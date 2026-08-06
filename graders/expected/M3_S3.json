@@ -1,0 +1,70 @@
+{
+  "state": "S3",
+  "waves": [
+    "W1_initial",
+    "W2",
+    "W3"
+  ],
+  "scale_rule": false,
+  "orders": {
+    "bronze_rows": 289272,
+    "rows_with_extra_columns": 2574,
+    "distinct_order_line_id": 285796,
+    "duplicates_removed": 3476,
+    "quarantine_rows": 2240,
+    "quarantine_by_reason": {
+      "INVALID_QUANTITY": 819,
+      "INVALID_TIMESTAMP": 1427
+    },
+    "silver_rows": 283556,
+    "distinct_order_id": 137508,
+    "revenue_lines": 235494,
+    "orphan_customer_rows": 1731,
+    "orphan_product_rows": 546,
+    "sum_gross_amount": "30668800.85",
+    "sum_net_amount": "29137390.27",
+    "sum_net_amount_revenue_only": "24179713.35",
+    "status_distribution": {
+      "CANCELLED": 27902,
+      "DELIVERED": 199049,
+      "PENDING": 14026,
+      "RETURNED": 20160,
+      "SHIPPED": 22419
+    },
+    "min_order_date": "2025-12-01",
+    "max_order_date": "2026-06-03"
+  },
+  "events": {
+    "bronze_rows": 139428,
+    "malformed_rows": 415,
+    "parseable_rows": 139013,
+    "distinct_event_id": 138313,
+    "duplicates_removed": 700,
+    "silver_event_rows": 138313,
+    "silver_event_item_rows": 27878,
+    "events_with_items": 16770,
+    "events_with_customer_id": 121760,
+    "events_with_epoch_ts": 1354,
+    "event_type_distribution": {
+      "add_to_cart": 10075,
+      "checkout_start": 4704,
+      "page_view": 50780,
+      "product_view": 55658,
+      "purchase": 1991,
+      "search": 15105
+    }
+  },
+  "contract_and_ldp": {
+    "scope_orders_deduplicated": 285796,
+    "scope_events_deduplicated": 138313,
+    "contract_violations": {
+      "EVENT_TS_ISO8601": 1352,
+      "ORDER_LINE_ID_UNIQUE": 3476,
+      "ORDER_TS_PARSABLE": 1427,
+      "QUANTITY_POSITIVE": 819,
+      "UNIT_PRICE_NUMERIC": 1106
+    },
+    "ldp_revenue_by_month_country_rows": 42,
+    "ldp_revenue_lines": 235494
+  }
+}

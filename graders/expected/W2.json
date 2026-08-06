@@ -1,0 +1,32 @@
+{
+  "wave": "W2",
+  "label": "Incremental J+1 (rejeu partiel de la veille)",
+  "files": {
+    "orders/orders_2026-06-02.csv": 1626,
+    "events/events_2026-06-02.jsonl.gz": 7970
+  },
+  "totals": {
+    "orders": {
+      "orders": 744,
+      "lines_clean": 1554,
+      "lines_written": 1626,
+      "dup_exact": 14,
+      "bad_ts": 7,
+      "bad_qty": 1,
+      "price_junk": 8,
+      "unknown_customer": 12,
+      "unknown_product": 5,
+      "extra_columns": 9,
+      "replayed_from_previous_day": 58
+    },
+    "events": {
+      "events": 7926,
+      "sessions": 1983,
+      "bad_json": 20,
+      "dup_event_id": 44,
+      "epoch_ts": 58,
+      "late": 36,
+      "lines_written": 7970
+    }
+  }
+}

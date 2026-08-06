@@ -1,0 +1,148 @@
+{
+  "m4_scd2": {
+    "apres_2_extractions": {
+      "journal_customer_rows": 25411,
+      "journal_seller_rows": 641,
+      "customer_scd2_rows": 25390,
+      "customer_scd2_current": 25060,
+      "customer_scd2_collapsed": 21,
+      "customer_versions_histogram": {
+        "1": 24730,
+        "2": 330
+      },
+      "customer_scd2_deleted_current": 25,
+      "seller_scd2_rows": 640,
+      "seller_scd2_current": 600,
+      "seller_scd2_collapsed": 1,
+      "seller_versions_histogram": {
+        "1": 560,
+        "2": 40
+      },
+      "sellers_with_plan_change": 40
+    },
+    "apres_3_extractions": {
+      "journal_customer_rows": 25971,
+      "journal_seller_rows": 706,
+      "customer_scd2_rows": 25570,
+      "customer_scd2_current": 25080,
+      "customer_scd2_collapsed": 401,
+      "customer_versions_histogram": {
+        "1": 24593,
+        "2": 484,
+        "3": 3
+      },
+      "customer_scd2_deleted_current": 35,
+      "seller_scd2_rows": 665,
+      "seller_scd2_current": 600,
+      "seller_scd2_collapsed": 41,
+      "seller_versions_histogram": {
+        "1": 535,
+        "2": 65
+      },
+      "sellers_with_plan_change": 65
+    }
+  },
+  "m5_gold": {
+    "fact_rows": 282104,
+    "commission_historized_total": "3164343.53",
+    "commission_current_plan_total": "3118577.56",
+    "commission_gap": "-45765.97",
+    "agg_revenue_monthly_rows": 13333,
+    "months": {
+      "2025-12": {
+        "net_amount": "4840958.20",
+        "commission": "636906.79",
+        "lines": 47515
+      },
+      "2026-01": {
+        "net_amount": "4277208.71",
+        "commission": "562463.41",
+        "lines": 41593
+      },
+      "2026-02": {
+        "net_amount": "3365911.50",
+        "commission": "442617.04",
+        "lines": 32593
+      },
+      "2026-03": {
+        "net_amount": "3799585.22",
+        "commission": "500846.61",
+        "lines": 36796
+      },
+      "2026-04": {
+        "net_amount": "3683814.84",
+        "commission": "483855.74",
+        "lines": 35750
+      },
+      "2026-05": {
+        "net_amount": "3821704.17",
+        "commission": "503196.68",
+        "lines": 37496
+      },
+      "2026-06": {
+        "net_amount": "260610.22",
+        "commission": "34457.26",
+        "lines": 2529
+      }
+    },
+    "lookback_cutoff_exclusive": "2026-03-04",
+    "max_order_date": "2026-06-02",
+    "top_product_90d": "P007960",
+    "top_product_90d_net_amount": "9571.30",
+    "products_with_revenue_90d": 8204
+  },
+  "m5_funnel": {
+    "sources": 7,
+    "by_source": {
+      "affiliate": {
+        "sessions": 4641,
+        "product_view": 3071,
+        "add_to_cart": 1386,
+        "checkout_start": 625,
+        "purchase": 255
+      },
+      "bing": {
+        "sessions": 4504,
+        "product_view": 2949,
+        "add_to_cart": 1340,
+        "checkout_start": 630,
+        "purchase": 262
+      },
+      "direct": {
+        "sessions": 4624,
+        "product_view": 2984,
+        "add_to_cart": 1279,
+        "checkout_start": 560,
+        "purchase": 240
+      },
+      "google": {
+        "sessions": 4535,
+        "product_view": 2995,
+        "add_to_cart": 1356,
+        "checkout_start": 650,
+        "purchase": 281
+      },
+      "meta": {
+        "sessions": 4540,
+        "product_view": 2996,
+        "add_to_cart": 1379,
+        "checkout_start": 673,
+        "purchase": 286
+      },
+      "newsletter": {
+        "sessions": 4610,
+        "product_view": 3050,
+        "add_to_cart": 1406,
+        "checkout_start": 647,
+        "purchase": 269
+      },
+      "tiktok": {
+        "sessions": 4413,
+        "product_view": 2947,
+        "add_to_cart": 1324,
+        "checkout_start": 627,
+        "purchase": 280
+      }
+    }
+  }
+}

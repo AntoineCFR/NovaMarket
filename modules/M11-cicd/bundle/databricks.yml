@@ -1,0 +1,46 @@
+# M11 — squelette du bundle déclaratif
+#
+# Complète les TODO, puis :
+#   databricks bundle validate -t dev
+#   databricks bundle deploy   -t dev
+#   databricks bundle run novamarket_smoke -t dev
+#
+# Rappel de vocabulaire : le produit s'appelle Declarative Automation Bundles.
+# La commande CLI, elle, est restée `databricks bundle`.
+
+bundle:
+  name: novamarket
+
+include:
+  - resources/*.yml
+
+# TODO A — déclare les variables qui changent d'un environnement à l'autre.
+# Au minimum : le catalog cible. Une variable a un `description` et un `default`.
+variables:
+  catalog:
+    description: ...
+    default: ...
+
+targets:
+
+  # TODO B — le target de développement.
+  # Points à régler : le mode de déploiement, l'hôte du workspace, et la surcharge
+  # de la variable `catalog`.
+  #
+  # Le mode `development` préfixe automatiquement les ressources et suspend les
+  # planifications. Comprends ce que chacun des deux résout avant de l'activer.
+  dev:
+    mode: ...
+    default: true
+    workspace:
+      host: https://<ton-workspace>.cloud.databricks.com
+    variables:
+      catalog: ...
+
+  # TODO C — le target de production.
+  prod:
+    mode: ...
+    workspace:
+      host: https://<ton-workspace>.cloud.databricks.com
+    variables:
+      catalog: ...

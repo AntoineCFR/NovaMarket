@@ -1,0 +1,14 @@
+{
+  "wave": "W0_ref",
+  "label": "Referentiels (chargement initial)",
+  "files": {
+    "ref/categories.csv": 39,
+    "ref/sellers.csv": 600,
+    "ref/products.csv": 8000
+  },
+  "totals": {
+    "categories": 39,
+    "sellers": 600,
+    "products": 8000
+  }
+}

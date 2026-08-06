@@ -1,0 +1,29 @@
+# Corrigé M11 — job de fumée
+#
+# Il tourne dans n'importe quel environnement, y compris un catalog vide. Son rôle
+# n'est pas de traiter de la donnée mais de prouver que le déploiement a produit un
+# environnement utilisable — et de laisser une trace vérifiable de ce fait.
+
+resources:
+  jobs:
+    novamarket_smoke:
+      name: novamarket_smoke
+
+      tasks:
+        - task_key: smoke
+          notebook_task:
+            notebook_path: ${var.notebook_root}/M11_smoke
+            base_parameters:
+              # La variable de target : c'est elle qui différencie dev et prod.
+              catalog: ${var.catalog}
+              # Références dynamiques résolues à l'exécution par Databricks.
+              bundle_name: ${bundle.name}
+              bundle_target: ${bundle.target}
+              job_name: "{{job.name}}"
+
+      email_notifications:
+        on_failure:
+          - ${var.alert_email}
+
+      timeout_seconds: 900
+      max_concurrent_runs: 1

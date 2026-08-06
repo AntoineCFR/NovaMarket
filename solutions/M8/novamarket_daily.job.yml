@@ -1,0 +1,154 @@
+# Corrigé M8 — définition du job NovaMarket
+#
+# Exporté depuis l'interface (Jobs & Pipelines → ⋮ → View YAML), puis nettoyé.
+# Adapte les chemins `notebook_path` à l'emplacement réel de tes notebooks.
+#
+# Concurrence maximale : 3 (le for_each), puis 3 (oltp + les deux silver).
+# Jamais plus de 5 tâches prêtes simultanément — contrainte Free Edition respectée.
+
+resources:
+  jobs:
+    novamarket_daily:
+      name: novamarket_daily
+
+      parameters:
+        - name: catalog
+          default: novamarket
+        - name: run_id
+          # Reference dynamique : Databricks la resout a l'execution.
+          default: "{{job.run_id}}"
+
+      # Un job sans timeout qui se bloque consomme le quota jusqu'a epuisement.
+      # 2 h = environ 4x la duree observee, marge confortable sans etre absurde.
+      timeout_seconds: 7200
+      max_concurrent_runs: 1
+
+      schedule:
+        quartz_cron_expression: "0 0 4 * * ?"
+        timezone_id: Europe/Paris
+        # Desactive apres validation du module : le quota Free Edition n'aime pas
+        # les jobs quotidiens qui tournent pour rien.
+        pause_status: PAUSED
+
+      email_notifications:
+        on_failure:
+          - antoine.cosne@ik.me
+        # Volontairement absent : on_success. Une notification qui arrive tous les
+        # jours n'est plus lue au bout d'une semaine.
+
+      tasks:
+
+        # --- Ingestion ----------------------------------------------------
+        - task_key: ingest_files
+          for_each_task:
+            inputs: '["orders", "events", "ref"]'
+            concurrency: 3
+            task:
+              task_key: ingest_one
+              notebook_task:
+                notebook_path: /Workspace/novamarket/M1_bronze_dispatch
+                base_parameters:
+                  source: "{{input}}"
+                  catalog: "{{job.parameters.catalog}}"
+                  run_id: "{{job.parameters.run_id}}"
+          # Deux nouvelles tentatives : c'est ce qui absorbe la derive de schema
+          # d'Auto Loader sans reveiller personne.
+          max_retries: 2
+          min_retry_interval_millis: 60000
+          retry_on_timeout: true
+
+        - task_key: ingest_oltp
+          depends_on:
+            - task_key: ingest_files
+          notebook_task:
+            notebook_path: /Workspace/novamarket/M2_bronze_oltp
+            base_parameters:
+              catalog: "{{job.parameters.catalog}}"
+              run_id: "{{job.parameters.run_id}}"
+              source_mode: file
+              file_version: v3
+          max_retries: 1
+
+        # --- Silver -------------------------------------------------------
+        - task_key: silver_orders
+          depends_on:
+            - task_key: ingest_files
+          notebook_task:
+            notebook_path: /Workspace/novamarket/M3_silver_order_line
+            base_parameters:
+              catalog: "{{job.parameters.catalog}}"
+              run_id: "{{job.parameters.run_id}}"
+
+        - task_key: silver_events
+          depends_on:
+            - task_key: ingest_files
+          notebook_task:
+            notebook_path: /Workspace/novamarket/M3_silver_events
+            base_parameters:
+              catalog: "{{job.parameters.catalog}}"
+              run_id: "{{job.parameters.run_id}}"
+
+        # --- Historisation ------------------------------------------------
+        - task_key: scd2
+          depends_on:
+            - task_key: ingest_oltp
+          notebook_task:
+            notebook_path: /Workspace/novamarket/M4_scd2
+            base_parameters:
+              catalog: "{{job.parameters.catalog}}"
+              run_id: "{{job.parameters.run_id}}"
+
+        # --- Gold ---------------------------------------------------------
+        - task_key: gold
+          depends_on:
+            - task_key: silver_orders
+            - task_key: silver_events
+            - task_key: scd2
+          notebook_task:
+            notebook_path: /Workspace/novamarket/M5_gold
+            base_parameters:
+              catalog: "{{job.parameters.catalog}}"
+              run_id: "{{job.parameters.run_id}}"
+
+        # --- Qualite ------------------------------------------------------
+        - task_key: dq_checks
+          depends_on:
+            - task_key: gold
+          notebook_task:
+            notebook_path: /Workspace/novamarket/M6_qualite
+            base_parameters:
+              catalog: "{{job.parameters.catalog}}"
+              run_id: "{{job.parameters.run_id}}"
+
+        # --- Aiguillage ---------------------------------------------------
+        - task_key: dq_gate
+          depends_on:
+            - task_key: dq_checks
+          condition_task:
+            op: EQUAL_TO
+            left: "{{tasks.dq_checks.values.dq_status}}"
+            right: PASS
+
+        - task_key: publish
+          depends_on:
+            - task_key: dq_gate
+              outcome: "true"
+          notebook_task:
+            notebook_path: /Workspace/novamarket/M8_job_summary
+            base_parameters:
+              catalog: "{{job.parameters.catalog}}"
+              run_id: "{{job.parameters.run_id}}"
+              job_name: novamarket_daily
+
+        - task_key: alert_and_stop
+          depends_on:
+            - task_key: dq_gate
+              outcome: "false"
+          notebook_task:
+            notebook_path: /Workspace/novamarket/M8_dq_failure
+            base_parameters:
+              catalog: "{{job.parameters.catalog}}"
+              run_id: "{{job.parameters.run_id}}"
+          # Cette tache leve volontairement une exception : sans elle, un job dont
+          # toutes les taches critiques ont ete SKIPPED se termine en SUCCESS, et
+          # personne n'est prevenu.

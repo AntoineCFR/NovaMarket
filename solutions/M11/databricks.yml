@@ -1,0 +1,46 @@
+# Corrigé M11 — bundle déclaratif NovaMarket
+#
+#   databricks bundle validate -t dev     # ne touche à rien, résout et affiche
+#   databricks bundle deploy   -t dev
+#   databricks bundle run novamarket_smoke -t dev
+#   databricks bundle deploy   -t prod
+#   databricks bundle run novamarket_smoke -t prod
+#   databricks bundle destroy  -t dev     # pour ne rien laisser traîner
+
+bundle:
+  name: novamarket
+
+include:
+  - resources/*.yml
+
+variables:
+  catalog:
+    description: Catalog Unity Catalog cible de l environnement
+    default: novamarket
+  notebook_root:
+    description: Racine des notebooks dans le workspace
+    default: /Workspace/novamarket
+  alert_email:
+    description: Destinataire des notifications d echec
+    default: antoine.cosne@ik.me
+
+targets:
+
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://<ton-workspace>.cloud.databricks.com
+    variables:
+      catalog: novamarket_dev
+
+  prod:
+    mode: production
+    workspace:
+      host: https://<ton-workspace>.cloud.databricks.com
+      # En mode production, le chemin racine est explicite plutôt que dérivé de
+      # l'utilisateur : c'est ce qui rend le déploiement reproductible par un
+      # principal de service dans un pipeline CI.
+      root_path: /Workspace/Shared/.bundle/${bundle.name}/${bundle.target}
+    variables:
+      catalog: novamarket

@@ -1,0 +1,35 @@
+{
+  "wave": "W4",
+  "label": "Incremental J+3 (incident de production)",
+  "files": {
+    "orders/orders_2026-06-04.csv": 1439,
+    "ref/products.csv": 500,
+    "events/events_2026-06-04.jsonl.gz": 8518
+  },
+  "totals": {
+    "orders": {
+      "orders": 701,
+      "lines_clean": 1418,
+      "lines_written": 1439,
+      "dup_exact": 21,
+      "bad_ts": 8,
+      "bad_qty": 1,
+      "price_junk": 11,
+      "unknown_customer": 15,
+      "unknown_product": 2,
+      "extra_columns": 4,
+      "incident_cents_lines": 55,
+      "truncated_last_line": 1,
+      "truncated_ref_products": 500
+    },
+    "events": {
+      "events": 8482,
+      "sessions": 2058,
+      "bad_json": 19,
+      "dup_event_id": 36,
+      "epoch_ts": 84,
+      "late": 42,
+      "lines_written": 8518
+    }
+  }
+}

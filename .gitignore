@@ -1,0 +1,28 @@
+# Données générées — reproductibles à l'identique par le générateur déterministe.
+# Versionner un artefact qu'on sait reconstruire, c'est versionner du bruit.
+#   python generator/generate.py --waves W0_ref W1_initial W2 --clean
+#   python generator/generate_oltp.py
+data/
+
+# État local des bundles déclaratifs
+.databricks/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Réglages locaux de Claude Code : chemins absolus, propres à cette machine
+.claude/settings.local.json
+
+# Éditeurs et systèmes de fichiers
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Ne jamais versionner : profils de connexion, jetons, secrets
+.databrickscfg
+*.pem
+.env

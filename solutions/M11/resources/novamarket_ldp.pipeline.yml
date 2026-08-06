@@ -1,0 +1,23 @@
+# Corrigé M11 — le pipeline déclaratif de M7, devenu ressource du bundle
+#
+# ⚠️ Free Edition : un seul pipeline actif par type. En déployant sur les deux targets,
+# tu en auras deux. Déploie le pipeline sur `prod` uniquement, ou supprime celui de dev
+# avec `databricks bundle destroy -t dev` avant de déployer prod.
+
+resources:
+  pipelines:
+    novamarket_ldp:
+      name: novamarket_ldp
+      catalog: ${var.catalog}
+      schema: ldp
+
+      # Surtout pas `continuous: true` : le quota Free Edition n'y survivrait pas.
+      continuous: false
+      development: true
+
+      libraries:
+        - notebook:
+            path: ${var.notebook_root}/M7_pipeline
+
+      configuration:
+        source_path: /Volumes/${var.catalog}/landing/files/orders

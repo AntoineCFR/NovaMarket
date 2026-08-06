@@ -1,0 +1,31 @@
+{
+  "wave": "W3",
+  "label": "Incremental J+2 (derive de schema)",
+  "files": {
+    "orders/orders_2026-06-03.csv": 1487,
+    "events/events_2026-06-03.jsonl.gz": 8360
+  },
+  "totals": {
+    "orders": {
+      "orders": 685,
+      "lines_clean": 1463,
+      "lines_written": 1487,
+      "dup_exact": 24,
+      "bad_ts": 5,
+      "bad_qty": 6,
+      "price_junk": 4,
+      "unknown_customer": 10,
+      "unknown_product": 1,
+      "extra_columns": 5
+    },
+    "events": {
+      "events": 8314,
+      "sessions": 2014,
+      "bad_json": 26,
+      "dup_event_id": 46,
+      "epoch_ts": 85,
+      "late": 47,
+      "lines_written": 8360
+    }
+  }
+}

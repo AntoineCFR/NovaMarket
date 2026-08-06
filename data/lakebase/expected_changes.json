@@ -1,0 +1,511 @@
+{
+  "waves": [
+    {
+      "wave": "D1",
+      "change_ts": "2026-06-05 08:15:00",
+      "watermark_before_customers": "2026-04-30 09:00:00",
+      "watermark_before_sellers": "2025-10-16 09:00:00",
+      "updated_customers": 300,
+      "new_customers": 60,
+      "new_customer_ids": [
+        "C900001",
+        "C900002",
+        "C900003",
+        "C900004",
+        "C900005",
+        "C900006",
+        "C900007",
+        "C900008",
+        "C900009",
+        "C900010",
+        "C900011",
+        "C900012",
+        "C900013",
+        "C900014",
+        "C900015",
+        "C900016",
+        "C900017",
+        "C900018",
+        "C900019",
+        "C900020",
+        "C900021",
+        "C900022",
+        "C900023",
+        "C900024",
+        "C900025",
+        "C900026",
+        "C900027",
+        "C900028",
+        "C900029",
+        "C900030",
+        "C900031",
+        "C900032",
+        "C900033",
+        "C900034",
+        "C900035",
+        "C900036",
+        "C900037",
+        "C900038",
+        "C900039",
+        "C900040",
+        "C900041",
+        "C900042",
+        "C900043",
+        "C900044",
+        "C900045",
+        "C900046",
+        "C900047",
+        "C900048",
+        "C900049",
+        "C900050",
+        "C900051",
+        "C900052",
+        "C900053",
+        "C900054",
+        "C900055",
+        "C900056",
+        "C900057",
+        "C900058",
+        "C900059",
+        "C900060"
+      ],
+      "soft_deleted_customers": 25,
+      "soft_deleted_ids": [
+        "C000053",
+        "C000289",
+        "C001297",
+        "C001694",
+        "C003711",
+        "C004245",
+        "C004265",
+        "C004304",
+        "C004811",
+        "C008123",
+        "C008827",
+        "C009807",
+        "C010038",
+        "C010437",
+        "C012312",
+        "C012667",
+        "C013902",
+        "C014506",
+        "C015198",
+        "C015744",
+        "C015958",
+        "C016314",
+        "C017974",
+        "C018433",
+        "C022675"
+      ],
+      "boundary_customer_ids": [
+        "C008322",
+        "C014845",
+        "C015028",
+        "C021795",
+        "C024060"
+      ],
+      "updated_sellers": 40,
+      "plan_changes": [
+        {
+          "seller_id": "S0085",
+          "from": "BASIC",
+          "to": "PLUS"
+        },
+        {
+          "seller_id": "S0425",
+          "from": "PLUS",
+          "to": "BASIC"
+        },
+        {
+          "seller_id": "S0476",
+          "from": "PLUS",
+          "to": "BASIC"
+        },
+        {
+          "seller_id": "S0372",
+          "from": "PLUS",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0101",
+          "from": "BASIC",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0463",
+          "from": "PLUS",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0043",
+          "from": "PLUS",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0265",
+          "from": "BASIC",
+          "to": "PLUS"
+        },
+        {
+          "seller_id": "S0209",
+          "from": "PLUS",
+          "to": "BASIC"
+        },
+        {
+          "seller_id": "S0122",
+          "from": "PREMIUM",
+          "to": "BASIC"
+        },
+        {
+          "seller_id": "S0139",
+          "from": "BASIC",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0116",
+          "from": "BASIC",
+          "to": "PLUS"
+        },
+        {
+          "seller_id": "S0503",
+          "from": "BASIC",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0519",
+          "from": "BASIC",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0080",
+          "from": "BASIC",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0432",
+          "from": "PLUS",
+          "to": "BASIC"
+        },
+        {
+          "seller_id": "S0529",
+          "from": "BASIC",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0268",
+          "from": "BASIC",
+          "to": "PLUS"
+        },
+        {
+          "seller_id": "S0502",
+          "from": "BASIC",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0152",
+          "from": "BASIC",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0478",
+          "from": "PLUS",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0030",
+          "from": "BASIC",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0201",
+          "from": "BASIC",
+          "to": "PLUS"
+        },
+        {
+          "seller_id": "S0022",
+          "from": "PLUS",
+          "to": "BASIC"
+        },
+        {
+          "seller_id": "S0346",
+          "from": "BASIC",
+          "to": "PLUS"
+        },
+        {
+          "seller_id": "S0524",
+          "from": "BASIC",
+          "to": "PLUS"
+        },
+        {
+          "seller_id": "S0132",
+          "from": "BASIC",
+          "to": "PLUS"
+        },
+        {
+          "seller_id": "S0159",
+          "from": "BASIC",
+          "to": "PLUS"
+        },
+        {
+          "seller_id": "S0352",
+          "from": "BASIC",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0084",
+          "from": "PREMIUM",
+          "to": "BASIC"
+        },
+        {
+          "seller_id": "S0546",
+          "from": "BASIC",
+          "to": "PLUS"
+        },
+        {
+          "seller_id": "S0149",
+          "from": "BASIC",
+          "to": "PLUS"
+        },
+        {
+          "seller_id": "S0355",
+          "from": "PLUS",
+          "to": "BASIC"
+        },
+        {
+          "seller_id": "S0390",
+          "from": "BASIC",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0010",
+          "from": "PLUS",
+          "to": "BASIC"
+        },
+        {
+          "seller_id": "S0405",
+          "from": "PLUS",
+          "to": "BASIC"
+        },
+        {
+          "seller_id": "S0388",
+          "from": "BASIC",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0571",
+          "from": "BASIC",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0070",
+          "from": "BASIC",
+          "to": "PLUS"
+        },
+        {
+          "seller_id": "S0079",
+          "from": "PREMIUM",
+          "to": "PLUS"
+        }
+      ]
+    },
+    {
+      "wave": "D2",
+      "change_ts": "2026-06-06 07:30:00",
+      "watermark_before_customers": "2026-06-05 08:15:00",
+      "watermark_before_sellers": "2026-06-05 08:15:00",
+      "updated_customers": 150,
+      "new_customers": 20,
+      "new_customer_ids": [
+        "C910001",
+        "C910002",
+        "C910003",
+        "C910004",
+        "C910005",
+        "C910006",
+        "C910007",
+        "C910008",
+        "C910009",
+        "C910010",
+        "C910011",
+        "C910012",
+        "C910013",
+        "C910014",
+        "C910015",
+        "C910016",
+        "C910017",
+        "C910018",
+        "C910019",
+        "C910020"
+      ],
+      "soft_deleted_customers": 10,
+      "soft_deleted_ids": [
+        "C000980",
+        "C002172",
+        "C002597",
+        "C007068",
+        "C007722",
+        "C008668",
+        "C011957",
+        "C012112",
+        "C012621",
+        "C012684"
+      ],
+      "boundary_customer_ids": [],
+      "updated_sellers": 25,
+      "plan_changes": [
+        {
+          "seller_id": "S0293",
+          "from": "BASIC",
+          "to": "PLUS"
+        },
+        {
+          "seller_id": "S0019",
+          "from": "PLUS",
+          "to": "BASIC"
+        },
+        {
+          "seller_id": "S0247",
+          "from": "PREMIUM",
+          "to": "PLUS"
+        },
+        {
+          "seller_id": "S0545",
+          "from": "PLUS",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0060",
+          "from": "PLUS",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0364",
+          "from": "PLUS",
+          "to": "BASIC"
+        },
+        {
+          "seller_id": "S0225",
+          "from": "PREMIUM",
+          "to": "BASIC"
+        },
+        {
+          "seller_id": "S0333",
+          "from": "PREMIUM",
+          "to": "PLUS"
+        },
+        {
+          "seller_id": "S0334",
+          "from": "BASIC",
+          "to": "PLUS"
+        },
+        {
+          "seller_id": "S0310",
+          "from": "PLUS",
+          "to": "BASIC"
+        },
+        {
+          "seller_id": "S0237",
+          "from": "BASIC",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0184",
+          "from": "PREMIUM",
+          "to": "PLUS"
+        },
+        {
+          "seller_id": "S0012",
+          "from": "BASIC",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0291",
+          "from": "BASIC",
+          "to": "PLUS"
+        },
+        {
+          "seller_id": "S0329",
+          "from": "PLUS",
+          "to": "BASIC"
+        },
+        {
+          "seller_id": "S0255",
+          "from": "BASIC",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0582",
+          "from": "PLUS",
+          "to": "BASIC"
+        },
+        {
+          "seller_id": "S0434",
+          "from": "PLUS",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0360",
+          "from": "PLUS",
+          "to": "BASIC"
+        },
+        {
+          "seller_id": "S0350",
+          "from": "PLUS",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0242",
+          "from": "BASIC",
+          "to": "PLUS"
+        },
+        {
+          "seller_id": "S0496",
+          "from": "PLUS",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0034",
+          "from": "BASIC",
+          "to": "PREMIUM"
+        },
+        {
+          "seller_id": "S0591",
+          "from": "BASIC",
+          "to": "PLUS"
+        },
+        {
+          "seller_id": "S0477",
+          "from": "BASIC",
+          "to": "PREMIUM"
+        }
+      ]
+    }
+  ],
+  "extractions_gte": [
+    {
+      "n": 1,
+      "customers": 25000,
+      "sellers": 600,
+      "watermark_customers_after": "2026-04-30 09:00:00",
+      "watermark_sellers_after": "2025-10-16 09:00:00"
+    },
+    {
+      "n": 2,
+      "customers": 411,
+      "sellers": 41,
+      "watermark_customers_after": "2026-06-05 08:15:00",
+      "watermark_sellers_after": "2026-06-05 08:15:00"
+    },
+    {
+      "n": 3,
+      "customers": 560,
+      "sellers": 65,
+      "watermark_customers_after": "2026-06-06 07:30:00",
+      "watermark_sellers_after": "2026-06-06 07:30:00"
+    }
+  ],
+  "journal_customers_rows": 25971,
+  "journal_sellers_rows": 706,
+  "final_customers": 25080,
+  "final_sellers": 600
+}

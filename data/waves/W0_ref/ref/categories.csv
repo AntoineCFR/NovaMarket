@@ -1,0 +1,40 @@
+category_id,category_label,top_category_code,top_category_label
+CAT001,Petit électroménager,HOME,Maison & Cuisine
+CAT002,Arts de la table,HOME,Maison & Cuisine
+CAT003,Linge de maison,HOME,Maison & Cuisine
+CAT004,Rangement,HOME,Maison & Cuisine
+CAT005,Luminaires,HOME,Maison & Cuisine
+CAT006,Jardin,HOME,Maison & Cuisine
+CAT007,Smartphones,TECH,High-Tech
+CAT008,Audio,TECH,High-Tech
+CAT009,Informatique,TECH,High-Tech
+CAT010,Objets connectés,TECH,High-Tech
+CAT011,Photo,TECH,High-Tech
+CAT012,Accessoires,TECH,High-Tech
+CAT013,Prêt-à-porter,FASH,Mode
+CAT014,Chaussures,FASH,Mode
+CAT015,Maroquinerie,FASH,Mode
+CAT016,Montres & Bijoux,FASH,Mode
+CAT017,Lingerie,FASH,Mode
+CAT018,Soin du visage,BEAU,Beauté & Santé
+CAT019,Parfums,BEAU,Beauté & Santé
+CAT020,Capillaire,BEAU,Beauté & Santé
+CAT021,Parapharmacie,BEAU,Beauté & Santé
+CAT022,Maquillage,BEAU,Beauté & Santé
+CAT023,Running,SPORT,Sport & Plein air
+CAT024,Fitness,SPORT,Sport & Plein air
+CAT025,Cycles,SPORT,Sport & Plein air
+CAT026,Randonnée,SPORT,Sport & Plein air
+CAT027,Sports collectifs,SPORT,Sport & Plein air
+CAT028,Jeux de société,KIDS,Jeux & Enfants
+CAT029,Puériculture,KIDS,Jeux & Enfants
+CAT030,Figurines,KIDS,Jeux & Enfants
+CAT031,Jeux éducatifs,KIDS,Jeux & Enfants
+CAT032,Romans,BOOK,Culture & Livres
+CAT033,BD & Mangas,BOOK,Culture & Livres
+CAT034,Scolaire,BOOK,Culture & Livres
+CAT035,Vinyles,BOOK,Culture & Livres
+CAT036,Entretien auto,AUTO,Auto & Bricolage
+CAT037,Outillage,AUTO,Auto & Bricolage
+CAT038,Pièces détachées,AUTO,Auto & Bricolage
+CAT039,Peinture,AUTO,Auto & Bricolage

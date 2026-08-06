@@ -1,0 +1,501 @@
+product_id,product_name,brand,category_id,seller_id,list_price,weight_kg,is_discontinued
+P000001,Rivage Gourde Ultra,Rivage,CAT023,S0081,49.91,0.828,false
+P000002,Bexon Haltères Compact,Bexon,CAT025,S0088,117.02,1.776,false
+P000003,Cirrus Webcam Nomade,Cirrus,CAT010,S0011,89.11,9.632,false
+P000004,Lumen Sneakers Nomade,Lumen,CAT016,S0234,55.26,4.449,false
+P000005,Ivory Trottinette Pro,Ivory,CAT028,S0425,161.87,11.076,false
+P000006,Bexon Chaussures de trail Pro,Bexon,CAT026,S0051,73.25,1.770,false
+P000007,Bexon Eau de toilette Essentiel,Bexon,CAT021,S0294,93.37,3.311,false
+P000008,Alvora Filtre à air Classic,Alvora,CAT039,S0181,41.35,5.312,false
+P000009,Lumen Shampooing Ultra,Lumen,CAT021,S0210,68.46,1.217,true
+P000010,Pallas Filtre à air Classic,Pallas,CAT038,S0061,5.40,4.221,false
+P000011,Orbit Perceuse Ultra,Orbit,CAT039,S0599,48.28,3.340,true
+P000012,Rivage Enceinte Ultra,Rivage,CAT007,S0393,154.89,11.795,false
+P000013,Delvia Roman Premium,Delvia,CAT034,S0160,56.27,3.490,false
+P000014,Fjord Chargeur Pro,Fjord,CAT007,S0066,158.13,2.706,false
+P000015,Rivage Montre connectée Classic,Rivage,CAT008,S0471,40.76,4.670,false
+P000016,Granit Puzzle Ultra,Granit,CAT030,S0572,61.67,11.194,false
+P000017,Bexon Palette Pro,Bexon,CAT022,S0355,161.65,8.831,false
+P000018,Pallas Sac de sport Essentiel,Pallas,CAT025,S0506,48.43,4.194,false
+P000019,Bexon Nettoyant jantes Éco,Bexon,CAT038,S0167,249.60,11.912,false
+P000020,Granit Arrosoir Classic,Granit,CAT005,S0592,57.18,9.894,false
+P000021,Juniper Cube éducatif XL,Juniper,CAT031,S0326,28.26,9.837,false
+P000022,Bexon Écharpe Ultra,Bexon,CAT017,S0310,112.36,0.635,false
+P000023,Alvora Montre XL,Alvora,CAT016,S0081,53.03,7.583,false
+P000024,Windrow Cube éducatif Ultra,Windrow,CAT030,S0427,19.82,5.954,false
+P000025,Orbit Cube éducatif Pro,Orbit,CAT028,S0260,186.42,6.877,true
+P000026,Kestrel Roman Signature,Kestrel,CAT032,S0586,27.93,10.795,true
+P000027,Terra Ceinture Compact,Terra,CAT017,S0469,203.23,6.836,false
+P000028,Windrow Puzzle Compact,Windrow,CAT029,S0498,174.94,11.432,false
+P000029,Orbit Chemise XL,Orbit,CAT016,S0370,80.05,0.077,false
+P000030,Orbit Bouilloire Premium,Orbit,CAT003,S0565,37.18,5.200,false
+P000031,Ivory Jeu de plateau Premium,Ivory,CAT030,S0480,92.27,7.917,false
+P000032,Solstice Nettoyant jantes Signature,Solstice,CAT036,S0166,46.57,6.381,false
+P000033,Nordis Roman Classic,Nordis,CAT034,S0209,62.79,10.677,false
+P000034,Zephyr Webcam Nomade,Zephyr,CAT008,S0587,32.99,8.325,false
+P000035,Delvia Crème hydratante Compact,Delvia,CAT020,S0430,62.40,1.461,false
+P000036,Solstice Gourde Essentiel,Solstice,CAT023,S0319,39.16,4.610,false
+P000037,Alvora Eau de toilette Classic,Alvora,CAT019,S0574,50.23,5.526,false
+P000038,Delvia Shampooing Essentiel,Delvia,CAT021,S0296,5.78,11.353,false
+P000039,Rivage Jeu de plateau Premium,Rivage,CAT029,S0328,207.94,7.124,false
+P000040,Bexon Tapis de yoga Essentiel,Bexon,CAT024,S0067,16.06,2.551,false
+P000041,Lumen Montre connectée Éco,Lumen,CAT008,S0255,115.55,9.341,false
+P000042,Ember Coffret BD Premium,Ember,CAT033,S0154,34.02,9.341,false
+P000043,Nordis Sérum Éco,Nordis,CAT019,S0156,29.56,1.829,false
+P000044,Juniper Poêle Classic,Juniper,CAT005,S0556,52.40,10.972,false
+P000045,Rivage Perceuse Premium,Rivage,CAT036,S0149,89.73,3.687,false
+P000046,Orbit Nettoyant jantes Éco,Orbit,CAT037,S0296,92.84,8.351,false
+P000047,Solstice Shampooing Nomade,Solstice,CAT021,S0047,186.15,0.217,false
+P000048,Delvia Webcam Compact,Delvia,CAT011,S0190,80.92,4.797,false
+P000049,Quartz Sérum Ultra,Quartz,CAT020,S0152,34.92,6.418,false
+P000050,Halcyon Étagère Nomade,Halcyon,CAT005,S0195,35.52,3.347,false
+P000051,Pallas Webcam Pro,Pallas,CAT008,S0562,69.13,5.717,false
+P000052,Granit Enceinte Ultra,Granit,CAT009,S0383,96.48,7.273,false
+P000053,Fjord Manuel Éco,Fjord,CAT034,S0146,133.41,3.191,false
+P000054,Juniper Gourde Nomade,Juniper,CAT023,S0095,87.62,2.608,false
+P000055,Cirrus Filtre à air Éco,Cirrus,CAT037,S0557,25.03,10.128,false
+P000056,Quartz Peluche Essentiel,Quartz,CAT030,S0418,231.30,7.674,false
+P000057,Bexon Bâche Nomade,Bexon,CAT037,S0101,138.31,9.411,false
+P000058,Terra Webcam Premium,Terra,CAT011,S0581,83.20,5.397,true
+P000059,Halcyon Sérum Signature,Halcyon,CAT021,S0235,282.90,9.645,false
+P000060,Kestrel Palette Signature,Kestrel,CAT019,S0095,43.61,5.329,false
+P000061,Pallas Sac à main Éco,Pallas,CAT013,S0491,79.59,9.851,true
+P000062,Ember Filtre à air Premium,Ember,CAT037,S0099,106.01,1.449,false
+P000063,Cirrus Coffret BD Compact,Cirrus,CAT032,S0577,58.64,10.894,false
+P000064,Ivory Housse de couette Premium,Ivory,CAT001,S0199,6.47,8.306,false
+P000065,Windrow Shampooing Pro,Windrow,CAT021,S0526,279.10,2.687,false
+P000066,Quartz Nettoyant jantes Compact,Quartz,CAT039,S0588,56.18,4.924,false
+P000067,Vertex Shampooing Pro,Vertex,CAT021,S0217,85.75,10.064,true
+P000068,Fjord Crème hydratante Classic,Fjord,CAT019,S0504,146.37,10.753,false
+P000069,Granit Sac de sport Classic,Granit,CAT027,S0057,131.11,4.092,false
+P000070,Lumen Bouilloire Compact,Lumen,CAT002,S0452,29.30,8.286,false
+P000071,Nordis Souris Classic,Nordis,CAT009,S0402,50.66,4.814,false
+P000072,Windrow Montre connectée Essentiel,Windrow,CAT008,S0468,250.54,7.970,false
+P000073,Vertex Veste Premium,Vertex,CAT017,S0515,49.87,7.936,false
+P000074,Fjord Cube éducatif Éco,Fjord,CAT029,S0338,39.81,3.195,false
+P000075,Fjord Figurine Signature,Fjord,CAT030,S0247,11.97,1.367,false
+P000076,Alvora Peluche Pro,Alvora,CAT031,S0386,163.53,7.062,true
+P000077,Ember Bâche Signature,Ember,CAT037,S0280,70.29,2.409,false
+P000078,Orbit Chargeur Premium,Orbit,CAT010,S0222,73.13,1.573,false
+P000079,Windrow Shampooing XL,Windrow,CAT020,S0466,72.64,8.536,false
+P000080,Orbit Tapis de yoga Essentiel,Orbit,CAT023,S0187,39.64,7.070,false
+P000081,Nordis Sneakers Signature,Nordis,CAT016,S0011,20.62,2.538,false
+P000082,Zephyr Ceinture Éco,Zephyr,CAT015,S0321,85.19,7.553,false
+P000083,Kestrel Gourde Nomade,Kestrel,CAT023,S0192,72.42,6.966,false
+P000084,Alvora Palette Signature,Alvora,CAT020,S0460,125.07,5.963,true
+P000085,Pallas Nettoyant jantes Nomade,Pallas,CAT037,S0224,236.65,9.044,false
+P000086,Alvora Montre connectée XL,Alvora,CAT007,S0499,49.85,9.606,false
+P000087,Meridian Jeu de plateau Premium,Meridian,CAT030,S0492,56.19,1.219,false
+P000088,Zephyr Étagère Essentiel,Zephyr,CAT005,S0127,20.80,0.602,false
+P000089,Delvia Montre connectée Nomade,Delvia,CAT011,S0171,145.73,11.838,false
+P000090,Zephyr Brosse Essentiel,Zephyr,CAT018,S0460,68.21,0.220,false
+P000091,Kestrel Bâche Éco,Kestrel,CAT036,S0047,88.80,0.144,false
+P000092,Terra Bâche Classic,Terra,CAT037,S0340,108.41,7.081,false
+P000093,Fjord Chaussures de trail Compact,Fjord,CAT026,S0109,186.54,7.771,false
+P000094,Windrow Cube éducatif Essentiel,Windrow,CAT031,S0106,26.49,9.948,true
+P000095,Ivory Casque vélo Éco,Ivory,CAT024,S0326,89.26,11.477,false
+P000096,Delvia Manuel Signature,Delvia,CAT032,S0177,44.95,11.725,false
+P000097,Ursa Enceinte Premium,Ursa,CAT012,S0483,30.57,11.276,false
+P000098,Rivage Chemise Compact,Rivage,CAT015,S0445,45.30,6.591,false
+P000099,Meridian Cube éducatif Classic,Meridian,CAT030,S0510,47.06,6.092,true
+P000100,Nordis Puzzle Essentiel,Nordis,CAT031,S0019,76.31,4.458,false
+P000101,Cirrus Bâche Ultra,Cirrus,CAT038,S0102,65.68,4.431,false
+P000102,Delvia Perceuse Pro,Delvia,CAT038,S0436,27.64,10.055,false
+P000103,Bexon Manuel Éco,Bexon,CAT032,S0116,26.07,4.960,false
+P000104,Pallas Gourde Nomade,Pallas,CAT026,S0001,96.11,0.273,false
+P000105,Bexon Puzzle Éco,Bexon,CAT031,S0110,49.76,6.174,false
+P000106,Ivory Trottinette Signature,Ivory,CAT030,S0274,74.34,8.909,false
+P000107,Cirrus Lampe Ultra,Cirrus,CAT005,S0551,14.46,9.068,false
+P000108,Terra Arrosoir Essentiel,Terra,CAT003,S0174,101.69,8.817,false
+P000109,Kestrel Perceuse Classic,Kestrel,CAT037,S0175,32.33,7.389,false
+P000110,Zephyr Coffret BD Compact,Zephyr,CAT034,S0017,67.47,11.664,false
+P000111,Quartz Puzzle Ultra,Quartz,CAT031,S0439,23.30,2.391,false
+P000112,Rivage Beau livre Ultra,Rivage,CAT032,S0113,59.98,4.999,false
+P000113,Quartz Roman Classic,Quartz,CAT035,S0169,45.29,7.795,false
+P000114,Quartz Tapis de yoga Éco,Quartz,CAT027,S0295,16.51,5.367,false
+P000115,Delvia Crème hydratante XL,Delvia,CAT018,S0541,78.55,2.143,false
+P000116,Ursa Perceuse Essentiel,Ursa,CAT039,S0111,80.78,7.369,false
+P000117,Rivage Lampe Éco,Rivage,CAT002,S0466,51.59,4.318,false
+P000118,Nordis Tapis de yoga Pro,Nordis,CAT024,S0097,24.02,5.041,false
+P000119,Fjord Nettoyant jantes Nomade,Fjord,CAT039,S0242,59.72,3.758,false
+P000120,Meridian Sac de sport Nomade,Meridian,CAT027,S0088,32.59,7.736,false
+P000121,Nordis Haltères Classic,Nordis,CAT024,S0095,238.34,10.430,true
+P000122,Vertex Sac de sport Essentiel,Vertex,CAT024,S0120,10.81,5.888,true
+P000123,Kestrel Casque vélo Classic,Kestrel,CAT023,S0479,176.50,7.286,false
+P000124,Ivory Coffret BD Premium,Ivory,CAT032,S0307,26.30,2.778,false
+P000125,Ursa Sneakers Premium,Ursa,CAT015,S0301,60.92,8.552,false
+P000126,Rivage Casque vélo Signature,Rivage,CAT024,S0525,23.11,6.609,false
+P000127,Alvora Gourde Signature,Alvora,CAT023,S0254,180.27,1.663,true
+P000128,Orbit Casque Signature,Orbit,CAT007,S0469,168.59,10.586,false
+P000129,Granit Chargeur Pro,Granit,CAT009,S0150,50.83,6.421,false
+P000130,Windrow Écharpe Essentiel,Windrow,CAT014,S0441,93.68,4.682,false
+P000131,Granit Jeu de plateau Compact,Granit,CAT030,S0477,24.44,9.798,true
+P000132,Granit Figurine Pro,Granit,CAT028,S0492,92.12,5.637,false
+P000133,Windrow Perceuse Classic,Windrow,CAT039,S0250,178.06,11.251,false
+P000134,Lumen Bâche Signature,Lumen,CAT038,S0046,45.49,10.069,false
+P000135,Rivage Lampe Essentiel,Rivage,CAT001,S0061,16.47,0.061,false
+P000136,Lumen Eau de toilette Éco,Lumen,CAT020,S0547,51.52,11.644,false
+P000137,Delvia Chargeur Essentiel,Delvia,CAT011,S0255,50.59,8.037,false
+P000138,Terra Set de couverts Signature,Terra,CAT003,S0540,30.99,8.017,false
+P000139,Pallas Puzzle Ultra,Pallas,CAT031,S0558,27.94,0.882,false
+P000140,Quartz Nettoyant jantes Classic,Quartz,CAT039,S0046,68.36,3.589,false
+P000141,Cirrus Chargeur Pro,Cirrus,CAT012,S0435,129.26,10.517,false
+P000142,Ember Shampooing Essentiel,Ember,CAT019,S0027,5.49,3.255,false
+P000143,Bexon Peluche Éco,Bexon,CAT030,S0389,29.62,7.790,false
+P000144,Rivage Shampooing Éco,Rivage,CAT020,S0027,102.54,8.703,false
+P000145,Windrow Montre connectée XL,Windrow,CAT012,S0248,19.33,8.080,true
+P000146,Granit Chaussures de trail Premium,Granit,CAT023,S0478,158.78,10.343,false
+P000147,Vertex Sérum Compact,Vertex,CAT019,S0136,6.94,9.925,false
+P000148,Juniper Gourde Pro,Juniper,CAT027,S0299,176.32,3.129,false
+P000149,Pallas Eau de toilette Compact,Pallas,CAT019,S0352,7.15,10.246,false
+P000150,Windrow Cube éducatif Éco,Windrow,CAT031,S0191,154.45,3.213,false
+P000151,Cirrus Trottinette Classic,Cirrus,CAT030,S0082,42.22,4.302,false
+P000152,Halcyon Housse de couette Ultra,Halcyon,CAT006,S0158,64.62,3.502,false
+P000153,Vertex Roman Premium,Vertex,CAT035,S0233,164.45,3.598,false
+P000154,Halcyon Sérum Signature,Halcyon,CAT021,S0062,51.63,8.813,false
+P000155,Bexon Chargeur Signature,Bexon,CAT007,S0354,162.26,4.091,false
+P000156,Fjord Manuel Essentiel,Fjord,CAT035,S0155,30.13,1.332,false
+P000157,Windrow Manuel XL,Windrow,CAT034,S0559,41.34,2.635,false
+P000158,Quartz Ceinture XL,Quartz,CAT017,S0056,146.40,1.499,false
+P000159,Terra Arrosoir Premium,Terra,CAT005,S0483,46.67,1.331,false
+P000160,Halcyon Ceinture Compact,Halcyon,CAT015,S0074,57.41,3.138,false
+P000161,Quartz Tapis de yoga Signature,Quartz,CAT027,S0354,131.37,7.684,false
+P000162,Quartz Set de couverts Essentiel,Quartz,CAT004,S0337,60.05,2.579,false
+P000163,Kestrel Enceinte Ultra,Kestrel,CAT012,S0565,264.44,10.506,false
+P000164,Ursa Clavier Ultra,Ursa,CAT008,S0329,31.67,5.641,false
+P000165,Orbit Souris Premium,Orbit,CAT007,S0383,90.73,9.037,false
+P000166,Delvia Palette Nomade,Delvia,CAT020,S0296,105.64,6.058,false
+P000167,Halcyon Casque vélo Essentiel,Halcyon,CAT023,S0525,35.64,3.987,false
+P000168,Terra Chargeur Essentiel,Terra,CAT009,S0439,31.81,11.920,false
+P000169,Juniper Crème hydratante Essentiel,Juniper,CAT021,S0519,62.10,4.676,true
+P000170,Delvia Vinyle Compact,Delvia,CAT034,S0570,33.74,8.860,true
+P000171,Zephyr Lampe Classic,Zephyr,CAT003,S0283,47.81,4.663,false
+P000172,Ivory Puzzle Pro,Ivory,CAT030,S0289,99.42,10.590,false
+P000173,Alvora Bâche Essentiel,Alvora,CAT039,S0468,73.15,0.939,false
+P000174,Pallas Enceinte Classic,Pallas,CAT011,S0030,46.45,3.114,false
+P000175,Nordis Bouilloire Essentiel,Nordis,CAT004,S0396,72.69,5.485,false
+P000176,Ursa Perceuse Ultra,Ursa,CAT037,S0033,11.19,8.492,false
+P000177,Windrow Brosse Nomade,Windrow,CAT022,S0443,31.56,4.625,false
+P000178,Nordis Vinyle Signature,Nordis,CAT033,S0379,50.40,4.094,false
+P000179,Alvora Arrosoir Premium,Alvora,CAT004,S0378,23.65,0.558,false
+P000180,Kestrel Roman Essentiel,Kestrel,CAT033,S0406,84.23,1.093,false
+P000181,Fjord Puzzle Classic,Fjord,CAT028,S0312,62.19,5.251,false
+P000182,Kestrel Casque vélo Éco,Kestrel,CAT026,S0502,64.30,6.901,false
+P000183,Ursa Tapis de yoga Classic,Ursa,CAT023,S0252,69.32,9.827,false
+P000184,Terra Souris Classic,Terra,CAT009,S0259,93.82,4.520,false
+P000185,Ursa Clé à cliquet Essentiel,Ursa,CAT039,S0292,18.21,4.046,false
+P000186,Granit Perceuse Essentiel,Granit,CAT039,S0284,66.84,5.937,false
+P000187,Windrow Housse de couette Essentiel,Windrow,CAT006,S0199,38.18,6.565,false
+P000188,Terra Shampooing Compact,Terra,CAT021,S0526,113.50,11.062,true
+P000189,Kestrel Roman Premium,Kestrel,CAT034,S0320,141.28,9.534,true
+P000190,Windrow Figurine Pro,Windrow,CAT028,S0260,149.31,11.544,false
+P000191,Ivory Sac à main Premium,Ivory,CAT013,S0413,40.58,2.250,false
+P000192,Lumen Poêle XL,Lumen,CAT002,S0573,132.36,5.094,false
+P000193,Fjord Webcam Classic,Fjord,CAT007,S0550,54.74,10.107,false
+P000194,Orbit Bouilloire Essentiel,Orbit,CAT004,S0221,25.29,3.270,false
+P000195,Kestrel Sac à main XL,Kestrel,CAT014,S0138,282.12,10.600,false
+P000196,Ivory Casque Classic,Ivory,CAT008,S0248,31.64,5.075,false
+P000197,Ember Coffret BD Premium,Ember,CAT034,S0209,12.14,7.650,true
+P000198,Ember Montre Nomade,Ember,CAT017,S0182,90.38,4.382,false
+P000199,Pallas Chargeur Pro,Pallas,CAT009,S0393,126.01,7.956,false
+P000200,Nordis Sac de sport Nomade,Nordis,CAT023,S0119,60.67,3.103,false
+P000201,Nordis Écharpe Compact,Nordis,CAT015,S0272,84.94,1.795,false
+P000202,Quartz Housse de couette Éco,Quartz,CAT005,S0145,17.98,7.432,true
+P000203,Windrow Arrosoir Classic,Windrow,CAT001,S0518,54.31,6.489,false
+P000204,Kestrel Roman Classic,Kestrel,CAT035,S0482,197.14,1.729,false
+P000205,Orbit Filtre à air Éco,Orbit,CAT038,S0397,79.42,7.720,false
+P000206,Delvia Manuel Pro,Delvia,CAT033,S0207,17.44,1.669,false
+P000207,Ember Bâche Compact,Ember,CAT037,S0090,114.57,8.710,false
+P000208,Ursa Étagère Nomade,Ursa,CAT005,S0199,60.38,3.101,false
+P000209,Ember Beau livre Éco,Ember,CAT035,S0369,68.49,8.192,false
+P000210,Halcyon Bouilloire Nomade,Halcyon,CAT001,S0178,73.42,7.619,false
+P000211,Lumen Coffret BD Essentiel,Lumen,CAT033,S0060,54.04,10.318,false
+P000212,Juniper Roman Ultra,Juniper,CAT034,S0358,74.79,5.246,true
+P000213,Fjord Clavier Classic,Fjord,CAT010,S0499,45.79,10.432,false
+P000214,Juniper Montre connectée Premium,Juniper,CAT011,S0471,75.39,9.951,true
+P000215,Ivory Beau livre Ultra,Ivory,CAT035,S0267,38.26,4.937,false
+P000216,Bexon Eau de toilette Signature,Bexon,CAT020,S0300,65.88,10.621,true
+P000217,Alvora Chaussures de trail Pro,Alvora,CAT024,S0379,147.37,11.220,false
+P000218,Pallas Montre connectée Éco,Pallas,CAT012,S0590,75.71,3.977,false
+P000219,Quartz Gourde Pro,Quartz,CAT025,S0478,22.47,9.626,true
+P000220,Nordis Crème hydratante Signature,Nordis,CAT020,S0200,92.33,4.153,false
+P000221,Ursa Perceuse Essentiel,Ursa,CAT038,S0341,229.91,6.391,false
+P000222,Pallas Palette Nomade,Pallas,CAT021,S0030,132.11,1.663,false
+P000223,Windrow Tapis de yoga XL,Windrow,CAT023,S0254,81.31,7.313,false
+P000224,Fjord Beau livre Ultra,Fjord,CAT034,S0535,27.21,4.369,false
+P000225,Delvia Bâche Nomade,Delvia,CAT037,S0210,17.07,10.239,false
+P000226,Halcyon Peluche Signature,Halcyon,CAT031,S0406,14.73,7.683,false
+P000227,Halcyon Montre Compact,Halcyon,CAT014,S0170,75.26,2.409,false
+P000228,Ivory Clé à cliquet Essentiel,Ivory,CAT038,S0132,9.16,1.672,false
+P000229,Windrow Roman Classic,Windrow,CAT032,S0417,165.70,6.642,false
+P000230,Kestrel Beau livre Compact,Kestrel,CAT032,S0517,39.02,1.483,false
+P000231,Alvora Trottinette Premium,Alvora,CAT030,S0511,57.72,3.359,false
+P000232,Granit Chaussures de trail Nomade,Granit,CAT023,S0169,45.98,3.109,false
+P000233,Kestrel Haltères Classic,Kestrel,CAT027,S0524,73.75,6.855,false
+P000234,Zephyr Filtre à air Premium,Zephyr,CAT037,S0387,91.50,1.141,false
+P000235,Fjord Webcam Signature,Fjord,CAT012,S0230,43.31,10.369,false
+P000236,Windrow Chargeur Signature,Windrow,CAT009,S0430,69.22,0.943,false
+P000237,Vertex Housse de couette Premium,Vertex,CAT005,S0589,45.25,5.539,false
+P000238,Granit Coffret BD Éco,Granit,CAT032,S0137,31.92,4.318,false
+P000239,Fjord Cube éducatif Éco,Fjord,CAT028,S0151,87.21,6.090,false
+P000240,Zephyr Sneakers Compact,Zephyr,CAT017,S0243,38.26,2.717,false
+P000241,Halcyon Chargeur Ultra,Halcyon,CAT011,S0437,36.02,1.571,false
+P000242,Zephyr Bâche Pro,Zephyr,CAT039,S0394,149.76,0.069,false
+P000243,Orbit Clé à cliquet Compact,Orbit,CAT039,S0542,94.44,0.670,false
+P000244,Halcyon Filtre à air Premium,Halcyon,CAT036,S0044,156.72,0.998,false
+P000245,Quartz Brosse Signature,Quartz,CAT019,S0267,64.15,10.725,false
+P000246,Juniper Poêle Premium,Juniper,CAT003,S0130,11.90,1.374,false
+P000247,Vertex Bouilloire Signature,Vertex,CAT002,S0519,152.53,5.045,false
+P000248,Terra Montre Éco,Terra,CAT013,S0515,107.79,1.640,false
+P000249,Delvia Crème hydratante Nomade,Delvia,CAT018,S0505,22.49,9.442,false
+P000250,Ivory Beau livre Classic,Ivory,CAT033,S0490,93.23,1.550,false
+P000251,Bexon Filtre à air Éco,Bexon,CAT036,S0155,65.11,7.980,false
+P000252,Quartz Casque vélo Pro,Quartz,CAT026,S0490,43.78,4.644,false
+P000253,Rivage Vinyle Pro,Rivage,CAT033,S0170,44.76,5.728,false
+P000254,Cirrus Shampooing Classic,Cirrus,CAT019,S0505,13.24,4.480,false
+P000255,Lumen Set de couverts Essentiel,Lumen,CAT002,S0407,45.99,4.619,false
+P000256,Orbit Jeu de plateau Nomade,Orbit,CAT031,S0006,83.06,8.319,false
+P000257,Vertex Nettoyant jantes Premium,Vertex,CAT037,S0069,9.17,10.696,false
+P000258,Delvia Casque vélo Compact,Delvia,CAT024,S0220,81.95,11.005,false
+P000259,Fjord Figurine XL,Fjord,CAT029,S0257,263.93,6.188,false
+P000260,Ember Roman Pro,Ember,CAT034,S0327,147.85,5.643,false
+P000261,Solstice Étagère Essentiel,Solstice,CAT004,S0158,195.26,8.648,false
+P000262,Juniper Enceinte Classic,Juniper,CAT007,S0339,283.55,7.868,false
+P000263,Ember Lampe Classic,Ember,CAT002,S0390,78.85,10.311,false
+P000264,Vertex Casque vélo Éco,Vertex,CAT026,S0566,27.50,0.646,false
+P000265,Orbit Sérum Éco,Orbit,CAT022,S0533,81.76,3.249,false
+P000266,Kestrel Sérum Pro,Kestrel,CAT022,S0526,47.73,5.198,false
+P000267,Solstice Manuel Ultra,Solstice,CAT035,S0233,58.53,10.209,false
+P000268,Fjord Poêle Ultra,Fjord,CAT006,S0358,23.33,5.394,false
+P000269,Zephyr Housse de couette Essentiel,Zephyr,CAT001,S0006,8.58,2.646,true
+P000270,Delvia Jeu de plateau Premium,Delvia,CAT031,S0180,104.00,5.610,false
+P000271,Halcyon Shampooing Éco,Halcyon,CAT019,S0473,16.77,7.511,false
+P000272,Rivage Roman XL,Rivage,CAT033,S0386,8.79,6.158,false
+P000273,Cirrus Gourde Signature,Cirrus,CAT026,S0280,91.25,3.748,false
+P000274,Alvora Chaussures de trail Compact,Alvora,CAT026,S0043,50.02,1.601,false
+P000275,Quartz Coffret BD Ultra,Quartz,CAT032,S0019,66.80,0.344,false
+P000276,Cirrus Eau de toilette Éco,Cirrus,CAT019,S0364,84.94,2.533,false
+P000277,Orbit Eau de toilette Compact,Orbit,CAT018,S0424,21.23,3.425,false
+P000278,Bexon Shampooing Signature,Bexon,CAT020,S0195,136.27,4.432,true
+P000279,Pallas Eau de toilette Compact,Pallas,CAT019,S0516,26.54,7.219,false
+P000280,Halcyon Chaussures de trail Éco,Halcyon,CAT025,S0574,8.72,2.566,false
+P000281,Meridian Shampooing Pro,Meridian,CAT018,S0531,178.94,9.492,false
+P000282,Delvia Chargeur Compact,Delvia,CAT008,S0329,179.55,8.627,false
+P000283,Solstice Crème hydratante Ultra,Solstice,CAT020,S0504,53.59,4.816,false
+P000284,Delvia Manuel Premium,Delvia,CAT035,S0285,73.04,6.314,false
+P000285,Cirrus Trottinette Classic,Cirrus,CAT028,S0264,121.47,10.226,false
+P000286,Cirrus Ceinture Classic,Cirrus,CAT015,S0456,41.71,8.455,false
+P000287,Terra Arrosoir Ultra,Terra,CAT005,S0215,29.73,8.154,true
+P000288,Ember Manuel Compact,Ember,CAT033,S0306,23.62,1.706,false
+P000289,Windrow Arrosoir Ultra,Windrow,CAT003,S0573,49.03,6.496,false
+P000290,Windrow Bâche Premium,Windrow,CAT037,S0013,178.00,1.801,true
+P000291,Ember Arrosoir XL,Ember,CAT006,S0144,16.96,4.040,false
+P000292,Zephyr Palette Nomade,Zephyr,CAT021,S0132,124.50,10.451,false
+P000293,Terra Sérum Nomade,Terra,CAT021,S0493,23.66,0.093,false
+P000294,Alvora Nettoyant jantes Signature,Alvora,CAT037,S0435,16.59,10.817,false
+P000295,Terra Étagère Compact,Terra,CAT002,S0360,103.00,6.964,false
+P000296,Fjord Chaussures de trail Nomade,Fjord,CAT025,S0185,5.77,6.212,false
+P000297,Windrow Vinyle Premium,Windrow,CAT032,S0570,70.43,3.700,false
+P000298,Zephyr Haltères Compact,Zephyr,CAT026,S0395,54.33,5.662,false
+P000299,Cirrus Housse de couette Ultra,Cirrus,CAT003,S0199,22.53,4.159,false
+P000300,Solstice Montre connectée Classic,Solstice,CAT011,S0587,8.80,11.495,false
+P000301,Kestrel Clavier Premium,Kestrel,CAT008,S0048,80.52,1.549,false
+P000302,Pallas Brosse Ultra,Pallas,CAT018,S0355,80.64,6.102,false
+P000303,Ember Chaussures de trail Signature,Ember,CAT026,S0039,211.54,8.856,false
+P000304,Delvia Eau de toilette Nomade,Delvia,CAT019,S0345,47.22,10.585,false
+P000305,Meridian Casque vélo Pro,Meridian,CAT023,S0120,107.24,9.157,false
+P000306,Zephyr Tapis de yoga Essentiel,Zephyr,CAT024,S0525,89.78,7.614,false
+P000307,Vertex Trottinette Pro,Vertex,CAT028,S0388,182.95,11.263,false
+P000308,Bexon Gourde Nomade,Bexon,CAT026,S0536,69.08,6.056,false
+P000309,Lumen Tapis de yoga Éco,Lumen,CAT026,S0184,7.49,7.344,false
+P000310,Cirrus Beau livre Nomade,Cirrus,CAT033,S0568,177.25,10.500,false
+P000311,Lumen Cube éducatif Nomade,Lumen,CAT030,S0467,73.43,3.349,false
+P000312,Windrow Manuel Premium,Windrow,CAT033,S0169,46.00,6.314,false
+P000313,Ivory Brosse XL,Ivory,CAT020,S0223,155.17,6.310,false
+P000314,Orbit Chemise Essentiel,Orbit,CAT013,S0440,41.64,2.196,false
+P000315,Ursa Enceinte Éco,Ursa,CAT007,S0499,200.24,6.840,false
+P000316,Cirrus Eau de toilette Classic,Cirrus,CAT021,S0194,51.09,5.627,false
+P000317,Ember Lampe XL,Ember,CAT002,S0251,30.45,9.325,false
+P000318,Kestrel Beau livre Nomade,Kestrel,CAT035,S0135,57.55,7.796,false
+P000319,Quartz Sac à main XL,Quartz,CAT016,S0315,25.24,2.508,false
+P000320,Kestrel Étagère XL,Kestrel,CAT005,S0265,94.18,0.173,false
+P000321,Solstice Clé à cliquet Essentiel,Solstice,CAT039,S0216,138.48,2.431,false
+P000322,Rivage Nettoyant jantes Classic,Rivage,CAT037,S0241,229.30,10.430,false
+P000323,Ursa Puzzle Classic,Ursa,CAT031,S0401,13.44,5.689,false
+P000324,Solstice Filtre à air Ultra,Solstice,CAT038,S0167,185.21,3.518,false
+P000325,Zephyr Peluche Essentiel,Zephyr,CAT030,S0461,87.73,5.865,false
+P000326,Meridian Écharpe Compact,Meridian,CAT015,S0278,83.22,0.743,true
+P000327,Bexon Jeu de plateau Essentiel,Bexon,CAT030,S0082,125.93,9.374,false
+P000328,Nordis Coffret BD Nomade,Nordis,CAT035,S0392,106.61,1.604,false
+P000329,Rivage Bouilloire Essentiel,Rivage,CAT001,S0449,79.33,11.678,false
+P000330,Meridian Coffret BD Pro,Meridian,CAT033,S0450,92.91,7.953,false
+P000331,Ivory Casque vélo Classic,Ivory,CAT024,S0086,15.44,5.736,false
+P000332,Kestrel Cube éducatif Compact,Kestrel,CAT031,S0180,74.81,11.684,false
+P000333,Bexon Casque vélo Compact,Bexon,CAT027,S0569,36.14,10.685,false
+P000334,Orbit Coffret BD Essentiel,Orbit,CAT035,S0517,67.04,7.053,false
+P000335,Vertex Sac à main Premium,Vertex,CAT016,S0059,35.60,2.124,false
+P000336,Cirrus Puzzle Classic,Cirrus,CAT029,S0527,12.30,5.569,false
+P000337,Fjord Roman Signature,Fjord,CAT034,S0060,5.50,8.815,false
+P000338,Granit Webcam Éco,Granit,CAT012,S0437,120.47,5.560,false
+P000339,Alvora Montre Classic,Alvora,CAT013,S0321,54.35,2.580,false
+P000340,Pallas Beau livre Éco,Pallas,CAT033,S0098,198.44,6.519,true
+P000341,Windrow Haltères Classic,Windrow,CAT026,S0428,48.25,9.605,false
+P000342,Fjord Arrosoir Classic,Fjord,CAT003,S0446,66.24,3.962,false
+P000343,Ivory Enceinte Compact,Ivory,CAT011,S0532,34.16,9.106,false
+P000344,Zephyr Écharpe Signature,Zephyr,CAT013,S0515,88.30,11.925,false
+P000345,Ember Webcam Éco,Ember,CAT007,S0451,69.21,0.114,false
+P000346,Granit Bâche Pro,Granit,CAT037,S0034,25.13,1.318,false
+P000347,Meridian Enceinte Premium,Meridian,CAT009,S0038,13.16,10.464,true
+P000348,Granit Beau livre Signature,Granit,CAT035,S0026,140.02,0.942,false
+P000349,Meridian Puzzle Compact,Meridian,CAT029,S0078,58.56,8.353,false
+P000350,Alvora Eau de toilette Premium,Alvora,CAT019,S0268,33.61,7.133,false
+P000351,Orbit Brosse Premium,Orbit,CAT022,S0214,123.48,11.285,false
+P000352,Granit Trottinette Nomade,Granit,CAT030,S0008,30.54,6.505,false
+P000353,Delvia Roman Signature,Delvia,CAT032,S0362,56.84,2.041,false
+P000354,Ivory Webcam Classic,Ivory,CAT010,S0071,53.46,7.630,false
+P000355,Pallas Set de couverts Éco,Pallas,CAT002,S0420,27.84,2.383,false
+P000356,Granit Sac à main Essentiel,Granit,CAT017,S0444,29.35,6.915,false
+P000357,Solstice Palette Pro,Solstice,CAT018,S0338,47.26,7.199,false
+P000358,Ember Bâche XL,Ember,CAT037,S0055,8.14,9.029,false
+P000359,Fjord Brosse XL,Fjord,CAT020,S0062,110.81,7.355,false
+P000360,Ember Brosse Pro,Ember,CAT019,S0027,144.37,10.853,true
+P000361,Cirrus Jeu de plateau Compact,Cirrus,CAT029,S0520,85.21,0.308,false
+P000362,Nordis Clé à cliquet Pro,Nordis,CAT037,S0394,66.53,5.805,false
+P000363,Ursa Brosse Signature,Ursa,CAT018,S0163,48.65,10.956,false
+P000364,Windrow Manuel Ultra,Windrow,CAT035,S0399,36.35,7.146,false
+P000365,Lumen Clavier Signature,Lumen,CAT012,S0142,72.83,0.283,false
+P000366,Terra Gourde Éco,Terra,CAT027,S0086,16.19,5.719,false
+P000367,Juniper Crème hydratante Nomade,Juniper,CAT018,S0367,102.15,10.406,false
+P000368,Alvora Vinyle Compact,Alvora,CAT032,S0116,27.68,8.007,false
+P000369,Bexon Shampooing Nomade,Bexon,CAT018,S0460,37.40,8.749,false
+P000370,Terra Webcam XL,Terra,CAT009,S0537,153.53,2.732,true
+P000371,Lumen Écharpe Essentiel,Lumen,CAT017,S0024,17.34,4.619,false
+P000372,Juniper Montre Nomade,Juniper,CAT015,S0028,275.60,9.567,false
+P000373,Orbit Puzzle Signature,Orbit,CAT028,S0418,18.79,6.509,false
+P000374,Cirrus Figurine XL,Cirrus,CAT028,S0205,57.18,9.944,false
+P000375,Fjord Enceinte Pro,Fjord,CAT010,S0095,103.03,1.833,false
+P000376,Solstice Enceinte XL,Solstice,CAT012,S0142,35.99,2.399,false
+P000377,Granit Sneakers Éco,Granit,CAT013,S0413,75.77,1.598,false
+P000378,Ember Poêle Éco,Ember,CAT001,S0277,134.60,11.367,false
+P000379,Halcyon Webcam Essentiel,Halcyon,CAT007,S0071,61.60,11.848,false
+P000380,Ivory Enceinte Signature,Ivory,CAT010,S0532,121.27,1.044,false
+P000381,Solstice Sneakers Compact,Solstice,CAT015,S0365,92.37,9.774,false
+P000382,Pallas Sérum Compact,Pallas,CAT018,S0236,65.23,4.925,false
+P000383,Ivory Cube éducatif Nomade,Ivory,CAT030,S0572,23.26,1.218,false
+P000384,Ivory Montre Ultra,Ivory,CAT015,S0107,27.27,5.714,false
+P000385,Ember Set de couverts Premium,Ember,CAT005,S0589,44.86,0.076,false
+P000386,Orbit Crème hydratante Premium,Orbit,CAT019,S0195,64.38,3.215,false
+P000387,Zephyr Chemise Compact,Zephyr,CAT016,S0031,70.32,5.190,false
+P000388,Halcyon Brosse XL,Halcyon,CAT018,S0300,92.55,10.802,false
+P000389,Windrow Lampe Compact,Windrow,CAT003,S0483,48.58,10.547,false
+P000390,Cirrus Casque vélo Premium,Cirrus,CAT027,S0169,58.05,9.920,false
+P000391,Nordis Gourde Classic,Nordis,CAT024,S0039,237.36,5.673,false
+P000392,Pallas Puzzle XL,Pallas,CAT031,S0461,116.93,0.612,false
+P000393,Windrow Souris Essentiel,Windrow,CAT007,S0140,78.29,6.942,false
+P000394,Granit Beau livre Classic,Granit,CAT035,S0014,42.95,8.862,false
+P000395,Ivory Coffret BD XL,Ivory,CAT032,S0137,14.28,4.170,false
+P000396,Juniper Figurine Ultra,Juniper,CAT028,S0506,18.63,8.036,false
+P000397,Vertex Puzzle Classic,Vertex,CAT030,S0161,13.80,5.201,false
+P000398,Ember Étagère Ultra,Ember,CAT001,S0025,24.38,1.242,false
+P000399,Juniper Chargeur Compact,Juniper,CAT012,S0121,11.53,6.877,false
+P000400,Zephyr Bâche Premium,Zephyr,CAT037,S0384,39.46,2.054,false
+P000401,Kestrel Sérum Compact,Kestrel,CAT019,S0552,81.60,6.972,false
+P000402,Pallas Filtre à air XL,Pallas,CAT036,S0034,30.41,8.647,false
+P000403,Delvia Sac à main Pro,Delvia,CAT013,S0508,104.96,9.788,false
+P000404,Cirrus Tapis de yoga Compact,Cirrus,CAT023,S0104,119.15,1.100,false
+P000405,Kestrel Étagère Classic,Kestrel,CAT006,S0556,68.64,9.316,false
+P000406,Zephyr Clavier XL,Zephyr,CAT007,S0569,213.02,0.471,false
+P000407,Ivory Brosse Essentiel,Ivory,CAT019,S0136,15.64,2.873,false
+P000408,Meridian Puzzle XL,Meridian,CAT031,S0391,91.38,11.529,true
+P000409,Juniper Jeu de plateau Signature,Juniper,CAT029,S0078,55.24,2.340,false
+P000410,Pallas Clavier Ultra,Pallas,CAT011,S0539,116.15,4.491,false
+P000411,Granit Figurine Éco,Granit,CAT030,S0430,44.39,2.889,false
+P000412,Terra Sneakers Nomade,Terra,CAT017,S0440,81.13,0.619,false
+P000413,Orbit Filtre à air XL,Orbit,CAT037,S0542,39.76,7.578,false
+P000414,Windrow Chaussures de trail Premium,Windrow,CAT023,S0095,49.51,0.333,false
+P000415,Nordis Housse de couette Essentiel,Nordis,CAT001,S0161,185.45,9.805,false
+P000416,Orbit Peluche Premium,Orbit,CAT030,S0206,71.04,0.972,false
+P000417,Terra Arrosoir Nomade,Terra,CAT001,S0459,6.77,5.367,false
+P000418,Zephyr Peluche Ultra,Zephyr,CAT028,S0414,65.16,3.688,false
+P000419,Zephyr Sac de sport Ultra,Zephyr,CAT026,S0297,95.51,5.901,false
+P000420,Terra Set de couverts Pro,Terra,CAT006,S0483,36.20,8.989,false
+P000421,Terra Lampe Nomade,Terra,CAT006,S0307,38.18,7.667,false
+P000422,Delvia Brosse Pro,Delvia,CAT020,S0462,68.09,7.464,false
+P000423,Alvora Palette Compact,Alvora,CAT021,S0323,14.59,8.652,false
+P000424,Quartz Chaussures de trail Ultra,Quartz,CAT024,S0256,77.58,0.196,true
+P000425,Granit Étagère Éco,Granit,CAT001,S0114,50.79,7.166,false
+P000426,Cirrus Clavier Ultra,Cirrus,CAT009,S0534,177.66,2.399,false
+P000427,Juniper Crème hydratante Ultra,Juniper,CAT020,S0552,83.93,11.153,false
+P000428,Nordis Eau de toilette Classic,Nordis,CAT021,S0266,18.89,6.407,false
+P000429,Kestrel Casque Essentiel,Kestrel,CAT009,S0065,47.05,3.625,false
+P000430,Granit Arrosoir Classic,Granit,CAT002,S0247,32.27,4.965,false
+P000431,Ursa Arrosoir Signature,Ursa,CAT006,S0173,41.70,1.269,false
+P000432,Granit Ceinture Éco,Granit,CAT015,S0342,66.62,8.931,false
+P000433,Kestrel Sérum Compact,Kestrel,CAT021,S0062,68.37,10.070,false
+P000434,Windrow Sac de sport Compact,Windrow,CAT026,S0186,189.90,1.757,false
+P000435,Fjord Haltères Pro,Fjord,CAT023,S0432,12.06,0.187,false
+P000436,Alvora Ceinture Éco,Alvora,CAT016,S0384,213.56,4.113,false
+P000437,Vertex Roman Nomade,Vertex,CAT032,S0164,82.98,6.339,false
+P000438,Granit Peluche Premium,Granit,CAT029,S0244,10.03,7.889,false
+P000439,Meridian Montre connectée XL,Meridian,CAT010,S0056,199.32,2.988,false
+P000440,Granit Housse de couette Éco,Granit,CAT002,S0575,61.05,3.483,false
+P000441,Bexon Clavier XL,Bexon,CAT012,S0166,86.25,5.943,false
+P000442,Rivage Haltères Premium,Rivage,CAT027,S0330,126.65,8.490,false
+P000443,Nordis Souris Pro,Nordis,CAT008,S0346,71.07,9.556,false
+P000444,Terra Haltères Nomade,Terra,CAT023,S0187,82.25,3.606,false
+P000445,Windrow Housse de couette XL,Windrow,CAT006,S0527,25.76,1.138,false
+P000446,Nordis Bouilloire Compact,Nordis,CAT005,S0036,72.81,6.727,false
+P000447,Halcyon Beau livre Pro,Halcyon,CAT035,S0576,88.75,11.423,false
+P000448,Lumen Chemise Premium,Lumen,CAT015,S0220,40.85,7.615,false
+P000449,Halcyon Lampe Essentiel,Halcyon,CAT005,S0302,74.17,3.834,false
+P000450,Delvia Sneakers Premium,Delvia,CAT017,S0544,22.34,1.494,false
+P000451,Quartz Casque vélo Nomade,Quartz,CAT026,S0560,85.16,4.010,false
+P000452,Ursa Coffret BD XL,Ursa,CAT035,S0431,37.97,5.930,false
+P000453,Delvia Enceinte Éco,Delvia,CAT011,S0066,231.73,8.592,false
+P000454,Ember Sérum Pro,Ember,CAT018,S0271,210.14,0.483,false
+P000455,Rivage Manuel Signature,Rivage,CAT034,S0566,70.11,0.098,false
+P000456,Solstice Clavier Ultra,Solstice,CAT007,S0071,161.69,9.834,true
+P000457,Kestrel Manuel Nomade,Kestrel,CAT033,S0154,27.88,0.320,false
+P000458,Rivage Étagère Éco,Rivage,CAT001,S0336,172.10,10.784,false
+P000459,Granit Crème hydratante Premium,Granit,CAT018,S0202,80.78,8.587,false
+P000460,Bexon Vinyle Signature,Bexon,CAT032,S0078,29.67,0.861,false
+P000461,Fjord Vinyle XL,Fjord,CAT033,S0325,67.69,11.079,false
+P000462,Pallas Montre connectée Essentiel,Pallas,CAT012,S0537,20.43,3.833,true
+P000463,Rivage Vinyle XL,Rivage,CAT035,S0032,73.73,4.664,false
+P000464,Terra Sac de sport XL,Terra,CAT027,S0184,87.82,8.359,false
+P000465,Juniper Perceuse Premium,Juniper,CAT038,S0387,11.15,5.707,false
+P000466,Delvia Puzzle Essentiel,Delvia,CAT028,S0260,8.06,10.273,false
+P000467,Juniper Chemise Compact,Juniper,CAT016,S0080,77.72,4.143,false
+P000468,Orbit Vinyle Compact,Orbit,CAT034,S0320,32.05,2.428,false
+P000469,Quartz Cube éducatif Nomade,Quartz,CAT030,S0589,59.85,5.692,false
+P000470,Rivage Jeu de plateau Ultra,Rivage,CAT031,S0241,55.01,4.017,false
+P000471,Nordis Arrosoir Nomade,Nordis,CAT002,S0306,67.50,3.186,false
+P000472,Alvora Vinyle Essentiel,Alvora,CAT033,S0406,182.52,7.964,false
+P000473,Granit Étagère Premium,Granit,CAT002,S0162,111.45,0.974,false
+P000474,Meridian Clé à cliquet Éco,Meridian,CAT036,S0293,81.76,2.013,false
+P000475,Windrow Beau livre Ultra,Windrow,CAT034,S0139,269.89,1.909,false
+P000476,Windrow Montre Classic,Windrow,CAT015,S0197,94.80,6.883,false
+P000477,Fjord Brosse Ultra,Fjord,CAT018,S0488,94.97,8.242,false
+P000478,Orbit Enceinte Premium,Orbit,CAT011,S0346,50.08,7.977,false
+P000479,Ember Housse de couette Signature,Ember,CAT006,S0518,9.27,7.546,false
+P000480,Solstice Eau de toilette Premium,Solstice,CAT021,S0505,127.93,0.906,true
+P000481,Ember Manuel Premium,Ember,CAT034,S0304,63.64,5.011,false
+P000482,Ivory Montre Éco,Ivory,CAT015,S0143,94.87,5.785,false
+P000483,Vertex Webcam Nomade,Vertex,CAT008,S0419,7.56,10.221,false
+P000484,Quartz Shampooing Classic,Quartz,CAT020,S0505,139.26,10.973,false
+P000485,Bexon Bâche Compact,Bexon,CAT038,S0034,103.43,9.879,false
+P000486,Windrow Roman Classic,Windrow,CAT033,S0063,76.84,1.678,false
+P000487,Ivory Coffret BD Signature,Ivory,CAT033,S0359,83.47,7.855,false
+P000488,Terra Veste Nomade,Terra,CAT014,S0584,89.40,8.161,false
+P000489,Meridian Jeu de plateau Signature,Meridian,CAT031,S0389,157.55,6.280,false
+P000490,Kestrel Roman Nomade,Kestrel,CAT033,S0504,101.81,8.373,false
+P000491,Zephyr Clé à cliquet Classic,Zephyr,CAT038,S0388,28.20,0.838,false
+P000492,Juniper Haltères Ultra,Juniper,CAT024,S0299,74.81,11.422,false
+P000493,Ivory Set de couverts Premium,Ivory,CAT003,S0114,34.44,4.699,false
+P000494,Ember Jeu de plateau Signature,Ember,CAT029,S0500,92.02,1.825,false
+P000495,Delvia Brosse Classic,Delvia,CAT021,S0296,166.83,9.302,false
+P000496,Delvia Casque Compact,Delvia,CAT010,S0248,176.94,6.264,false
+P000497,Alvora Tapis de yoga Nomade,Alvora,CAT027,S0299,84.86,9.670,false
+P000498,Meridian Casque vélo Pro,Meridian,CAT026,S0566,79.69,5.522,false
+P000499,Meridian Écharpe Éco,Meridian,CAT014,S0365,73.63,10.306,false
+P000500,Meridian Palette Signature,Meridian,CAT018,S0588,55.25,9.304,false

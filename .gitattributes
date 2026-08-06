@@ -1,0 +1,18 @@
+# Les fichiers de `data/` sont la matiere premiere des exercices, et leur contenu est
+# volontairement abime : encodage windows-1252, adresses tronquees, octets invisibles
+# dans `unit_price`, JSON illisibles. Les comptes de reference du parcours (287 785
+# lignes, 1 087 adresses, 1 102 prix pollues...) dependent de leurs octets exacts.
+#
+# `-text` interdit a Git toute conversion de fins de ligne, dans les deux sens. Sans
+# lui, un `clone` sur une autre machine ou un autre systeme rendrait des fichiers
+# differents de ceux qui ont servi a calculer les attendus.
+data/** -text
+
+# Les archives gzip sont binaires : toute conversion les corromprait.
+*.gz binary
+
+# Le reste du depot est du texte normal, Git peut normaliser.
+*.md text
+*.py text
+*.yml text
+*.json text

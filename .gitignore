@@ -1,8 +1,14 @@
-# Données générées — reproductibles à l'identique par le générateur déterministe.
-# Versionner un artefact qu'on sait reconstruire, c'est versionner du bruit.
-#   python generator/generate.py --waves W0_ref W1_initial W2 --clean
+# `data/` EST versionné — décision révisée le 5 août 2026.
+#
+# Le raisonnement initial tenait : les données se régénèrent à l'identique par
+#   python generator/generate.py --waves W0_ref W1_initial W2 W3 W4 --clean
 #   python generator/generate_oltp.py
-data/
+# et versionner un artefact reconstructible, c'est versionner du bruit.
+#
+# Ce qui l'a emporté : la livraison aux volumes Databricks est incrémentale, vague par
+# vague. Travailler à distance sans les fichiers supposerait de disposer de Python et du
+# générateur sur la machine du moment. 56 Mo pour supprimer cette dépendance, c'est bon
+# marché. Voir `.gitattributes` : leurs octets doivent rester intacts.
 
 # État local des bundles déclaratifs
 .databricks/

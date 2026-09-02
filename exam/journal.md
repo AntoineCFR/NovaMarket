@@ -238,6 +238,10 @@ modification des fichiers — ils n'avaient pas été pris sur le moment.
 | **5 août** | **9 h 51** | **13 h 15** *(pause, déclarée a posteriori)* | **3 h 24** | M3 — déduplication |
 | **5 août** | **13 h 55** | **14 h 03** *(pause)* | **8 min** | M3, suite |
 | **5 août** | **14 h 30** | **16 h 13** *(pause)* | **1 h 43** | M3, suite — nettoyage, typage, quarantaine |
+| *— absence, puis reprise tardive —* | | | | |
+| **31 août** | **9 h 19** | **9 h 38** | **19 min** | Blanc n°1 — 36/45 |
+| **1er sept** | **7 h 55** | **8 h 21** | **26 min** | Blanc n°2 — 34/45 |
+| **1er sept** | **18 h 37** | **18 h 56** | **19 min** | Blanc n°3 — 43/45 |
 
 ### Total par jour
 
@@ -247,10 +251,11 @@ modification des fichiers — ils n'avaient pas été pris sur le moment.
 | 31 juil | 3 | ~3 h 25 |
 | 3 août | 2 | **5 h 40** |
 | 4 août | 2 | **4 h 28** |
-| 5 août | 3 | **5 h 15** *(journée en cours)* |
+| 5 août | 3 | **5 h 15** |
+| 31 août | 1 | **19 min** *(journée en cours)* |
 | | | |
 | **Depuis lundi 3 août** | | **10 h 07** |
-| **Cumul depuis le 29 juillet** | | **~14 h 15** |
+| **Cumul depuis le 29 juillet** | | **~14 h 35** |
 
 ---
 
@@ -259,7 +264,7 @@ modification des fichiers — ils n'avaient pas été pris sur le moment.
 | Étape | Prévu | Fait le | Réel | Résultat |
 |---|---|---|---|---|
 | Remise en main au retour | 2 h | | | — |
-| **Blanc n°1** chronométré | 1 h 30 | | | *voir « Examens blancs »* |
+| **Blanc n°1** chronométré | 1 h 30 | **31 août** | **19 min** | *voir « Examens blancs »* |
 | Réparation blanc n°1 | 3 h | | | — |
 | Les dix gestes, sans notes | 6 h | | | … / 10 |
 | **Blanc n°2** à froid | 1 h 30 | | | *voir « Examens blancs »* |
@@ -276,6 +281,20 @@ fois qu'une session révèle une lacune ou renverse une certitude.
 |---|---|---|---|
 | 4 août | Watermark d'ingestion (S2), révision post-M2 : 6/7 | Je croyais que le `>=` **fermait** la bordure. Il ne ferme que le cas d'égalité : une transaction validée après ma lecture mais horodatée *strictement avant* le watermark reste invisible pour toujours. `now()` en Postgres renvoie l'heure de **début de transaction**, ce qui rend le cas courant | Corrigé M2 + à confirmer sur docs.databricks.com |
 | 4 août | Évaluation paresseuse (S3) | Je pensais qu'un DataFrame filtré était « extrait une fois ». **C'est un plan, pas de la donnée** : `count()`, `write` et `agg()` le rejouent chacun depuis la source. Sur un Postgres vivant, trois actions = trois instantanés, et le watermark peut dépasser ce qui a été écrit | Corrigé M2 rectifié le 4 août · à revoir en M3 |
+| 31 août | Blanc n°1, 36/45 | **Six ratés sur neuf sont dans des chapitres du manuel non lus, quatre dans le seul chapitre 21.** Les trois autres sont dans des chapitres **déjà lus** : où vit l'état de `COPY INTO` (9.5, deux questions) et `USE SCHEMA` ≠ `CREATE TABLE` (4.2). Les sections 5 et 7, les deux scores les plus suspects du diagnostic, sont bien celles qui s'effondrent : 75 %→67 % et 83 %→62 % | `exam/mock-exam-1.md` annoté |
+| 31 août | Salve A — chapitre 21 lu, puis 12 questions : **11/12**, contre-salve **3/3** | **La cause n°7 du diagnostic — les restrictions d'Unity Catalog — m'a coûté deux points dans la même journée** : Q28 du blanc n°1 (traversée `USE` confondue avec action `CREATE`) puis Q10 de la salve. Une table portant un masque ou un filtre **n'accepte plus le `MERGE`** : ce n'est pas un résultat faux, c'est un refus, et la chaîne SCD2 s'arrête la nuit suivante. J'avais raisonné « les politiques s'évaluent à la lecture, donc une écriture n'est pas concernée » — vrai pour une vue, faux ici. Fermée à la contre-salve | Manuel **21.2, p. 363** et *Limites et pièges*, p. 376 |
+| 31 août | Salve B — chapitre 20 lu, puis 11 questions : **9/11** | **À REVOIR — raté deux fois de suite, sous deux formulations différentes.** Devant un échec où *aucune application n'apparaît*, j'ai désigné l'onglet des étapes, puis le plan d'exécution. Ces deux objets sont **produits par le pilote** : sans application, il n'existe ni plan ni étape à consulter. La chaîne monte en cinq couches — démarrage machine, bibliothèques, application, plan, étapes — et les deux premières se lisent **uniquement dans le journal d'événements du cluster**. La bonne question devant un échec n'est pas « qu'est-ce qui cloche dans mon code » mais « **jusqu'où la chaîne est-elle montée** » | Manuel **tableau 20.1, p. 346** |
+| 31 août | Salve C — chapitre 18 lu, puis 12 questions : **11/12** | Pour alerter sur un **échec**, j'ai proposé `depends_on` + condition sur une valeur de tâche. Impossible : une tâche qui échoue **ne publie aucune valeur**, la condition n'a rien à évaluer, et la tâche de notification est **sautée** — je reproduisais le graphe vert que je venais d'identifier correctement deux questions plus tôt. `depends_on` signifie « **après le succès de** » : pour réagir à un échec il faut changer la règle de déclenchement, pas ajouter un test. `run_if` : `ALL_SUCCESS` (défaut) · `AT_LEAST_ONE_FAILED` · `ALL_DONE` · `NONE_FAILED`. Fermé en volée 3 | Manuel **p. 322** |
+| 31 août | Salve D — chapitres 19 et 16 lus, puis 12 questions : **12/12** | Première salve sans raté. Acquis dans la foulée : l'arbitrage vue / vue matérialisée se tranche sur **coût × fréquence**, jamais sur le coût seul ; une **table de flux est aveugle aux corrections rétroactives** — c'est le critère de choix, pas la nature « qui ne fait que grandir » ; une définition matérialisée ne doit contenir **aucune référence au présent** ; dans un pipeline déclaratif, `spark.read.table` **ne crée pas de dépendance** et donne un résultat faux à la première exécution ; un **rafraîchissement complet efface l'historique d'une SCD2**. **Réserve** : ces questions portaient sur des chapitres lus dans l'heure. Le vrai test reste le blanc n°2, à froid | Manuel ch. 16 et 19 |
+| 31 août | Salve E — chapitre 14 lu, puis 12 questions : **12/12** | Deuxième salve parfaite. Acquis : l'**intervalle semi-ouvert** (début inclus, fin exclue) garantit une ligne et une seule à toute date — fermer à la date du changement crée un doublon d'une journée ; joindre une dimension historisée **sans condition de période** multiplie les faits, et **pas uniformément** (les entités qui changent le plus sont les plus dupliquées) ; `concat_ws` **ignore les absences**, d'où le `coalesce` obligatoire avant toute empreinte ; un `MERGE` **échoue** si la source contient deux fois la clé ; le CDF **ne vaut que pour l'avenir** ; le versionnement de table répond au niveau de la **table**, jamais de l'**entité** | Manuel ch. 14 |
+| 31 août | Salve F — **mêlée**, 15 questions, 7 sections, sujets non annoncés : **13/15** | Les deux ratés ont la **même racine** : j'ai supposé l'outil accommodant là où il est strict. `unionByName` sans `allowMissingColumns=True` **lève** au lieu de compléter par des `NULL`. Une ligne JSON syntaxiquement invalide n'est **pas** ignorée : elle va dans `_corrupt_record`. La leçon ANSI a été transférée au `cast` mais pas au-delà — **la règle générale est : sur une API Spark, ne jamais supposer le comportement conciliant**. Points fermés en revanche : journal d'événements du cluster (raté 2 fois, juste à la 3ᵉ), `run_if`, `RESTORE ... TO VERSION AS OF` (raté au diagnostic de juillet), bordure de watermark, `row_number` | `exam/qcm-section-3.md`, à confirmer sur docs.databricks.com |
+| **1er sept** | **Blanc n°2 à froid — 34/45, 76 % pondéré, contre 82 % la veille** | **Le résultat le plus utile de toute la préparation.** Cinq des onze ratés portent sur des chapitres lus **la veille** (Q19, Q21, Q27, Q34, Q40), et **trois avaient été répondus juste en salve le jour même** : Q27 deux fois, Q34, Q40. Les salves mesuraient la compréhension **à chaud, sur un chapitre lu dans l'heure, sujet annoncé**. Ce blanc mesure la rétention **à froid, sujets mêlés, dix-huit heures après**. Ce ne sont pas la même chose, et l'écart vaut six points. **Conséquence : lire un chapitre de plus rapporte moins que repasser ceux d'hier.** | `exam/mock-exam-2.md` annoté |
+| 1er sept | Salve ingestion — `exam/fiche-ingestion.md` : **11/12** | Le déblocage est venu d'une **erreur de présentation de ma part** : ma fiche listait Structured Streaming, Auto Loader et Lakeflow Connect côte à côte comme s'ils étaient de même rang. Ils sont à **trois niveaux** : le moteur (Structured Streaming), la source (`.format("cloudFiles")` = Auto Loader, `.format("kafka")`), le service managé (Lakeflow Connect). **Auto Loader *est* du Structured Streaming.** `COPY INTO` est le seul intrus : commande SQL, pas de checkpoint. Fiche corrigée. Raté restant : le défaut de `schemaEvolutionMode` est `addNewColumns` **sans** schéma explicite, `none` **avec** — et sous `addNewColumns` l'échec du flux est **volontaire** | `exam/fiche-ingestion.md` |
+| 1er sept | Salve CI/CD — `exam/fiche-cicd.md` : **12/12** | Section la plus faible des deux blancs (60 % et 67 %), traitée en partant du **dépôt** (`modules/M11-cicd/`) et non du manuel, qui est conceptuel et ne montre ni `destroy`, ni la structure d'un bundle, ni les commandes. C'est le trou de méthode du 31 août : le livre seul ne suffit pas pour la section 5 | `exam/fiche-cicd.md` |
+| 1er sept | Salve optimisation — `exam/fiche-optimisation.md` : **11/12** | **Le déblocage : tout se ramène aux statistiques min-max par fichier.** Ranger, c'est resserrer ces intervalles ; il n'y a **pas d'index** au sens relationnel. Raté : j'ai cru que la **forte cardinalité** condamnait *toute* technique de rangement. Elle ne condamne que le **partitionnement**, qui crée un répertoire par valeur — quatre millions de clients, quatre millions de répertoires, donc le problème des petits fichiers. `CLUSTER BY` ne crée aucun répertoire : il ordonne les lignes **dans** les fichiers. **La forte cardinalité est la raison pour laquelle le liquid clustering existe.** Et la Q34 du blanc n°2 (mesurer en fichiers lus, pas au chronomètre) est passée au troisième essai | `exam/fiche-optimisation.md` |
+| **1er sept, soir** | **Blanc n°3 — 43/45, 96 % pondéré** | **Le vrai signal n'est pas le score** : ce blanc est le moins indépendant des trois, écrit le jour même à partir de la matière révisée le jour même. Ce qui compte : **cinq questions portaient sur les chapitres 12, 13, 15 et 17, non lus — les cinq sont justes**. Les chapitres manquants n'étaient pas le trou redouté. Et un raté qui résiste à tout : **`TRUNCATE` + `COPY INTO` = zéro ligne**. Deux fois au blanc n°1, dans mes *Termes à revoir* depuis le 31 juillet, juste en salve ce matin, **expliqué correctement à l'oral quatre heures avant** — et raté quand même. « Seulement les nouvelles » répond à *que fait `COPY INTO` normalement*, pas à *que se passe-t-il après un `TRUNCATE`* | `exam/mock-exam-3.md` annoté |
+| **2 sept, matin** | **Salve de décroissance à froid — 15/15** *(après correction)* | **L'hypothèse de décroissance ne s'est pas vérifiée.** Après une nuit et sans relecture, les quatre faits tombés le plus récemment sont tous justes, `TRUNCATE` + `COPY INTO` compris — celui qui avait résisté à cinq expositions. **Le seul « raté » était une question mal formulée de Claude**, que j'ai contestée à raison : « le trou de bordure est-il fermé par `>=` ? » — au sens littéral de *bordure* (le cas d'égalité), **oui**, avec déduplication. C'est même la réponse attendue à l'examen. Ce que Claude visait était la **marge de sécurité**, que le journal liste comme un terme **distinct** : `now()` rend l'heure de début de transaction, donc une ligne validée après ma lecture porte un horodatage strictement inférieur au watermark et n'est jamais relue — et dédoublonner n'y peut rien, puisqu'elle n'a jamais été extraite. **Deux problèmes, deux parades : `>=` pour l'égalité, la marge pour la visibilité différée** | Manuel 9.2, p. 156 |
+| **2 sept, ap.-midi** | **Guide officiel vérifié · atelier médaillon · ch. 12 et 17 lus · salve finale 15/15** | **Le guide officiel du 4 mai est inchangé** : sept sections, poids et 33 objectifs identiques à `docs/04`. Quatre précisions ajoutées : des **questions non notées s'ajoutent aux 45** sans être identifiées ; Lakeflow Connect se décline en connecteurs **standard** et **managed** ; deux cours recommandés manquaient à mon parcours (*Data Interoperability with UC*, *Get Started with Data Governance*) ; le guide contient **cinq vraies questions d'examen retirées**. L'une d'elles **corrige la fiche compute** : pour des analystes SQL concurrents, la réponse officielle est *high-concurrency cluster avec autoscaling* — parce que le SQL warehouse **n'était pas dans les options**. La leçon vaut plus que le fait : **on coche la moins fausse des quatre, pas la réponse qu'on aurait écrite**. Salve finale 15/15, incluant les chapitres 12 et 17 lus dans l'heure et les deux faits appris deux heures plus tôt | Guide officiel PDF, `exam/fiche-compute.md` §2 bis |
 | | | | |
 | | | | |
 | | | | |
@@ -322,6 +341,19 @@ module.
 | Mode **ANSI** et famille `try_*` | Avec ANSI actif — le défaut ici et sur Databricks SQL — un `cast` raté **lève** au lieu de rendre `NULL`. Parades : garde `when`/`rlike`, `try_cast`, `try_to_timestamp`, `try_to_number` | 3 | M3, M6 |
 | Motif de date **Java** | `MM` mois / `mm` minutes · `HH` 24 h / `hh` 12 h · `dd` jour du mois / `DD` jour de l'année · `yyyy` année / **`YYYY` année ISO de la semaine** — faux au réveillon, juste le reste de l'année | 3 | M3 |
 | Réconciliation absolue | Un watermark est incrémental, donc aveugle à ce qui disparaît. On le double d'un comptage complet source/cible, moins fréquent | 2, 6 | M2, M6 |
+| Journal d'événements du cluster | Là où se lisent les échecs **avant** toute application : démarrage, capacité, conflit de bibliothèques. L'interface du moteur et le plan n'existent pas à ce stade | 6 | M12 |
+| `run_if` | `depends_on` = « après le **succès** de ». Une tâche d'alerte sur échec exige `AT_LEAST_ONE_FAILED` ; un résumé systématique, `ALL_DONE` | 4 | M8 |
+| Coût × fréquence | Le critère du choix vue / vue matérialisée. On matérialise ce qui est **lu bien plus souvent qu'écrit**, jamais l'inverse | 3 | M5 |
+| Intervalle semi-ouvert | `[valid_from, valid_to)` : début inclus, **fin exclue**. Fermer à la date du changement compte la journée deux fois | 3 | M4 |
+| `unionByName` et `allowMissingColumns` | Par défaut **lève** si les colonnes diffèrent. Le remplissage par `NULL` exige `allowMissingColumns=True` | 3 | M3 |
+| Ligne JSON invalide | Va dans `_corrupt_record`, **jamais** dans `_rescued_data`, et n'est **pas** ignorée silencieusement | 2 | M1 |
+| Jointure sur dimension historisée | Sur la clé **et** l'intervalle. Sans la période, les faits se multiplient par le nombre de versions, de façon **non uniforme** | 3 | M4, M5 |
+| `WHEN NOT MATCHED BY SOURCE` | La seule clause qui ferme un enregistrement **disparu** de la source | 3 | M4 |
+| Définition relative au présent | `current_date()` dans une vue matérialisée : la fenêtre se décale à chaque rafraîchissement, **sans erreur ni valeur aberrante** | 3 | M5 |
+| Table de flux et corrections | Elle ne relit jamais le passé. Si la source corrige rétroactivement, il faut une **vue matérialisée** | 3 | M7 |
+| Rafraîchissement complet | Reconstruit depuis la source, donc **efface l'historique d'une SCD2**. À exclure dès la déclaration | 3, 4 | M7, M4 |
+| `debugValue` | Sans lui, un carnet lisant une valeur de tâche **ne peut plus s'exécuter seul** hors du graphe | 4 | M8 |
+| `MERGE` sur table à politique | Un masque ou un filtre de lignes rend la table **incompatible** avec la fusion. Ce n'est pas un résultat faux, c'est un refus — la chaîne SCD2 s'arrête | 7 | M10, M4 |
 
 ---
 
@@ -339,6 +371,8 @@ Ce qu'une IA m'a dit et que je n'ai pas encore confirmé sur docs.databricks.com
 | « Mets un `.cache()` quand un DataFrame sert deux fois » | Claude, M2 et fiches d'outillage | **4 août — IMPOSSIBLE en Free Edition.** `PERSIST TABLE is not supported on serverless compute` (SQLSTATE 0A000). Contrainte ajoutée à `docs/01`, corrigés M2 et M3 nettoyés. **Le concept reste au programme de l'examen** — seule la pratique est impossible ici |
 | « Les prix propres s'écrivent avec un point ; le filtre de diagnostic est `^-?[0-9]+(\.[0-9]+)?$` » | Claude, en séance sur M3 | **5 août — FAUX.** Le contrat définit `unit_price` comme **décimal à virgule** (`^[0-9]+,[0-9]{2}$`, cf. `M6_qualite_solution.py`). Mon filtre a signalé 287 502 lignes « polluées » sur 287 785 : c'est la norme qu'il comptait, pas le bruit. Le vrai compte est **1 102**. Filtre improvisé au lieu d'être repris du corrigé M3, TODO A |
 | « Un `cast` impossible rend `NULL` » — et « le garde-fou sur la chaîne vide est cosmétique » | Claude, corrigés M3 et M6, fiches d'outillage | **5 août — FAUX ici : le mode ANSI est actif.** `CANNOT_PARSE_TIMESTAMP` (22007) sur `to_timestamp`, `CAST_INVALID_INPUT` (22018) sur `cast`. **Toute la stratégie de quarantaine reposait sur `isNull()` et se serait arrêtée sur la première valeur sale.** Corrigés M3 (3 fonctions + `event_ts_expr`) et M6 (`try_cast`) réparés, `docs/01` complété. Le garde `when`/`rlike` que j'avais qualifié de décoratif est en réalité **porteur** |
+| « Les jetons excédentaires d'un CSV vont dans la colonne de sauvetage, la ligne est conservée » | Claude, **corrigé de `mock-exam-2.md`, Q11** | **1er sept — FAUX, et déjà falsifié le 31 juillet.** Le corrigé de M1 avait été réparé ; la réparation n'a **jamais été propagée aux examens blancs**. J'ai répondu juste et le corrigé m'a compté faux. Point crédité. Leçon : un corrigé de ce dépôt n'est pas une autorité — le journal, si |
+| « Passer le curseur en `>=` ne ferme pas le trou de bordure » | Claude, salve de décroissance du 2 sept | **2 sept — question mal formulée, point crédité.** *Bordure* désigne le cas d'**égalité**, que `>=` ferme bien, avec déduplication — c'est la réponse attendue à l'examen. Claude visait la *marge de sécurité*, que ce journal liste pourtant comme un terme distinct. Deuxième défaut de ses propres supports que je relève en deux jours, après le corrigé Q11 du blanc n°2 |
 | | | |
 
 ---
@@ -348,7 +382,9 @@ Ce qu'une IA m'a dit et que je n'ai pas encore confirmé sur docs.databricks.com
 | Date | Examen | Score | Sections perdues |
 |---|---|---|---|
 | *29 et 31 juil* | *diagnostic, 7 fiches* | *55 / 80 — 70 % pondéré* | *3 (58 %), 6 (50 %), 1 (60 %)* |
-| | n°1 | … / 45 | |
+| **31 août** | **n°1** | **36 / 45 — 80 % · 82 % pondéré** | **7 (62 %), 5 (67 %), 2 (78 %)** |
+| **1er sept** | **n°2** | **34 / 45 — 76 % pondéré** *(Q11 créditée, corrigé faux)* | **5 (60 %), 6 (67 %), 4 (71 %), 7 (71 %)** |
+| **1er sept** | **n°3** *(format du jour J)* | **43 / 45 — 96 % pondéré** | **5 (80 %), 2 (89 %)** — le reste à 100 % |
 | | n°2 | … / 45 | |
 
 Compare surtout ta **progression par section** entre les deux : c'est elle qui dit si les

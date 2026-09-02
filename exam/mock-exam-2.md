@@ -9,6 +9,32 @@ entièrement différentes.
 
 ---
 
+
+---
+
+## Résultat — 1er septembre 2026, 7 h 55 → 8 h 21 (26 min)
+
+**34 / 45 — 76 %**, Q11 créditée (son corrigé est faux, voir la question). Pondéré : **76 %**.
+
+| Section | Poids | Blanc n°1 | **Blanc n°2** |
+|---|---|---|---|
+| 1 · Plateforme | 6 % | 100 % | **100 %** |
+| 2 · Ingestion | 21 % | 78 % | **83 %** |
+| 3 · Transformation | 22 % | 100 % | **82 %** |
+| 4 · Jobs | 16 % | 83 % | **71 %** |
+| 5 · CI/CD | 10 % | 67 % | **60 %** |
+| 6 · Diagnostic | 10 % | 80 % | **67 %** |
+| 7 · Gouvernance | 15 % | 62 % | **71 %** |
+| **Pondéré** | | **82 %** | **76 %** |
+
+> **Cinq des onze ratés portent sur des chapitres lus la veille** — Q19, Q21, Q27, Q34, Q40 —
+> et **trois d'entre eux avaient été répondus juste en salve** le jour même : Q27 (deux fois),
+> Q34 et Q40. Les salves mesuraient la compréhension à chaud ; ce blanc mesure la rétention
+> à froid. Ce ne sont pas les mêmes choses, et l'écart est ici de six points.
+
+> ⚠️ La répartition réelle est **3 / 6 / 11 / 7 / 5 / 6 / 7**, et non celle annoncée en tête
+> de fiche. Les pourcentages ci-dessus sont calculés sur les effectifs réels.
+
 **1.** Une équipe doit revenir à l'état d'une table tel qu'il était hier à 14 h. Quelle
 approche ?
 
@@ -17,12 +43,16 @@ approche ?
 - **C.** Rejouer le pipeline complet
 - **D.** Restaurer une sauvegarde externe
 
+Réponse candidat : B  ✅
+
 **2.** Deux jobs écrivent simultanément dans la même table Delta. Que se passe-t-il ?
 
 - **A.** Les écritures sont mises en file et attendent
 - **B.** Contrôle de concurrence optimiste : l'écriture conflictuelle échoue et doit être rejouée
 - **C.** Les données sont fusionnées automatiquement
 - **D.** La table est corrompue
+
+Réponse candidat : B  ✅
 
 **3.** Une charge ETL planifiée tourne sur un all-purpose cluster. Principal argument pour
 la basculer sur du job compute ?
@@ -32,6 +62,8 @@ la basculer sur du job compute ?
 - **C.** Meilleures performances
 - **D.** Meilleure gouvernance
 
+Réponse candidat : A  ✅
+
 **4.** Auto Loader est configuré en `rescue`. Un fichier arrive avec deux colonnes
 inconnues. Que se passe-t-il ?
 
@@ -40,12 +72,18 @@ inconnues. Que se passe-t-il ?
 - **C.** Leur contenu part dans la colonne de sauvetage, sans interruption
 - **D.** Les colonnes sont ajoutées à la table
 
+Réponse candidat : C  ✅
+
 **5.** Quelle méthode d'ingestion convient pour un flux Kafka ?
 
 - **A.** `COPY INTO`
 - **B.** Structured Streaming directement sur la source
 - **C.** Auto Loader
 - **D.** Un connecteur managé
+
+Réponse candidat : D  ❌ — juste : **B**
+
+> Un bus de messages n'est pas du fichier : ni `COPY INTO` ni Auto Loader ne s'y appliquent, et un connecteur managé vise les bases et applications d'entreprise. On lit la source **directement en Structured Streaming**. → **8.4-8.5, p. 142-146** et **9.4, p. 160** (je crois qu'il existe, et sinon c'est Auto Loader)
 
 **6.** Un pipeline lit un export quotidien complet d'un référentiel. Quel motif d'écriture ?
 
@@ -54,12 +92,16 @@ inconnues. Que se passe-t-il ?
 - **C.** Auto Loader en streaming
 - **D.** `MERGE` sur la clé
 
+Réponse candidat : B  ✅
+
 **7.** Quel est l'inconvénient principal d'un `overwrite` sur un instantané de référentiel ?
 
 - **A.** La perte de l'historique des valeurs antérieures
 - **B.** Le coût de stockage
 - **C.** La lenteur
 - **D.** L'impossibilité de le planifier
+
+Réponse candidat : A  ✅
 
 **8.** Une colonne `prix` contient `"14,90 €"`, `" 14,90"` avec une espace insécable, et
 `"14.90"`. Quelle stratégie de nettoyage est la plus robuste ?
@@ -69,6 +111,8 @@ inconnues. Que se passe-t-il ?
 - **C.** `cast("double")` direct
 - **D.** `regexp_replace("€", "")`
 
+Réponse candidat : A  ✅
+
 **9.** Pourquoi une liste blanche vaut-elle mieux qu'une liste noire pour ce nettoyage ?
 
 - **A.** Elle est plus rapide
@@ -76,12 +120,16 @@ inconnues. Que se passe-t-il ?
 - **C.** Elle préserve les accents
 - **D.** On ne peut pas énumérer les caractères qu'on n'a pas encore vus
 
+Réponse candidat : D  ✅
+
 **10.** Un fichier CSV est encodé en `windows-1252`, lu par défaut en UTF-8. Symptôme ?
 
 - **A.** Caractères accentués remplacés par des caractères de substitution
 - **B.** Échec de lecture
 - **C.** Colonnes décalées
 - **D.** Lignes manquantes
+
+Réponse candidat : A  ✅
 
 **11.** Une adresse contient le séparateur du CSV, non échappé. Avec une colonne de
 sauvetage active, que se passe-t-il ?
@@ -91,6 +139,10 @@ sauvetage active, que se passe-t-il ?
 - **C.** La ligne est rejetée
 - **D.** La lecture échoue
 
+Réponse candidat : A  ✅ *(corrigé faux — voir ci-dessous)*
+
+> **CORRIGÉ FAUX — point crédité.** Le corrigé affirme que les jetons excédentaires vont dans la colonne de sauvetage. C'est l'**affirmation falsifiée n°1 de ton journal** : tu l'as testée le 31 juillet sur `orders_2026-05.csv`, 181 lignes défectueuses, schéma explicite, colonne de sauvetage posée — **0 ligne sauvée**. Le lecteur CSV **tronque**. Corrigé de M1 réparé à l'époque, mais la réparation n'a jamais été propagée jusqu'ici. Ta réponse est la bonne. → journal, *Affirmations à vérifier*
+
 **12.** Quelle est la bonne pratique pour les lignes invalides en couche silver ?
 
 - **A.** Les supprimer par un `WHERE`
@@ -98,12 +150,16 @@ sauvetage active, que se passe-t-il ?
 - **C.** Les écarter vers une table de quarantaine, avec la donnée brute et le motif
 - **D.** Les laisser passer avec des nulls
 
+Réponse candidat : C  ✅
+
 **13.** Un `expect_or_drop` dans un pipeline déclaratif : que deviennent les lignes en échec ?
 
 - **A.** Comptées dans les métriques, mais **écartées** — elles ne sont pas conservées
 - **B.** Le pipeline échoue
 - **C.** Conservées avec un drapeau
 - **D.** Écrites dans une table d'erreurs automatique
+
+Réponse candidat : A  ✅
 
 **14.** Quelle jointure compte les lignes de gauche sans correspondance à droite, sans
 ramener les colonnes de droite ?
@@ -113,12 +169,18 @@ ramener les colonnes de droite ?
 - **C.** `left_semi`
 - **D.** `inner`
 
+Réponse candidat : A  ✅
+
 **15.** `df.summary()` par rapport à `df.describe()` :
 
 - **A.** identiques
 - **B.** `describe()` est plus complet
 - **C.** `summary()` ajoute les quartiles et accepte des percentiles personnalisés
 - **D.** `summary()` ne marche que sur les colonnes numériques
+
+Réponse candidat : A  ❌ — juste : **C**
+
+> **Dans tes *Termes à revoir* depuis le 31 juillet**, jamais drillé : `summary()` ajoute les quartiles et accepte des percentiles personnalisés ; `describe()` s'arrête à count/mean/stddev/min/max. → **5.5, p. 91**
 
 **16.** Une table de dimension SCD2 est jointe à un fait sans condition temporelle. Quel
 est le risque ?
@@ -128,6 +190,8 @@ est le risque ?
 - **C.** La jointure échoue
 - **D.** Chaque ligne de fait est dupliquée pour chaque version de la dimension
 
+Réponse candidat : D  ✅
+
 **17.** Dans une convention `[valid_from, valid_to)`, une transaction datée exactement de
 `valid_to` appartient à…
 
@@ -135,6 +199,8 @@ est le risque ?
 - **B.** la version qui se ferme
 - **C.** aucune des deux
 - **D.** la version suivante
+
+Réponse candidat : D  ✅
 
 **18.** Quel est le principal argument en faveur de `valid_to` à `NULL` plutôt qu'à une
 date sentinelle ?
@@ -144,6 +210,8 @@ date sentinelle ?
 - **C.** La performance des jointures
 - **D.** La compatibilité SQL
 
+Réponse candidat : A  ✅
+
 **19.** Un `MERGE` SCD2 doit fermer une version et en insérer une autre pour la même clé.
 Comment procède-t-on ?
 
@@ -152,12 +220,18 @@ Comment procède-t-on ?
 - **C.** C'est impossible
 - **D.** Un `UPDATE` suivi d'un `INSERT` dans une transaction
 
+Réponse candidat : D  ❌ — juste : **B**
+
+> Le motif SCD2 en deux temps : la source est **dupliquée**, une occurrence portant une clé de correspondance nulle pour forcer la branche INSERT, l'autre servant à fermer la version courante. Un seul `MERGE` ne peut pas à la fois mettre à jour et insérer sur la même clé. → **14.5, p. 252**
+
 **20.** Que fait `spark.sql.shuffle.partitions` ?
 
 - **A.** Fixe le nombre de partitions après un *shuffle*
 - **B.** Fixe le nombre de fichiers écrits
 - **C.** Contrôle la diffusion des petites tables
 - **D.** Limite la mémoire par exécuteur
+
+Réponse candidat : A  ✅
 
 **21.** Un job doit tourner tous les jours à 4 h, et l'équipe veut savoir quand les
 chiffres bougent. Quel déclencheur ?
@@ -167,12 +241,18 @@ chiffres bougent. Quel déclencheur ?
 - **C.** Arrivée de fichier
 - **D.** Mise à jour de table
 
+Réponse candidat : D  ❌ — juste : **B**
+
+> **Chapitre lu hier.** Régularité et prévisibilité : le déclencheur **programmé**. La mise à jour de table sert à chaîner deux traitements sans horloge, pas à tenir un rendez-vous quotidien à 4 h. → **18.3, p. 317**
+
 **22.** Quel est l'avantage sous-estimé d'un déclencheur programmé ?
 
 - **A.** Il est plus rapide
 - **B.** Il ne consomme pas de compute
 - **C.** Il est prévisible : on sait quand intervenir sans gêner
 - **D.** Il est moins cher
+
+Réponse candidat : C  ✅
 
 **23.** Une tâche de job échoue systématiquement à la première tentative et réussit à la
 seconde. Quelle cause probable dans un contexte Auto Loader ?
@@ -182,6 +262,8 @@ seconde. Quelle cause probable dans un contexte Auto Loader ?
 - **C.** Un problème réseau
 - **D.** Un manque de mémoire
 
+Réponse candidat : A  ✅
+
 **24.** Un DAG de job a besoin de 8 branches parallèles, mais le compte est limité à 5
 tâches concurrentes. Que se passe-t-il ?
 
@@ -190,12 +272,16 @@ tâches concurrentes. Que se passe-t-il ?
 - **C.** Le job échoue
 - **D.** Trois tâches sont ignorées
 
+Réponse candidat : B  ✅
+
 **25.** Comment un job peut-il échouer explicitement quand un contrôle qualité est au rouge ?
 
 - **A.** Une condition suffit
 - **B.** Ce n'est pas possible
 - **C.** Une tâche sur la branche `false` qui lève une exception
 - **D.** Un timeout court
+
+Réponse candidat : C  ✅
 
 **26.** Quel type de tâche permet d'exécuter une logique packagée dans une bibliothèque
 versionnée plutôt que dans un notebook ?
@@ -205,12 +291,20 @@ versionnée plutôt que dans un notebook ?
 - **C.** Tâche fichier Python ou JAR
 - **D.** Tâche de requête SQL
 
+Réponse candidat : D  ❌ — juste : **C**
+
+> Une logique packagée dans une bibliothèque versionnée s'exécute par une **tâche fichier Python ou JAR**. La tâche de requête SQL n'exécute que du SQL. → `modules/M8-orchestration/COMPLEMENT-taches-et-triggers.md`
+
 **27.** Une ressource est retirée du YAML d'un bundle, puis `deploy` est relancé. Résultat ?
 
 - **A.** Le déploiement échoue
 - **B.** La ressource est archivée
 - **C.** La ressource reste
 - **D.** La ressource est supprimée du workspace
+
+Réponse candidat : C  ❌ — juste : **D**
+
+> **Tu avais juste hier, deux fois** — salve A et salve F. Le YAML fait autorité : une ressource qui n'y figure plus **est supprimée** au déploiement suivant. → **21.4, p. 366**
 
 **28.** Comment simuler deux environnements avec un seul workspace ?
 
@@ -219,12 +313,16 @@ versionnée plutôt que dans un notebook ?
 - **C.** Deux utilisateurs
 - **D.** Deux dépôts Git
 
+Réponse candidat : A  ✅
+
 **29.** Qu'est-ce que deux targets sur un même workspace ne testent pas ?
 
 - **A.** L'isolation des permissions et la séparation des identités
 - **B.** La résolution des variables
 - **C.** Le mode de déploiement
 - **D.** La syntaxe du YAML
+
+Réponse candidat : A  ✅
 
 **30.** Un notebook a des modifications non commitées dans un Git Folder. Le développeur
 change de branche. Risque ?
@@ -234,6 +332,8 @@ change de branche. Risque ?
 - **C.** Fusion automatique
 - **D.** Perte des modifications non commitées
 
+Réponse candidat : D  ✅
+
 **31.** Quelle commande CLI supprime les ressources déployées par un bundle ?
 
 - **A.** `databricks workspace delete`
@@ -241,12 +341,18 @@ change de branche. Risque ?
 - **C.** `databricks bundle remove`
 - **D.** `databricks bundle clean`
 
+Réponse candidat : C  ❌ — juste : **B**
+
+> `databricks bundle destroy`. `bundle remove` et `bundle clean` n'existent pas — c'est exactement le réflexe « éliminer les commandes inventées » qui t'avait déjà coûté une question en juillet. → `modules/M11-cicd/OUTILLAGE.md`
+
 **32.** Comment repérer une dérive de performance d'un job dans le temps ?
 
 - **A.** `DESCRIBE HISTORY`
 - **B.** Le Spark UI de la dernière exécution
 - **C.** L'historique des exécutions dans l'interface Lakeflow Jobs
 - **D.** Les journaux du cluster
+
+Réponse candidat : C  ✅
 
 **33.** Un stage montre un *shuffle write* important suivi d'un *shuffle read* important.
 Que peut-on en dire ?
@@ -256,6 +362,8 @@ Que peut-on en dire ?
 - **C.** C'est anormal, il faut le supprimer
 - **D.** Les données traversent le réseau pour être regroupées — attendu sur un `groupBy` ou une jointure large, mais coûteux
 
+Réponse candidat : D  ✅
+
 **34.** Sur quoi mesurer objectivement l'effet d'un regroupement liquide ?
 
 - **A.** Le nombre de partitions
@@ -263,12 +371,18 @@ Que peut-on en dire ?
 - **C.** La durée d'exécution
 - **D.** Le nombre de fichiers réellement lus
 
+Réponse candidat : C  ❌ — juste : **D**
+
+> **Tu avais juste hier**, en salve B : le gain d'un regroupement se mesure en **fichiers réellement lus**, pas au chronomètre — sur un volume modeste les coûts fixes masquent l'effet, et beaucoup d'optimisations correctes ont été abandonnées pour cette raison. → **20.4, p. 351-353**
+
 **35.** Qu'est-ce que la *predictive optimization* prend en charge ?
 
 - **A.** La prédiction du coût des requêtes
 - **B.** Le déclenchement automatique d'`OPTIMIZE` et de `VACUUM` sur les tables managées
 - **C.** La mise en cache des résultats
 - **D.** Le choix des jointures
+
+Réponse candidat : B  ✅
 
 **36.** Quelle est la différence entre une table managée et une table externe du point de
 vue de la maintenance ?
@@ -278,6 +392,8 @@ vue de la maintenance ?
 - **C.** La table managée exige un `VACUUM` manuel
 - **D.** La table externe est compactée plus souvent
 
+Réponse candidat : B  ✅
+
 **37.** Comment convertir une table externe en table managée ?
 
 - **A.** Recréer la table et recopier les données
@@ -285,12 +401,18 @@ vue de la maintenance ?
 - **C.** Ce n'est pas possible
 - **D.** `ALTER TABLE t SET MANAGED`
 
+Réponse candidat : A  ❌ — juste : **D**
+
+> `ALTER TABLE … SET MANAGED` convertit sans réécrire les données ; `SET EXTERNAL` fait l'inverse. → `modules/M10-gouvernance/FICHE-tables-managees-externes.md`. *(Fonctionnalité récente : à confirmer sur docs.databricks.com si tu en as le temps.)*
+
 **38.** Quel privilège permet de traverser un schéma sans pouvoir lire ses tables ?
 
 - **A.** `BROWSE`
 - **B.** `SELECT`
 - **C.** `MODIFY`
 - **D.** `USE SCHEMA`
+
+Réponse candidat : D  ✅
 
 **39.** Un `REVOKE SELECT ON SCHEMA` est exécuté. Que devient le `USE SCHEMA` accordé
 précédemment ?
@@ -300,12 +422,18 @@ précédemment ?
 - **C.** Il reste : révoquer un privilège ne touche pas les autres
 - **D.** Il est révoqué aussi
 
+Réponse candidat : C  ✅
+
 **40.** Une table alimentée par `MERGE` reçoit un masque de colonne. Risque ?
 
 - **A.** Le masque est ignoré
 - **B.** La table passe en lecture seule
 - **C.** Le `MERGE` peut ne plus être supporté, ce qui casse le pipeline
 - **D.** Aucun
+
+Réponse candidat : D  ❌ — juste : **C**
+
+> **Tu avais juste hier**, en contre-salve A : une table portant une politique de masquage ou de filtrage **n'accepte plus l'opération de fusion**. Ce n'est pas un résultat faux, c'est un refus — la chaîne s'arrête au passage suivant. → **21.2, p. 363**
 
 **41.** Une politique de sécurité pilotée par une table de correspondance. Quel est le
 défaut le plus fréquent ?
@@ -315,12 +443,16 @@ défaut le plus fréquent ?
 - **C.** L'impossibilité de la sauvegarder
 - **D.** Le coût de lecture
 
+Réponse candidat : A  ✅
+
 **42.** Quel est l'intérêt d'un `DENY` par rapport à l'absence de `GRANT` ?
 
 - **A.** Aucun
 - **B.** Il est temporaire
 - **C.** Il perce un trou dans un octroi large, neutralise un héritage, et documente une interdiction
 - **D.** Il s'applique aux propriétaires
+
+Réponse candidat : C  ✅
 
 **43.** Une couche gold est publiée avant que les contrôles qualité ne s'exécutent, et une
 condition bloque seulement la tâche de publication du bilan. Quel est le problème ?
@@ -330,6 +462,8 @@ condition bloque seulement la tâche de publication du bilan. Quel est le probl�
 - **C.** Les analystes lisent déjà le gold : la barrière n'en est pas une
 - **D.** Aucun
 
+Réponse candidat : C  ✅
+
 **44.** Quelle est la bonne réponse à un contrôle qualité qui échoue sur un invariant
 comme « aucune clé dupliquée » ?
 
@@ -338,6 +472,10 @@ comme « aucune clé dupliquée » ?
 - **C.** Corriger automatiquement
 - **D.** Arrêter le pipeline : un invariant violé signifie que le code est faux
 
+Réponse candidat : A  ❌ — juste : **D**
+
+> Un **invariant** n'est pas un seuil de qualité : « aucune clé dupliquée » ne tolère pas 0,1 %. Sa violation signifie que le code est faux, et continuer propage l'erreur en aval. Alerter et continuer convient à une métrique, jamais à un invariant. → **17.3, p. 299** (mais, honnêtement, je ne suis pas sûr de comprendre)
+
 **45.** Un contrôle de volumétrie sur un référentiel est écrit `row_count >= 1`. Le
 référentiel est re-livré avec 5 % de ses lignes. Que fait le contrôle ?
 
@@ -345,6 +483,8 @@ référentiel est re-livré avec 5 % de ses lignes. Que fait le contrôle ?
 - **B.** Il bloque le pipeline
 - **C.** Il avertit
 - **D.** Il passe au vert : il vérifiait la non-vacuité, pas la plausibilité
+
+Réponse candidat : D  ✅ (mais là encore je n'en sais rien)
 
 ---
 

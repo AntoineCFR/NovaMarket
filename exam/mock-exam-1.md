@@ -11,6 +11,34 @@ en 90 minutes, c'est deux minutes par question, sans pause.
 
 ---
 
+## Résultat — 31 août 2026, 9 h 19 → 9 h 38
+
+**36 / 45 — 80 %.** Pondéré par les coefficients d'examen : **82 %.**
+
+| Section | Poids | Score | % | Diagnostic du 29 juil. |
+|---|---|---|---|---|
+| 1 · Plateforme | 6 % | 3/3 | **100 %** | 60 % |
+| 2 · Ingestion | 21 % | 7/9 | 78 % | 83 % |
+| 3 · Transformation | 22 % | 8/8 | **100 %** | **58 %** |
+| 4 · Jobs | 16 % | 5/6 | 83 % | 70 % |
+| 5 · CI/CD | 10 % | 4/6 | **67 %** | 75 % |
+| 6 · Diagnostic | 10 % | 4/5 | 80 % | 50 % |
+| 7 · Gouvernance | 15 % | 5/8 | **62 %** | 83 % |
+
+Contrairement au diagnostic, cet examen a été **rebrassé** : le score est exploitable.
+
+**Six des neuf ratés sont dans des chapitres du manuel que tu n'as pas encore lus**, dont
+**quatre dans le seul chapitre 21**. Les trois autres sont dans des chapitres déjà lus :
+9.5 (deux fois) et 4.2.
+
+> ⚠️ **La répartition annoncée en tête de fiche est fausse.** Elle promet
+> 3 / 9 / 10 / 7 / 5 / 4 / 7 ; le corrigé étiquette en réalité 3 / 9 / 8 / 6 / 6 / 5 / 8.
+> Défaut de fabrication de ma part. Les pourcentages par section ci-dessus restent justes
+> — ils sont calculés sur les effectifs réels — mais la section 3, la plus lourde, est
+> sous-représentée de deux questions. Ton 100 % y repose sur 8 questions, pas 10.
+
+---
+
 **1.** Un pipeline lit des fichiers CSV déposés une fois par jour dans un volume, une
 douzaine de fichiers. L'équipe travaille exclusivement en SQL. Quelle méthode d'ingestion ?
 
@@ -19,12 +47,16 @@ douzaine de fichiers. L'équipe travaille exclusivement en SQL. Quelle méthode 
 - **C.** `spark.read.csv()` avec `overwrite`
 - **D.** Un connecteur managé Lakeflow Connect
 
+Réponse candidat : B  ✅
+
 **2.** Quel est l'ordre correct de la hiérarchie Unity Catalog ?
 
 - **A.** workspace → catalog → schema → table
 - **B.** account → catalog → database → table
 - **C.** metastore → catalog → schema → table
 - **D.** catalog → metastore → schema → table
+
+Réponse candidat : C  ✅
 
 **3.** `dfA.union(dfB)` où B a les mêmes colonnes dans un ordre différent, types
 compatibles. Résultat ?
@@ -34,6 +66,8 @@ compatibles. Résultat ?
 - **C.** Erreur de schéma
 - **D.** Alignement automatique sur les noms
 
+Réponse candidat : A  ✅
+
 **4.** Une tâche de job doit transmettre un statut à une tâche conditionnelle en aval.
 Quel mécanisme ?
 
@@ -42,12 +76,18 @@ Quel mécanisme ?
 - **C.** `dbutils.jobs.taskValues`
 - **D.** Une variable d'environnement
 
+Réponse candidat : C  ✅
+
 **5.** `databricks bundle deploy` est lancé deux fois sans changement. Résultat ?
 
 - **A.** Ressources dupliquées
 - **B.** Workspace inchangé, le déploiement est idempotent
 - **C.** Une version empilée par ressource
 - **D.** Erreur de conflit
+
+Réponse candidat : A  ❌ — juste : **B**
+
+> **Déclaratif, pas impératif.** Un bundle ne fabrique pas des ressources, il décrit un *état souhaité* et le workspace y est amené. Deux déploiements identiques donnent donc le même état. C'est la même mécanique qui fait que **retirer une ressource du YAML la supprime** au déploiement suivant. Cette famille d'erreur est la cause n°6 de ton diagnostic du 29 juillet — elle n'est toujours pas fermée. → **21.4, p. 366**
 
 **6.** Un stage montre une médiane de tâche à 20 s et un maximum à 12 min, avec un
 *shuffle read* max vingt fois la médiane. Diagnostic ?
@@ -57,6 +97,8 @@ Quel mécanisme ?
 - **C.** *Data skew*
 - **D.** Manque de mémoire driver
 
+Réponse candidat : C  ✅
+
 **7.** Un utilisateur a `GRANT SELECT ON SCHEMA` mais ne voit aucune table. Cause la plus
 probable ?
 
@@ -64,6 +106,8 @@ probable ?
 - **B.** Les tables sont externes
 - **C.** Propagation en cours
 - **D.** `USE CATALOG` ou `USE SCHEMA` manquant
+
+Réponse candidat : D  ✅
 
 **8.** Auto Loader en `schemaEvolutionMode = "none"` reçoit un fichier avec une colonne
 supplémentaire. Que devient cette colonne ?
@@ -73,12 +117,16 @@ supplémentaire. Que devient cette colonne ?
 - **C.** Ignorée silencieusement et définitivement
 - **D.** Ajoutée à la table
 
+Réponse candidat : C  ✅
+
 **9.** Quel objet gold garantit d'être toujours à jour sans aucun rafraîchissement ?
 
 - **A.** Une table
 - **B.** Une vue
 - **C.** Une vue matérialisée
 - **D.** Une table de streaming
+
+Réponse candidat : B  ✅
 
 **10.** Un job doit démarrer dès qu'une table Delta est mise à jour par un autre job.
 Quel déclencheur ?
@@ -88,12 +136,16 @@ Quel déclencheur ?
 - **C.** Continu
 - **D.** Arrivée de fichier
 
+Réponse candidat : A  ✅
+
 **11.** Dans un bundle, à quoi sert le bloc `targets` ?
 
 - **A.** Déclarer les tables cibles
 - **B.** Lister les destinataires de notifications
 - **C.** Définir les environnements et leurs surcharges de variables
 - **D.** Configurer les clusters
+
+Réponse candidat : C  ✅
 
 **12.** Une fonction de masquage interroge une table de correspondance. L'appelant en est
 absent. Comportement d'une fonction correctement écrite ?
@@ -103,12 +155,18 @@ absent. Comportement d'une fonction correctement écrite ?
 - **C.** Ligne exclue
 - **D.** Valeur en clair
 
+Réponse candidat : D  ❌ — juste : **B**
+
+> **Tu as choisi la seule option qui échoue en ouvrant.** Une fonction de masquage correcte échoue en *fermant* : appelant inconnu, donc valeur masquée. Le principe tient toute la section 7 — par défaut on ne voit rien, et c'est un droit explicite qui ouvre. Même réflexe manquant qu'en Q43. → **21.1 et 21.2, p. 361-364**
+
 **13.** `count("*")` renvoie 1 000, `count("email")` renvoie 850. Que peut-on en déduire ?
 
 - **A.** 150 valeurs nulles dans `email`
 - **B.** 850 lignes valides et 150 en quarantaine
 - **C.** 150 doublons
 - **D.** Une erreur de type
+
+Réponse candidat : A  ✅
 
 **14.** Quelle méthode d'ingestion se dégrade en premier sur un répertoire d'un million de
 fichiers ?
@@ -118,6 +176,8 @@ fichiers ?
 - **C.** Auto Loader en *directory listing*
 - **D.** Les trois de la même façon
 
+Réponse candidat : A  ✅
+
 **15.** Une table de faits de 50 millions de lignes est jointe à une dimension de 300
 lignes. Quelle stratégie évite le *shuffle* du gros côté ?
 
@@ -125,6 +185,8 @@ lignes. Quelle stratégie évite le *shuffle* du gros côté ?
 - **B.** Augmenter `spark.sql.shuffle.partitions`
 - **C.** `cross join` filtré
 - **D.** Jointure diffusée de la dimension
+
+Réponse candidat : D  ✅
 
 **16.** Un `DENY SELECT` est posé sur une table par son propriétaire, à un groupe dont il
 est membre. Peut-il lire la table ?
@@ -134,12 +196,16 @@ est membre. Peut-il lire la table ?
 - **C.** Seulement en SQL
 - **D.** Seulement après `REVOKE`
 
+Réponse candidat : A  ✅
+
 **17.** Que fait `databricks bundle validate` ?
 
 - **A.** Supprime les ressources orphelines
 - **B.** Lance les tests unitaires
 - **C.** Déploie en mode simulation
 - **D.** Résout les variables et vérifie la configuration, sans rien modifier
+
+Réponse candidat : D  ✅
 
 **18.** Une tâche conditionnelle est fausse. Les tâches de la branche `true` sont…
 
@@ -148,12 +214,16 @@ est membre. Peut-il lire la table ?
 - **C.** relancées
 - **D.** *skipped*, et le job peut finir en succès
 
+Réponse candidat : D  ✅
+
 **19.** Quelle commande revient à une version antérieure d'une table Delta ?
 
 - **A.** `RESTORE TABLE t TO VERSION AS OF n`
 - **B.** `ROLLBACK`
 - **C.** `ALTER TABLE t UNDO`
 - **D.** `REVERT TABLE t`
+
+Réponse candidat : A  ✅
 
 **20.** `explode` contre `explode_outer` : quelle différence ?
 
@@ -162,6 +232,8 @@ est membre. Peut-il lire la table ?
 - **C.** `explode_outer` conserve les lignes à tableau vide ou nul
 - **D.** `explode_outer` conserve l'indice
 
+Réponse candidat : C  ✅
+
 **21.** Un connecteur managé Lakeflow Connect apporte quoi qu'un script JDBC n'apporte pas ?
 
 - **A.** De meilleures performances de lecture
@@ -169,12 +241,18 @@ est membre. Peut-il lire la table ?
 - **C.** Un format de stockage propriétaire
 - **D.** Le chiffrement des données
 
+Réponse candidat : B  ✅
+
 **22.** Sur quel objet est-il impossible de poser un filtre de lignes ?
 
 - **A.** Une vue
 - **B.** Une table managée
 - **C.** Une table de streaming
 - **D.** Une table externe
+
+Réponse candidat : C  ❌ — juste : **A**
+
+> **C'est dans ton propre tableau *Termes à revoir* depuis le 31 juillet** : « Masque et filtre de lignes — impossibles sur une vue ». Une vue est une définition de calcul, pas un objet de stockage : il n'y a pas de lignes sur lesquelles attacher une politique. → **4.5, p. 71** et **21.1, p. 361**
 
 **23.** Quelle recommandation actuelle pour optimiser les filtres sur une nouvelle table
 volumineuse ?
@@ -184,6 +262,10 @@ volumineuse ?
 - **C.** `PARTITIONED BY`
 - **D.** `OPTIMIZE ... ZORDER BY`
 
+Réponse candidat : D  ❌ — juste : **B**
+
+> Tu as répondu `ZORDER`, qui était la bonne réponse il y a deux ans. Sur une table **neuve**, la recommandation actuelle est `CLUSTER BY`. Également dans tes *Termes à revoir*. → **20.4 et 20.5, p. 351-356**
+
 **24.** Un `TRUNCATE TABLE` est suivi d'un `COPY INTO` identique au précédent. Combien de
 lignes sont chargées ?
 
@@ -192,12 +274,18 @@ lignes sont chargées ?
 - **C.** Aucune
 - **D.** Seulement les nouvelles
 
+Réponse candidat : B  ❌ — juste : **C**
+
+> `TRUNCATE` vide les **données**, pas l'**historique des fichiers déjà chargés**. `COPY INTO` les considère traités et n'en recharge aucun : la table reste vide, sans la moindre erreur. Dans tes *Termes à revoir*, et **dans un chapitre que tu as déjà lu** — p. 163
+
 **25.** Une jointure gauche avec une table de droite ayant deux lignes pour une clé…
 
 - **A.** duplique la ligne de gauche concernée
 - **B.** échoue
 - **C.** supprime la ligne ambiguë
 - **D.** conserve le nombre de lignes de gauche
+
+Réponse candidat : A  ✅
 
 **26.** En mode de déploiement `development`, que fait le bundle automatiquement ?
 
@@ -206,12 +294,16 @@ lignes sont chargées ?
 - **C.** Active le mode debug
 - **D.** Préfixe les ressources et suspend les planifications
 
+Réponse candidat : D  ✅
+
 **27.** Un `collect()` sur 80 millions de lignes échoue. Où est la saturation ?
 
 - **A.** Stockage
 - **B.** Driver
 - **C.** Exécuteurs
 - **D.** Metastore
+
+Réponse candidat : B  ✅
 
 **28.** Quel privilège manque pour créer une table dans un schéma sur lequel on a déjà
 `USE SCHEMA` ?
@@ -221,12 +313,18 @@ lignes sont chargées ?
 - **C.** `MODIFY`
 - **D.** `USE CATALOG`
 
+Réponse candidat : D  ❌ — juste : **A**
+
+> `USE CATALOG` serait nécessaire pour *atteindre* le schéma, mais l'énoncé te donne déjà `USE SCHEMA` : la traversée est acquise. Ce qui manque est le droit d'**agir** : `CREATE TABLE`. Sépare les privilèges de traversée (`USE …`) des privilèges d'action (`CREATE`, `SELECT`, `MODIFY`). **Chapitre déjà lu** — p. 64-66
+
 **29.** Un fichier JSON contient des objets imbriqués. Que fait une couche bronze fidèle ?
 
 - **A.** Les sérialise en chaîne
 - **B.** Les conserve en `STRUCT` et `ARRAY`
 - **C.** Les rejette
 - **D.** Les aplatit
+
+Réponse candidat : B  ✅
 
 **30.** Quel type de tâche de job rafraîchit un tableau de bord AI/BI ?
 
@@ -235,12 +333,16 @@ lignes sont chargées ?
 - **C.** Notebook avec appel API
 - **D.** Tâche de type tableau de bord
 
+Réponse candidat : D  ✅
+
 **31.** `approx_count_distinct` par rapport à `countDistinct` :
 
 - **A.** ne fonctionne que sur les entiers
 - **B.** plus précis
 - **C.** identique
 - **D.** approximatif, avec un coût nettement inférieur
+
+Réponse candidat : D  ✅
 
 **32.** Une extraction incrémentale filtre `updated_at > watermark`. Quel risque ?
 
@@ -249,12 +351,18 @@ lignes sont chargées ?
 - **C.** Duplication à chaque exécution
 - **D.** Aucun
 
+Réponse candidat : A  ✅
+
 **33.** Où vit l'état de progression de `COPY INTO` ?
 
 - **A.** Un répertoire de checkpoint désigné par l'utilisateur
 - **B.** Le metastore
 - **C.** Nulle part
 - **D.** Les métadonnées de la table cible
+
+Réponse candidat : C  ❌ — juste : **D**
+
+> **Même sujet que la Q24, et c'est ce qui l'explique** : ne sachant pas où vit l'état de `COPY INTO`, tu ne pouvais pas prévoir ce que `TRUNCATE` laisse intact. Il vit dans les **métadonnées de la table cible** — d'où sa survie au `TRUNCATE`. Auto Loader, lui, utilise un **checkpoint séparé** : c'est exactement là qu'est la différence à retenir. → **9.5, p. 163** et **A.4, p. 386**
 
 **34.** Un job sans timeout a une tâche bloquée. Conséquence ?
 
@@ -263,6 +371,8 @@ lignes sont chargées ?
 - **C.** Arrêt après une heure par défaut
 - **D.** Consommation de compute jusqu'à intervention
 
+Réponse candidat : D  ✅
+
 **35.** Que signifient des colonnes *Spill (disk)* non nulles dans un stage ?
 
 - **A.** Des données corrompues
@@ -270,12 +380,16 @@ lignes sont chargées ?
 - **C.** Une erreur mémoire
 - **D.** Un checkpoint écrit
 
+Réponse candidat : B  ✅
+
 **36.** Une politique ABAC s'attache à quoi ?
 
 - **A.** Un utilisateur
 - **B.** Une colonne
 - **C.** Un catalog ou un schéma, et s'applique par étiquette
 - **D.** Un job
+
+Réponse candidat : C  ✅
 
 **37.** Deux développeurs déploient le même bundle en `development` dans le même
 workspace. Résultat ?
@@ -285,6 +399,8 @@ workspace. Résultat ?
 - **C.** Le second écrase le premier
 - **D.** Fusion des ressources
 
+Réponse candidat : B  ✅
+
 **38.** Quel objet gold pour une requête coûteuse, relue souvent, avec une fraîcheur à la
 journée suffisante ?
 
@@ -292,6 +408,8 @@ journée suffisante ?
 - **B.** Vue
 - **C.** Table de streaming
 - **D.** Vue matérialisée
+
+Réponse candidat : D  ✅
 
 **39.** Une source supprime physiquement ses lignes. Conséquence pour un watermark sur
 `updated_at` ?
@@ -301,6 +419,8 @@ journée suffisante ?
 - **C.** Échec de l'extraction
 - **D.** Watermark négatif
 
+Réponse candidat : A  ✅
+
 **40.** `DROP TABLE` sur une table externe supprime…
 
 - **A.** uniquement les fichiers
@@ -308,12 +428,16 @@ journée suffisante ?
 - **C.** rien sans `PURGE`
 - **D.** les fichiers et l'entrée du catalogue
 
+Réponse candidat : B  ✅
+
 **41.** Le meilleur levier face à une tâche lente, en rapport coût/bénéfice ?
 
 - **A.** Agrandir le cluster
 - **B.** Passer en continu
 - **C.** Réduire le volume lu
 - **D.** Ajouter des nouvelles tentatives
+
+Réponse candidat : C  ✅
 
 **42.** Une tâche `for each` avec une concurrence de 4 sur une liste de 12 éléments : combien
 de tâches simultanées ?
@@ -323,12 +447,20 @@ de tâches simultanées ?
 - **C.** 4
 - **D.** 12
 
+Réponse candidat : B  ❌ — juste : **C**
+
+> La concurrence configurée *est* la réponse : 4. L'énoncé donne le chiffre, il n'y a rien à déduire. Erreur de lecture, pas de connaissance. → **18.2, p. 314**
+
 **43.** Où stocker un mot de passe utilisé par un job déployé par bundle ?
 
 - **A.** Variable de bundle
 - **B.** Fichier `.env` commité
 - **C.** `base_parameters`
 - **D.** Scope de secrets, référencé dans le YAML
+
+Réponse candidat : A  ❌ — juste : **D**
+
+> Une variable de bundle finit **en clair dans le YAML versionné**. Un secret est un objet distinct : scope de secrets, référencé depuis le YAML. Même angle mort qu'en Q12 — ce qui n'est pas explicitement protégé est exposé. → **21.6, p. 370**
 
 **44.** Quelle affirmation sur le compute serverless est exacte ?
 
@@ -337,6 +469,8 @@ de tâches simultanées ?
 - **C.** Démarrage rapide, facturation à l'usage, aucune inactivité facturée
 - **D.** Exige un cluster préexistant
 
+Réponse candidat : C  ✅
+
 **45.** Un masque est posé sur `gold.dim_customer.email`, mais `silver.customer_scd2` reste
 lisible par les mêmes utilisateurs. Portée réelle de la protection ?
 
@@ -344,6 +478,8 @@ lisible par les mêmes utilisateurs. Portée réelle de la protection ?
 - **B.** Partielle, les données sont chiffrées
 - **C.** Complète
 - **D.** Complète après `VACUUM`
+
+Réponse candidat : A  ✅
 
 ---
 

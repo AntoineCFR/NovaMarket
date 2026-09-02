@@ -3,6 +3,29 @@
 Adossé au guide officiel **version du 4 mai 2026**. 45 questions, 90 minutes, 33 objectifs
 répartis en 7 sections.
 
+> ✅ **Vérifié sur le PDF officiel le 2 septembre 2026, la veille de l'examen.** Les sept
+> sections, leurs poids et leurs objectifs sont **inchangés**. Cette transcription est
+> fidèle. Quatre précisions ont toutefois été ajoutées ci-dessous, absentes de la version
+> initiale.
+
+### Ce que le guide dit et que ce document ne disait pas
+
+**1. Des questions non notées s'ajoutent aux 45.** *« Exams may include unscored items to
+gather statistical information for future use. These items are not identified on the form
+and do not impact your score. Additional time is factored into account for this content. »*
+Autrement dit : **tu verras plus de 45 questions**, sans savoir lesquelles comptent, avec
+du temps supplémentaire prévu pour elles.
+
+**2. Lakeflow Connect se décline en connecteurs *standard* et *managed*.** Le guide
+distingue les deux à trois reprises en section 2, y compris dans l'objectif d'arbitrage.
+
+**3. Deux cours recommandés ne figuraient pas ici** : *Data Interoperability with Unity
+Catalog* et *Get Started with Data Governance on Databricks*. Tous deux tournent autour
+d'Unity Catalog et de la gouvernance — section 7, 15 %.
+
+**4. Le guide contient cinq questions d'exemple retirées d'une version précédente**, avec
+leurs réponses. Ce sont les seules vraies questions d'examen disponibles.
+
 Ce document est la référence de couverture : chaque objectif du guide y est tracé vers le
 module qui le traite. C'est lui qu'il faut relire deux semaines avant l'examen, avec la
 version à jour du guide officiel à côté — Databricks le met à jour sans prévenir.

@@ -1,153 +1,80 @@
-# NovaMarket — parcours Data Engineer sur Databricks Free Edition
+# Databricks — parcours Data Engineer
 
-Projet fil rouge pour valider des compétences de Data Engineer de bout en bout :
-ingestion multi-sources → bronze → silver → gold business-ready, qualité de données,
-métadonnées, et orchestration Lakeflow Jobs.
+Un dépôt, plusieurs projets fictifs, une progression. Chaque projet est un **cahier des
+charges métier** : une entreprise, ses données, ses besoins. La traduction en architecture
+est le travail à faire.
 
-Tout est conçu pour tourner **intégralement sur Databricks Free Edition**, sans
-compte cloud, sans service payant, sans accès internet sortant.
-
----
-
-## Le contexte métier
-
-**NovaMarket** est une marketplace généraliste européenne (FR, BE, DE, ES, IT, NL).
-Des vendeurs tiers y écoulent leur catalogue ; NovaMarket prélève une commission
-dont le taux dépend du plan d'abonnement du vendeur.
-
-Tu reprends la plateforme data. Rien n'existe. On te donne :
-
-- 6 mois d'historique de commandes exporté du backoffice, plus des livraisons quotidiennes
-- un flux d'événements applicatifs (clickstream)
-- un référentiel catalogue
-- une base OLTP applicative (clients, vendeurs)
-
-Ton objectif final : livrer un socle `gold` qui répond à 6 questions métier
-(voir `docs/02-sources-et-modele.md`), documenté, testé, et rafraîchi
-automatiquement chaque nuit par un job.
+> **Certification obtenue le 3 septembre 2026** — Databricks Certified Data Engineer
+> Associate, 89 % pondéré. Le détail est dans `Training/journal.md`.
 
 ---
 
-## Comment ça marche
+## Les projets
 
-| Élément | Rôle |
+| | Projet | Ce qu'on y travaille | État |
+|---|---|---|---|
+| **01** | *(à venir)* | Ingestion de fichiers, bronze → gold | 🔨 |
+| **02** | *(à venir)* | Bases relationnelles et dépôts partenaires | ⏳ |
+| **03** | *(à venir)* | Orchestration | ⏳ |
+| **04** | *(à venir)* | Pipelines déclaratifs | ⏳ |
+| **05** | *(à venir)* | Bundles et promotion d'environnement | ⏳ |
+| — | **NovaMarket** | Tout, en même temps, avec les embûches | 🔨 refonte |
+
+Les préfixes numériques donnent l'ordre conseillé. NovaMarket n'en porte pas : il vient
+quand tu décides qu'il vient.
+
+## L'anatomie d'un projet
+
+```
+0X-nom/
+├── README.md      le cahier des charges — le seul document de l'énoncé
+├── data/          les fichiers fournis, par vague s'il y en a plusieurs
+├── graders/       la vérification, sur le contenu produit
+└── solutions/     à n'ouvrir qu'après
+```
+
+**Le cahier des charges ne contient aucune indication technique** : ni nom d'outil, ni
+extrait de code, ni conseil de mise en œuvre. Le client décrit son métier, ses sources et
+ses attentes — y compris ses propres avertissements, quand ils relèvent du métier.
+
+Une section *« ce que nos outils consommeront »* nomme les tables et colonnes que la
+restitution lira. C'est un contrat d'interface, et c'est ce que le grader vérifie. Tout le
+chemin pour y arriver est libre.
+
+## `Training/` — le matériel commun
+
+| Dossier | Contenu |
 |---|---|
-| `generator/` | Génère les datasets. Déterministe : mêmes fichiers à chaque exécution |
-| `data/waves/` | Les fichiers à téléverser dans ton Volume, par vague (W0 → W4) |
-| `docs/` | Contraintes plateforme, dictionnaire des sources, conventions de nommage |
-| `modules/Mx-*/` | Un énoncé, des critères d'acceptation, un notebook starter à trous |
-| `modules/Mx-*/OUTILLAGE.md` | **À lire en premier** : les bibliothèques et fonctions du module, sans les réponses |
-| `graders/` | Un notebook de validation par module. Il assert sur **tes** tables. Importe le dossier entier — voir `graders/README.md` |
-| `solutions/` | Les corrigés. À n'ouvrir qu'après avoir fait valider le module |
+| `journal.md` | Le journal, tous projets confondus : sessions, ratés, termes à revoir |
+| `certification/` | Guide officiel, couverture des objectifs, examens blancs, drill de syntaxe |
+| `fiches/` | Huit fiches pratiques — le geste et le code — plus le carnet imprimable |
+| `reference/` | Contraintes Free Edition, conventions, Python pour le parcours |
+| `archive/` | Ce qui a été remplacé mais mérite d'être gardé |
 
-**Règle du jeu** : un module est validé quand son grader passe au vert. Le grader ne
-regarde jamais ton code, seulement le résultat dans Unity Catalog — libre à toi de
-l'obtenir comme tu veux, tant que les critères d'acceptation sont respectés.
-
-Les données arrivent par **vagues**, comme en production. Chaque vague change les
-comptages : les critères d'acceptation d'un module décrivent l'état du système **à ce
-moment du parcours**, pas un état absolu. Relancer le grader de M1 après avoir ingéré W4
-échouera, et c'est normal.
-
-| Vague | Contenu | Arrive au module |
-|---|---|---|
-| `W0_ref` + `W1_initial` | référentiels, 6 mois d'historique, 14 jours d'événements | M0 |
-| `W2` | premier incrémental, avec rejeu partiel | M1 |
-| `W3` | incrémental avec **dérive de schéma** | M8 |
-| `W4` | incrémental avec **incident de production** | M9 |
-
-> ⚠️ N'ouvre pas `data/waves/W3/` et `data/waves/W4/` avant d'y être. Tu peux, personne
-> ne te regarde — mais tu ne t'entraîneras à rien.
+Le compagnon principal reste le **Manuel du Data Engineer** — 400 pages, hors dépôt.
+`Training/certification/index-manuel.md` en donne la pagination et la correspondance avec
+les objectifs d'examen.
 
 ---
 
-## Le parcours
+## Comment travailler
 
-| Module | Sujet | Statut |
-|---|---|---|
-| **M0** | Setup : Unity Catalog, Volumes, téléversement, table d'audit | 📦 livré |
-| **M1** | Landing → Bronze avec Auto Loader (`_rescued_data`, `_metadata`, idempotence) | 📦 livré |
-| **M2** | Ingestion de la base OLTP (Lakebase Postgres) par watermark | 📦 livré |
-| **M3** | Bronze → Silver : typage, parsing, déduplication, quarantaine | 📦 livré |
-| **M4** | Historisation : SCD2, MERGE, Change Data Feed | 📦 livré |
-| **M5** | Silver → Gold : modèle en étoile, agrégats, vues métier | 📦 livré |
-| **M6** | Qualité & métadonnées : analyse des rescues, métriques DQ, tags UC, lineage | 📦 livré |
-| **M7** | Pipeline déclaratif Lakeflow : streaming tables, MV, expectations | 📦 livré |
-| **M8** | Orchestration Lakeflow Jobs : DAG, paramètres, `for_each`, conditions, retries | 📦 livré |
-| **M9** | Capstone : incident de production, détection, quarantaine, rejeu | 📦 livré |
+1. **Lire le cahier des charges**, et rien d'autre. Pas de fiche, pas de manuel encore.
+2. **Explorer les données fournies** avant d'écrire la moindre ligne de traitement.
+3. **Concevoir**, puis construire. Le manuel et les fiches sont là pour ça — d'abord
+   avec leur aide, et de moins en moins.
+4. **Passer le grader.** Il juge le résultat, jamais la méthode.
+5. **Consigner** dans `Training/journal.md` ce qui a résisté.
 
-### Les quatre modules de couverture d'examen
+Le corrigé s'ouvre après, jamais avant.
 
-Ajoutés pour couvrir les objectifs que le projet fil rouge ne croisait pas.
+## Conventions
 
-| Module | Sujet | Section d'examen |
-|---|---|---|
-| **M10** | Gouvernance : `GRANT`/`REVOKE`/`DENY`, masquage, filtres de lignes, ABAC | 7 — 15 % |
-| **M11** | CI/CD : Git Folders, bundles déclaratifs, targets, CLI | 5 — 10 % |
-| **M12** | Performance : Spark UI, *skew*, tuning, liquid clustering | 6 — 10 % |
-| **M13** | Ingestion : `COPY INTO`, Lakeflow Connect, déclencheurs | complète la 2 |
+Trois choses valables partout, détaillées dans `Training/reference/` :
 
-Plus trois compléments dans les modules existants : jointures et agrégations (M3), les
-quatre objets gold (M5), types de tâches et de déclencheurs (M8).
-
-Et sept **fiches de décision** — des sujets qui n'ont pas de bonne réponse unique, où ce
-qui compte est de savoir nommer les options et leur coût. `FICHE-source-malformee.md`
-(M1) est celle à lire même si tu n'as le temps que pour une : elle part d'un défaut réel
-de ce dépôt et assume que le choix retenu n'est pas celui d'une équipe en production.
-
-Compte une quarantaine d'heures de travail effectif pour l'ensemble.
-
----
-
-## Préparer la certification
-
-Le parcours couvre **100 % des 33 objectifs** du guide *Databricks Certified Data
-Engineer Associate* (version du 4 mai 2026) : 27 pratiqués en Free Edition, 6 traités en
-fiche de décision faute d'être reproductibles.
-
-| Document | Rôle |
-|---|---|
-| `docs/04-couverture-certification.md` | Chaque objectif tracé vers son module. À relire deux semaines avant |
-| `docs/05-glossaire-renommages.md` | Les noms de produits périmés qu'une IA emploie par réflexe. **À coller à chaque session** |
-| `docs/06-protocole-revision.md` | La boucle de révision, les dix gestes, le rythme |
-| `exam/` | 80 QCM par section + 2 examens blancs de 45 questions + le journal |
-
----
-
-## Démarrage
-
-1. Lis `docs/01-contraintes-free-edition.md` — ce que la plateforme autorise et interdit.
-2. Lis `docs/02-sources-et-modele.md` — les sources et les questions métier à servir.
-3. Lis `docs/07-python-pour-le-parcours.md` — l'inventaire exact des bibliothèques et
-   fonctions utilisées ici. Il distingue le **Python ordinaire** (cellules d'exploration
-   uniquement) de l'**API DataFrame**, qui n'est pas de la programmation mais un
-   vocabulaire déclaratif d'une trentaine de mots.
-4. Fais `modules/M0-setup/README.md`.
-5. Enchaîne sur `modules/M1-bronze/README.md`, en commençant par son `OUTILLAGE.md`.
-
-**Si ton objectif est la certification** : passe d'abord les sept fiches de QCM sans
-réviser, note tes scores dans `exam/journal.md`, et laisse le diagnostic décider de
-l'ordre. Le guide officiel est formel sur ce point — repasser du temps sur ce qu'on
-maîtrise déjà est l'erreur la plus coûteuse.
-
-### Régénérer les données
-
-```bash
-python generator/generate.py --waves W0_ref W1_initial W2 --clean
-```
-
-```bash
-python generator/generate_oltp.py
-```
-
-Python 3.9+ suffit, aucune dépendance externe.
-
-### Recalculer les valeurs attendues par les graders
-
-`generator/reference_stats.py` réimplémente les règles de la couche silver en Python
-pur, sans Spark, et écrit `graders/expected/M3.json`. C'est la référence contre laquelle
-les graders sont calibrés — et un garde-fou contre mes propres erreurs de comptage.
-
-```bash
-python generator/reference_stats.py
-```
+- **Free Edition, serverless uniquement** — aucun choix d'instance, `.cache()` refusé,
+  `availableNow` comme seul mode de déclenchement de flux.
+- **Le mode ANSI est actif** : un `cast` qui échoue lève. Sur de la donnée brute, jamais
+  `cast`, toujours `try_cast`.
+- **Les fichiers de `data/` sont volontairement abîmés** et leurs octets comptent.
+  `.gitattributes` interdit toute conversion de fin de ligne — ne la contourne pas.

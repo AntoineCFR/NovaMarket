@@ -1,32 +1,55 @@
-# Journal de révision
+# Journal — parcours Data Engineer
 
-**Examen : jeudi 3 septembre 2026, 9 h 45 — ✅ RÉUSSI, 89 % pondéré**
+Le journal de tous les projets. Une section par projet, plus le chapitre de certification,
+clos le 3 septembre 2026.
 
-*Recalé le 3 août : départ le 7 au matin.*
+**Trois réflexes à y consigner, sans exception :**
 
-| Fenêtre | Dates | Capacité | Objet |
+- **Ce qui a résisté.** Pas le score, le raisonnement : ce que je croyais, pourquoi c'était
+  faux, et ce qui l'a corrigé.
+- **Tout terme inconnu**, même mineur.
+- **Toute affirmation d'une IA que je n'ai pas pu vérifier** dans la documentation
+  officielle. Pas de source, pas de confiance — deux corrigés de ce dépôt se sont révélés
+  faux sur ce seul critère.
+
+---
+
+## Sommaire
+
+| Section | État |
+|---|---|
+| [Projets](#projets) | en cours |
+| [Certification Associate](#certification-data-engineer-associate--closed) | ✅ clos le 3 septembre 2026 |
+
+---
+
+## Projets
+
+*Une section par projet, ajoutée au démarrage de chacun.*
+
+### Suivi des sessions
+
+Ce qui compte ici, et rien d'autre : **le temps passé à construire**, délimité par les
+annonces explicites — « j'attaque », « je fais une pause », « je reprends », « j'en reste
+là ». Les révisions, les mises au point et la formation menée ailleurs n'y figurent pas.
+
+| Date | Projet | Début | Fin | Actif | Travaillé |
+|---|---|---|---|---|---|
+| | | | | | |
+
+### Ce que chaque session m'a appris
+
+| Date | Projet | Ce que je n'ai pas su | Vérifié où |
 |---|---|---|---|
-| **1 — le projet** | 3 → 6 août | 24 h | M1 → M5 : la chaîne `bronze → silver → gold` complète |
-| *Absence* | 7 → 24 août | — | Fiches de décision et glossaire, 20 min/jour. Re-télécharger le guide vers le 20 |
-| **2 — le reste** | 25 août → 2 sept | 48 h | M6 → M13, puis M10/M11/M12 · les deux blancs · les dix gestes |
+| | | | |
 
-> **42 h planifiées sur 48 en fenêtre 2.** La marge a fondu avec les quatre jours perdus
-> fin juillet. Si tu prends du retard, ce qui saute est M13 puis le complément *tâches et
-> déclencheurs*. Ce qui ne saute jamais : les deux examens blancs et les dix gestes.
+---
 
-Planning détaillé, jour par jour, dans `docs/06-protocole-revision.md`.
+## Certification Data Engineer Associate — clos
 
-> Six heures par jour, dont **quatre de compute au maximum** : au-delà, le quota Free
-> Edition coupe le compute jusqu'au lendemain. Garde toujours deux heures de travail hors
-> Databricks sous le coude.
-
-C'est ce document que tu reliras la veille — pas les corrigés. Deux réflexes à y
-consigner systématiquement :
-
-- **Tout terme inconnu**, même mineur. C'est souvent la seule différence entre deux
-  options d'un QCM.
-- **Toute affirmation d'une IA que tu n'as pas pu vérifier** dans la documentation
-  officielle. Pas de lien, pas de confiance.
+*Ce qui suit couvre la préparation et le passage de la certification, du 29 juillet au
+3 septembre 2026. Conservé tel quel : les termes à revoir et les affirmations falsifiées
+servent encore.*
 
 ---
 

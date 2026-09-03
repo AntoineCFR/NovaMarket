@@ -6,6 +6,10 @@
 # `-text` interdit a Git toute conversion de fins de ligne, dans les deux sens. Sans
 # lui, un `clone` sur une autre machine ou un autre systeme rendrait des fichiers
 # differents de ceux qui ont servi a calculer les attendus.
+#
+# Le motif couvre le `data/` de CHAQUE projet : la reorganisation du 3 septembre 2026 a
+# deplace les donnees sous `NovaMarket/data/`, et chaque projet a venir aura le sien.
+**/data/** -text
 data/** -text
 
 # Les archives gzip sont binaires : toute conversion les corromprait.

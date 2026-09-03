@@ -1,8 +1,8 @@
-# `data/` EST versionné — décision révisée le 5 août 2026.
+# Le `data/` de chaque projet EST versionné — décision révisée le 5 août 2026.
 #
 # Le raisonnement initial tenait : les données se régénèrent à l'identique par
-#   python generator/generate.py --waves W0_ref W1_initial W2 W3 W4 --clean
-#   python generator/generate_oltp.py
+#   python NovaMarket/generator/generate.py --waves W0_ref W1_initial W2 W3 W4 --clean
+#   python NovaMarket/generator/generate_oltp.py
 # et versionner un artefact reconstructible, c'est versionner du bruit.
 #
 # Ce qui l'a emporté : la livraison aux volumes Databricks est incrémentale, vague par

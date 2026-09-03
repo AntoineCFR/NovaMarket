@@ -1,0 +1,1184 @@
+<meta charset="utf-8">
+<title>Carnet de gestes Databricks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+:root{
+  --encre:#1c1a19; --encre-doux:#413c38; --gris:#6e6862;
+  --papier:#faf9f7; --papier-pur:#ffffff;
+  --brique:#9e3324; --brique-clair:#c2604f;
+  --trait:#ded8d1; --trait-fin:#ebe6e0;
+  --fond-code:#f4f1ed; --fond-cite:#f7f4f0;
+  --sans:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --serif:"IBM Plex Serif",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono","Cascadia Mono",Consolas,monospace;
+  --mesure:34rem;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --encre:#e9e4dd; --encre-doux:#c8c1b9; --gris:#988f86; --papier:#1a1817; --papier-pur:#1a1817;
+    --brique:#d97a66; --brique-clair:#e09580;
+    --trait:#3a3532; --trait-fin:#2b2725;
+    --fond-code:#221f1d; --fond-cite:#211e1c;
+  }
+}
+:root[data-theme="dark"]{
+  --encre:#e9e4dd; --encre-doux:#c8c1b9; --gris:#988f86;
+  --papier:#1a1817; --papier-pur:#1a1817;
+  --brique:#d97a66; --brique-clair:#e09580;
+  --trait:#3a3532; --trait-fin:#2b2725;
+  --fond-code:#221f1d; --fond-cite:#211e1c;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+body{
+  background:var(--papier); color:var(--encre);
+  font-family:var(--serif); font-size:16px; line-height:1.62;
+  margin:0; padding:0 1.5rem 6rem;
+  -webkit-font-smoothing:antialiased;
+}
+.feuille{max-width:var(--mesure); margin:0 auto}
+
+/* ---------- couverture ---------- */
+.couverture{padding:5rem 0 3rem; border-bottom:2px solid var(--encre); margin-bottom:2.5rem}
+.surtitre{
+  font-family:var(--mono); font-size:.7rem; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--brique); margin:0 0 1.1rem;
+}
+.couverture h1{
+  font-family:var(--sans); font-weight:600; font-size:2.9rem; line-height:1.05;
+  letter-spacing:-.022em; margin:0 0 1rem; text-wrap:balance;
+}
+.chapo{font-size:1.03rem; color:var(--encre-doux); margin:0; max-width:30rem}
+.meta{
+  font-family:var(--mono); font-size:.72rem; color:var(--gris);
+  margin-top:2rem; letter-spacing:.02em;
+}
+
+/* ---------- sommaire ---------- */
+.sommaire{margin:0 0 3rem}
+.sommaire h2{font-family:var(--sans); font-size:.75rem; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--gris); font-weight:600; margin:0 0 1rem;
+  padding-bottom:.5rem; border-bottom:1px solid var(--trait)}
+.sommaire ol{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.1rem}
+.sommaire li{display:flex; gap:.9rem; align-items:baseline;
+  padding:.42rem 0; border-bottom:1px solid var(--trait-fin)}
+.sommaire .num{font-family:var(--mono); font-size:.78rem; color:var(--brique);
+  font-weight:600; min-width:1.2rem}
+.sommaire a{color:var(--encre); text-decoration:none; font-weight:600;
+  font-family:var(--sans); font-size:.94rem}
+.sommaire a:hover{color:var(--brique)}
+.sommaire .quoi{color:var(--gris); font-size:.85rem; margin-left:auto; text-align:right;
+  font-family:var(--sans)}
+
+/* ---------- fiches ---------- */
+.fiche{padding-top:2.5rem}
+.fiche + .fiche{margin-top:4rem; border-top:1px solid var(--trait)}
+.fiche-num{
+  font-family:var(--mono); font-size:.72rem; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--brique); font-weight:600;
+  margin:0 0 .5rem;
+}
+h1{font-family:var(--sans); font-weight:600; font-size:1.95rem; line-height:1.15;
+  letter-spacing:-.018em; margin:0 0 1.4rem; text-wrap:balance}
+h2{font-family:var(--sans); font-weight:600; font-size:1.22rem; line-height:1.25;
+  letter-spacing:-.01em; margin:2.6rem 0 .9rem; text-wrap:balance;
+  padding-bottom:.4rem; border-bottom:1px solid var(--trait)}
+h3{font-family:var(--sans); font-weight:600; font-size:1rem;
+  margin:1.9rem 0 .6rem; color:var(--encre); text-wrap:balance}
+h4{font-family:var(--sans); font-weight:600; font-size:.88rem;
+  margin:1.4rem 0 .5rem; color:var(--encre-doux)}
+p{margin:0 0 1rem}
+strong{font-weight:600}
+a{color:var(--brique); text-decoration:none; border-bottom:1px solid var(--trait)}
+a:hover{border-bottom-color:var(--brique)}
+:focus-visible{outline:2px solid var(--brique); outline-offset:3px}
+
+ul,ol{margin:0 0 1.1rem; padding-left:1.25rem}
+li{margin:.3rem 0}
+li::marker{color:var(--brique)}
+
+hr{border:0; border-top:1px solid var(--trait-fin); margin:2rem 0}
+.fiche > hr:first-of-type{display:none}
+
+/* ---------- code ---------- */
+code{font-family:var(--mono); font-size:.85em; background:var(--fond-code);
+  padding:.1em .32em; border-radius:2px; color:var(--encre)}
+pre.code{
+  font-family:var(--mono); font-size:.78rem; line-height:1.55;
+  background:var(--fond-code); border-left:3px solid var(--brique);
+  margin:0 0 1.2rem; padding:.85rem 1rem; overflow-x:auto;
+  border-radius:0 3px 3px 0;
+}
+pre.code code{background:none; padding:0; font-size:inherit}
+pre.code::before{
+  content:attr(data-lang); display:block; font-size:.62rem; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--gris); margin-bottom:.5rem;
+}
+
+/* ---------- citations ---------- */
+blockquote{
+  margin:0 0 1.2rem; padding:.8rem 1.1rem; background:var(--fond-cite);
+  border-left:3px solid var(--trait); border-radius:0 3px 3px 0;
+}
+blockquote p{margin:0; font-size:.95rem; color:var(--encre-doux)}
+
+/* ---------- tables ---------- */
+.table-wrap{overflow-x:auto; margin:0 0 1.4rem}
+table{border-collapse:collapse; width:100%; font-family:var(--sans); font-size:.85rem;
+  font-variant-numeric:tabular-nums}
+th{text-align:left; font-weight:600; font-size:.7rem; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--gris); padding:.5rem .6rem .45rem 0;
+  border-bottom:1.5px solid var(--encre); vertical-align:bottom}
+td{padding:.5rem .6rem .5rem 0; border-bottom:1px solid var(--trait-fin);
+  vertical-align:top; line-height:1.45}
+th:last-child,td:last-child{padding-right:0}
+td code{font-size:.82em}
+
+/* ---------- impression ---------- */
+@media print{
+  @page{size:A4; margin:20mm 22mm 18mm}
+  :root{
+    --encre:#000; --encre-doux:#1c1a19; --gris:#4a4540;
+    --papier:#fff; --papier-pur:#fff; --brique:#8c2c1e; --brique-clair:#8c2c1e;
+    --trait:#b9b3ac; --trait-fin:#d6d1cb; --fond-code:#f2efec; --fond-cite:#f5f2ef;
+  }
+  body{font-size:10.2pt; line-height:1.5; padding:0; background:#fff; color:#000}
+  .feuille{max-width:none}
+  .couverture{padding:0 0 1.5rem; break-after:page}
+  .couverture h1{font-size:30pt}
+  .sommaire{break-after:page}
+  .fiche{break-before:page; padding-top:0; margin-top:0; border-top:0}
+  .fiche:first-of-type{break-before:auto}
+  h1{font-size:19pt; margin-bottom:1rem}
+  h2{font-size:12.5pt; margin-top:1.5rem; break-after:avoid}
+  h3,h4{break-after:avoid}
+  p,li{orphans:3; widows:3}
+  pre.code{font-size:8.2pt; break-inside:avoid; background:#f2efec;
+    border-left:2.5pt solid #8c2c1e}
+  blockquote{break-inside:avoid; background:#f5f2ef}
+  tr,thead{break-inside:avoid}
+  table{font-size:8.8pt; break-inside:auto}
+  .table-wrap{overflow:visible}
+  a{color:#000; border-bottom:0}
+  .ecran-seul{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+</style>
+
+<div class="feuille">
+<header class="couverture">
+  <p class="surtitre">Databricks · Data Engineer</p>
+  <h1>Carnet de gestes</h1>
+  <p class="chapo">Huit fiches qui répondent à « comment j'écris ça », pas à « pourquoi ça
+  marche ». Le raisonnement est dans le manuel ; ici, c'est le code.</p>
+  <p class="meta">Compagnon du parcours NovaMarket · 2 septembre 2026</p>
+</header>
+
+<nav class="sommaire">
+  <h2>Sommaire</h2>
+  <ol><li><span class="num">1</span><a href="#f1">Exploration</a><span class="quoi">Avant de coder</span></li><li><span class="num">2</span><a href="#f2">Structure</a><span class="quoi">Catalogues, schémas, tables</span></li><li><span class="num">3</span><a href="#f3">Ingestion</a><span class="quoi">Batch, COPY INTO, Auto Loader, JDBC, CDC</span></li><li><span class="num">4</span><a href="#f4">Nettoyage</a><span class="quoi">Dédupliquer, typer, isoler</span></li><li><span class="num">5</span><a href="#f5">Agrégation et publication</a><span class="quoi">Réduire ou annoter</span></li><li><span class="num">6</span><a href="#f6">Orchestration</a><span class="quoi">Lakeflow Jobs</span></li><li><span class="num">7</span><a href="#f7">Pipelines déclaratifs</a><span class="quoi">Le graphe déduit du code</span></li><li><span class="num">8</span><a href="#f8">CI/CD</a><span class="quoi">Git Folders et bundles</span></li></ol>
+</nav>
+<section class="fiche" id="f1"><p class="fiche-num">Fiche 1 · Avant de coder</p><h1>Exploration</h1>
+<p><strong>La règle</strong> : on ne déclare jamais un schéma avant d'avoir regardé le fichier brut. Cinq minutes ici évitent une journée de reprise plus tard.</p>
+<hr>
+<h2>Regarder les octets avant de parler de colonnes</h2>
+<p>Un fichier « CSV » n'est qu'un fichier texte. Avant de demander à Spark de l'interpréter, lis-le <strong>sans interprétation</strong> :</p>
+<pre class="code" data-lang="python"><code>brut = spark.read.text(&quot;/Volumes/cat/sch/vol/arrivees/ventes.csv&quot;)
+brut.show(5, truncate=False)      # les 5 premières lignes, telles quelles
+brut.count()                       # nombre de lignes physiques, en-tête comprise</code></pre>
+<p>C'est ce qui révèle, en une seconde : le vrai séparateur, la présence d'un en-tête, des guillemets, un pied de page, une ligne vide, un <code>BOM</code> en tête.</p>
+<p>Pour les cas tordus — accents cassés, espaces invisibles :</p>
+<pre class="code" data-lang="python"><code>from pyspark.sql import functions as F
+brut.select(F.hex(F.encode(&quot;value&quot;, &quot;UTF-8&quot;))).show(3, truncate=False)</code></pre>
+<hr>
+<h2>CSV</h2>
+<h3>Lecture exploratoire</h3>
+<pre class="code" data-lang="python"><code>df = (spark.read
+        .option(&quot;header&quot;, &quot;true&quot;)
+        .option(&quot;sep&quot;, &quot;;&quot;)
+        .option(&quot;inferSchema&quot;, &quot;true&quot;)     # exploration seulement
+        .option(&quot;encoding&quot;, &quot;UTF-8&quot;)
+        .csv(&quot;/Volumes/cat/sch/vol/arrivees/&quot;))
+
+df.printSchema()
+df.show(10, truncate=False)
+print(df.count(), len(df.columns))</code></pre>
+<blockquote><p><strong><code>inferSchema</code> est un outil d'exploration, pas de production.</strong> Il coûte une passe complète sur les données et le schéma qu'il déduit change avec le contenu du jour. En production, on déclare.</p></blockquote>
+<h3>Les options qui règlent 90 % des cas</h3>
+<div class="table-wrap"><table><thead><tr><th>Option</th><th>À quoi elle sert</th></tr></thead><tbody><tr><td><code>header</code></td><td>la première ligne est un en-tête</td></tr><tr><td><code>sep</code></td><td>le séparateur — <code>;</code> en Europe</td></tr><tr><td><code>encoding</code></td><td><code>UTF-8</code>, <code>windows-1252</code>, <code>ISO-8859-1</code></td></tr><tr><td><code>quote</code> · <code>escape</code></td><td>quand un champ contient le séparateur</td></tr><tr><td><code>multiLine</code></td><td>un enregistrement s'étale sur plusieurs lignes</td></tr><tr><td><code>nullValue</code></td><td>la chaîne qui signifie « absent » — <code>""</code>, <code>NULL</code>, <code>\N</code></td></tr><tr><td><code>dateFormat</code> · <code>timestampFormat</code></td><td>motif Java</td></tr><tr><td><code>mode</code></td><td><code>PERMISSIVE</code> (défaut) · <code>DROPMALFORMED</code> · <code>FAILFAST</code></td></tr></tbody></table></div>
+<h3>Diagnostiquer la qualité en trois requêtes</h3>
+<pre class="code" data-lang="python"><code>n = df.count()
+
+# complétude : l&#x27;écart entre les deux comptages EST le nombre d&#x27;absences
+df.select([
+    (F.count(c) / F.lit(n)).alias(c) for c in df.columns
+]).show(truncate=False)
+
+# unicité de la clé
+df.groupBy(&quot;order_id&quot;).count().filter(&quot;count &gt; 1&quot;).count()
+
+# domaine d&#x27;une colonne : que contient-elle réellement ?
+df.groupBy(&quot;status&quot;).count().orderBy(F.desc(&quot;count&quot;)).show(50, truncate=False)</code></pre>
+<h3>Le piège du CSV, mesuré</h3>
+<p>Un champ contenant le séparateur non échappé produit <strong>plus de jetons que de colonnes</strong>. Spark <strong>tronque</strong> les jetons en trop : le compte de lignes reste juste, le contenu est mutilé, et <strong>rien ne le signale</strong>. Ni la colonne de sauvetage ni celle d'enregistrement corrompu ne les récupèrent.</p>
+<p>Pour le détecter :</p>
+<pre class="code" data-lang="python"><code># compter les champs réellement présents par ligne, en lisant en texte brut
+(brut.withColumn(&quot;champs&quot;, F.size(F.split(&quot;value&quot;, &quot;;&quot;)))
+     .groupBy(&quot;champs&quot;).count().show())</code></pre>
+<p>Si tu vois autre chose que le nombre attendu, tu tiens ton problème.</p>
+<hr>
+<h2>JSON</h2>
+<h3>Lecture exploratoire</h3>
+<pre class="code" data-lang="python"><code>df = (spark.read
+        .option(&quot;multiLine&quot;, &quot;false&quot;)      # true si un objet s&#x27;étale sur plusieurs lignes
+        .json(&quot;/Volumes/cat/sch/vol/arrivees/events/&quot;))
+
+df.printSchema()          # LA commande à passer en premier sur du JSON
+df.show(3, truncate=False)</code></pre>
+<p><code>printSchema()</code> te donne la structure imbriquée complète : <code>struct</code>, <code>array</code>, types déduits. C'est ce qui décide de tout ce qui suit.</p>
+<h3>Deviner un schéma, puis le figer</h3>
+<pre class="code" data-lang="python"><code># extraire le schéma d&#x27;un échantillon, pour le recopier dans le code
+echantillon = spark.read.json(chemin).schema.json()
+print(echantillon)
+
+# en SQL, sur une colonne texte contenant du JSON
+spark.sql(&quot;SELECT schema_of_json(&#x27;{\&quot;a\&quot;:1,\&quot;b\&quot;:[\&quot;x\&quot;]}&#x27;)&quot;).show(truncate=False)</code></pre>
+<p>Ensuite on <strong>déclare</strong> ce schéma en dur, et l'on cesse de le deviner à chaque exécution.</p>
+<h3>Explorer l'imbriqué</h3>
+<pre class="code" data-lang="python"><code># aplatir un niveau
+df.select(&quot;id&quot;, &quot;client.*&quot;).printSchema()
+
+# un tableau : combien d&#x27;éléments, et des vides ?
+df.select(F.size(&quot;lignes&quot;).alias(&quot;n&quot;)).groupBy(&quot;n&quot;).count().show()
+
+# déplier — attention, ça change le grain
+df.select(&quot;id&quot;, F.explode(&quot;lignes&quot;).alias(&quot;ligne&quot;)).select(&quot;id&quot;, &quot;ligne.*&quot;)</code></pre>
+<blockquote><p><code>explode</code> <strong>supprime</strong> les lignes dont le tableau est vide ou nul. <code>explode_outer</code> les conserve avec <code>NULL</code>. <code>posexplode</code> ajoute la position.</p></blockquote>
+<h3>Les deux colonnes de récupération</h3>
+<pre class="code" data-lang="python"><code>df = (spark.read
+        .schema(schema_declare)
+        .option(&quot;columnNameOfCorruptRecord&quot;, &quot;_corrupt_record&quot;)
+        .json(chemin))
+
+df.filter(F.col(&quot;_corrupt_record&quot;).isNotNull()).show(5, truncate=False)</code></pre>
+<div class="table-wrap"><table><thead><tr><th>Colonne</th><th>Ce qu'elle attrape</th></tr></thead><tbody><tr><td><code>_corrupt_record</code></td><td><strong>Échec d'analyse</strong> : la ligne JSON est syntaxiquement invalide</td></tr><tr><td><code>_rescued_data</code></td><td><strong>Écart au schéma</strong> : type ou colonne inattendus <em>(Auto Loader)</em></td></tr></tbody></table></div>
+<p>Deux mécanismes distincts. Une ligne JSON cassée ne va <strong>jamais</strong> dans <code>_rescued_data</code>.</p>
+<hr>
+<h2>Le réflexe, en quatre gestes</h2>
+<ol><li><strong>Lire en texte brut</strong> et regarder cinq lignes.</li><li><strong><code>printSchema()</code></strong> — sur JSON, c'est la première commande.</li><li><strong>Compter</strong> : lignes, valeurs renseignées par colonne, clés en double.</li><li><strong>Regarder les domaines</strong> : <code>groupBy</code> sur les colonnes catégorielles.</li></ol>
+<p>Ensuite seulement, écrire le schéma en dur et passer à l'ingestion.</p>
+</section>
+<section class="fiche" id="f2"><p class="fiche-num">Fiche 2 · Catalogues, schémas, tables</p><h1>Structure</h1>
+<p><strong>La hiérarchie</strong> : <code>metastore → catalog → schema → table</code>. Il faut le droit de <strong>traverser</strong> chaque niveau supérieur avant de pouvoir agir sur un objet.</p>
+<hr>
+<h2>Créer</h2>
+<pre class="code" data-lang="sql"><code>CREATE CATALOG IF NOT EXISTS ventes
+  COMMENT &#x27;Domaine commercial — sources OLTP et fichiers partenaires&#x27;;
+
+CREATE SCHEMA IF NOT EXISTS ventes.bronze
+  COMMENT &#x27;Dépôt fidèle, aucune transformation&#x27;;
+CREATE SCHEMA IF NOT EXISTS ventes.silver;
+CREATE SCHEMA IF NOT EXISTS ventes.gold;
+
+-- un volume : des FICHIERS gouvernés, pas des lignes
+CREATE VOLUME IF NOT EXISTS ventes.bronze.landing
+  COMMENT &#x27;Zone de dépôt des fichiers partenaires&#x27;;</code></pre>
+<p>Chemin d'un volume : <code>/Volumes/&lt;catalog&gt;/&lt;schema&gt;/&lt;volume&gt;/…</code></p>
+<blockquote><p><strong>Table ou volume ?</strong> Une table gouverne des <strong>lignes</strong>, un volume gouverne des <strong>fichiers</strong>. Les deux existent en versions managée et externe.</p></blockquote>
+<h2>Créer une table</h2>
+<pre class="code" data-lang="sql"><code>-- managée : Databricks possède les fichiers
+CREATE TABLE ventes.silver.commande (
+  order_id     STRING  COMMENT &#x27;Identifiant métier, unique&#x27;,
+  order_ts     TIMESTAMP,
+  montant      DECIMAL(12,2),
+  statut       STRING
+)
+CLUSTER BY (order_ts)                    -- le rangement recommandé
+COMMENT &#x27;Commandes nettoyées et typées. Grain : une ligne par commande.&#x27;
+TBLPROPERTIES (&#x27;quality&#x27; = &#x27;silver&#x27;, &#x27;equipe&#x27; = &#x27;data&#x27;);
+
+-- externe : un chemin, dans un external location déclaré
+CREATE TABLE ventes.bronze.archive
+  LOCATION &#x27;s3://bucket/archive/&#x27;
+  AS SELECT * FROM ventes.bronze.commande;
+
+-- à partir d&#x27;une requête
+CREATE OR REPLACE TABLE ventes.gold.ca_mensuel AS
+  SELECT date_trunc(&#x27;MONTH&#x27;, order_ts) AS mois, sum(montant) AS ca
+  FROM ventes.silver.commande GROUP BY 1;</code></pre>
+<p>En PySpark :</p>
+<pre class="code" data-lang="python"><code>(df.write
+   .mode(&quot;overwrite&quot;)                       # ou &quot;append&quot;
+   .option(&quot;overwriteSchema&quot;, &quot;true&quot;)       # remplacer le schéma entier
+   .clusterBy(&quot;order_ts&quot;)
+   .saveAsTable(&quot;ventes.silver.commande&quot;))</code></pre>
+<h2>Managée contre externe</h2>
+<div class="table-wrap"><table><thead><tr><th></th><th>Managée</th><th>Externe</th></tr></thead><tbody><tr><td>Qui possède les fichiers</td><td>Databricks</td><td>Toi</td></tr><tr><td><code>DROP TABLE</code></td><td>supprime les fichiers</td><td><strong>les fichiers survivent</strong></td></tr><tr><td>Optimisation automatique</td><td>oui</td><td>non</td></tr><tr><td>Conversion</td><td><code>ALTER TABLE t SET MANAGED</code></td><td><code>ALTER TABLE t SET EXTERNAL</code></td></tr></tbody></table></div>
+<pre class="code" data-lang="sql"><code>DESCRIBE EXTENDED ventes.silver.commande;   -- lire la ligne &quot;Type&quot;</code></pre>
+<hr>
+<h2>Documenter</h2>
+<p>C'est ce que verront les gens qui ne liront jamais ta documentation.</p>
+<pre class="code" data-lang="sql"><code>COMMENT ON CATALOG ventes IS &#x27;Domaine commercial&#x27;;
+COMMENT ON SCHEMA ventes.gold IS &#x27;Couche de publication, prête pour la BI&#x27;;
+COMMENT ON TABLE ventes.gold.fact_commande IS
+  &#x27;Faits de commande. Grain : une ligne par ligne de commande.&#x27;;
+
+ALTER TABLE ventes.silver.commande
+  ALTER COLUMN montant COMMENT &#x27;Montant TTC en euros, hors frais de port&#x27;;</code></pre>
+<p><strong>Le commentaire de table doit contenir le grain.</strong> Une phrase : <em>« une ligne par … »</em>. C'est l'information que personne n'écrit et que tout le monde cherche.</p>
+<h2>Étiqueter — pour la gouvernance par attributs</h2>
+<pre class="code" data-lang="sql"><code>ALTER TABLE ventes.silver.client SET TAGS (&#x27;domaine&#x27; = &#x27;commercial&#x27;);
+ALTER TABLE ventes.silver.client
+  ALTER COLUMN email SET TAGS (&#x27;pii&#x27; = &#x27;true&#x27;);</code></pre>
+<p>Une politique attachée au <strong>catalogue</strong> peut ensuite couvrir toute colonne portant l'étiquette — y compris celles qui n'existent pas encore. C'est ce qui rend le travail proportionnel au nombre de <strong>règles</strong> plutôt qu'au nombre d'<strong>objets</strong>.</p>
+<hr>
+<h2>Inventorier</h2>
+<p>Le catalogue est lui-même une table, interrogeable en SQL.</p>
+<pre class="code" data-lang="sql"><code>-- toutes les tables d&#x27;un schéma
+SELECT table_name, table_type, comment
+FROM ventes.information_schema.tables
+WHERE table_schema = &#x27;silver&#x27;;
+
+-- les colonnes sans commentaire : la dette de documentation
+SELECT table_name, column_name
+FROM ventes.information_schema.columns
+WHERE table_schema = &#x27;gold&#x27; AND comment IS NULL;
+
+-- qui a quel droit sur quoi
+SELECT * FROM ventes.information_schema.table_privileges
+WHERE table_name = &#x27;commande&#x27;;</code></pre>
+<h2>Droits</h2>
+<pre class="code" data-lang="sql"><code>GRANT USE CATALOG ON CATALOG ventes TO `analystes`;
+GRANT USE SCHEMA  ON SCHEMA  ventes.gold TO `analystes`;
+GRANT SELECT      ON TABLE   ventes.gold.fact_commande TO `analystes`;
+
+GRANT CREATE TABLE ON SCHEMA ventes.silver TO `ingenieurs`;
+
+REVOKE SELECT ON TABLE ventes.gold.fact_commande FROM `stagiaires`;</code></pre>
+<blockquote><p><strong>Traverser n'est pas agir.</strong> <code>USE CATALOG</code> et <code>USE SCHEMA</code> donnent le droit de <em>descendre</em> ; <code>SELECT</code>, <code>MODIFY</code>, <code>CREATE TABLE</code> donnent le droit d'<em>agir</em>. Un compte qui a <code>SELECT</code> sur une table mais pas <code>USE SCHEMA</code> sur son schéma échoue.</p></blockquote>
+<hr>
+<h2>À retenir</h2>
+<ul><li><code>metastore → catalog → schema → table</code>, et il faut traverser chaque niveau.</li><li><strong>Table = lignes, volume = fichiers.</strong></li><li><code>DROP TABLE</code> sur une <strong>externe</strong> ne supprime pas les fichiers.</li><li>Le commentaire de table contient le <strong>grain</strong>.</li><li>Les étiquettes rendent la gouvernance proportionnelle aux règles, pas aux objets.</li></ul>
+</section>
+<section class="fiche" id="f3"><p class="fiche-num">Fiche 3 · Batch, COPY INTO, Auto Loader, JDBC, CDC</p><h1>Ingestion</h1>
+<p>Le raisonnement et les arbitrages sont dans <code>exam/fiche-ingestion.md</code>. <strong>Ici, c'est le code.</strong></p>
+<hr>
+<h2>Choisir en trois questions</h2>
+<div class="table-wrap"><table><thead><tr><th>La source</th><th>La méthode</th></tr></thead><tbody><tr><td>Des fichiers, peu nombreux, rythme prévisible, équipe SQL</td><td><strong><code>COPY INTO</code></strong></td></tr><tr><td>Des fichiers, nombreux, arrivées irrégulières, schéma mouvant</td><td><strong>Auto Loader</strong></td></tr><tr><td>Un bus de messages (Kafka…)</td><td><strong>Structured Streaming</strong> <code>format("kafka")</code></td></tr><tr><td>Une base relationnelle</td><td><strong>JDBC</strong> + curseur</td></tr><tr><td>Un SaaS d'entreprise (Salesforce, Workday…)</td><td><strong>Lakeflow Connect</strong></td></tr><tr><td>Un référentiel, petit, rechargé en entier</td><td><strong>batch</strong> <code>spark.read</code> + <code>overwrite</code></td></tr></tbody></table></div>
+<p><strong>Auto Loader <em>est</em> du Structured Streaming</strong> — c'est son nom quand la source est <code>cloudFiles</code>. <code>COPY INTO</code> est le seul intrus : commande SQL, sans checkpoint.</p>
+<hr>
+<h2>1. Batch complet</h2>
+<p>Pour un référentiel : on jette et on recharge. Simple, et suffisant tant que le volume est petit.</p>
+<pre class="code" data-lang="python"><code>ref = (spark.read
+         .option(&quot;header&quot;, &quot;true&quot;).option(&quot;sep&quot;, &quot;;&quot;)
+         .schema(schema_ref)                    # déclaré, jamais inféré en production
+         .csv(&quot;/Volumes/ventes/bronze/landing/ref/&quot;))
+
+(ref.withColumn(&quot;_ingere_le&quot;, F.current_timestamp())
+    .write.mode(&quot;overwrite&quot;)
+    .option(&quot;overwriteSchema&quot;, &quot;true&quot;)
+    .saveAsTable(&quot;ventes.bronze.ref_produit&quot;))</code></pre>
+<pre class="code" data-lang="sql"><code>CREATE OR REPLACE TABLE ventes.bronze.ref_produit AS
+SELECT * FROM read_files(&#x27;/Volumes/ventes/bronze/landing/ref/&#x27;,
+                         format =&gt; &#x27;csv&#x27;, header =&gt; true, sep =&gt; &#x27;;&#x27;);</code></pre>
+<hr>
+<h2>2. <code>COPY INTO</code></h2>
+<p><strong>L'état vit dans les métadonnées de la table cible.</strong> Idempotent : relancer la même commande ne recharge rien.</p>
+<pre class="code" data-lang="sql"><code>CREATE TABLE IF NOT EXISTS ventes.bronze.commande (
+  order_id STRING, order_ts STRING, montant STRING, statut STRING
+);
+
+COPY INTO ventes.bronze.commande
+FROM &#x27;/Volumes/ventes/bronze/landing/commandes&#x27;
+FILEFORMAT   = CSV
+FORMAT_OPTIONS (&#x27;header&#x27; = &#x27;true&#x27;, &#x27;sep&#x27; = &#x27;;&#x27;, &#x27;encoding&#x27; = &#x27;UTF-8&#x27;)
+COPY_OPTIONS   (&#x27;mergeSchema&#x27; = &#x27;true&#x27;);</code></pre>
+<p>Avec sélection et transformation à la volée :</p>
+<pre class="code" data-lang="sql"><code>COPY INTO ventes.bronze.commande
+FROM (
+  SELECT order_id, order_ts, montant, statut,
+         current_timestamp() AS _ingere_le,
+         _metadata.file_path AS _fichier
+  FROM &#x27;/Volumes/ventes/bronze/landing/commandes&#x27;
+)
+FILEFORMAT = CSV
+FORMAT_OPTIONS (&#x27;header&#x27; = &#x27;true&#x27;, &#x27;sep&#x27; = &#x27;;&#x27;);</code></pre>
+<p><strong>Les deux pièges :</strong></p>
+<pre class="code" data-lang="sql"><code>-- 1. TRUNCATE ne remet PAS l&#x27;historique des fichiers chargés
+TRUNCATE TABLE ventes.bronze.commande;
+COPY INTO ventes.bronze.commande FROM &#x27;…&#x27; FILEFORMAT = CSV;   -- 0 ligne, sans erreur
+
+-- 2. la parade
+COPY INTO ventes.bronze.commande
+FROM &#x27;…&#x27; FILEFORMAT = CSV
+COPY_OPTIONS (&#x27;force&#x27; = &#x27;true&#x27;);                               -- recharge tout</code></pre>
+<hr>
+<h2>3. Auto Loader</h2>
+<p><strong>L'état vit dans un checkpoint séparé.</strong> Le supprimer recharge tout.</p>
+<pre class="code" data-lang="python"><code>SOURCE = &quot;/Volumes/ventes/bronze/landing/commandes&quot;
+SCHEMA = &quot;/Volumes/ventes/bronze/landing/_schemas/commandes&quot;
+CHECK  = &quot;/Volumes/ventes/bronze/landing/_checkpoints/commandes&quot;
+
+flux = (spark.readStream
+          .format(&quot;cloudFiles&quot;)
+          .option(&quot;cloudFiles.format&quot;, &quot;csv&quot;)
+          .option(&quot;cloudFiles.schemaLocation&quot;, SCHEMA)
+          .option(&quot;cloudFiles.schemaEvolutionMode&quot;, &quot;addNewColumns&quot;)
+          .option(&quot;rescuedDataColumn&quot;, &quot;_rescued_data&quot;)
+          .option(&quot;header&quot;, &quot;true&quot;).option(&quot;sep&quot;, &quot;;&quot;)
+          .load(SOURCE)
+          .withColumn(&quot;_ingere_le&quot;, F.current_timestamp())
+          .withColumn(&quot;_fichier&quot;, F.col(&quot;_metadata.file_path&quot;)))
+
+(flux.writeStream
+     .option(&quot;checkpointLocation&quot;, CHECK)
+     .option(&quot;mergeSchema&quot;, &quot;true&quot;)
+     .trigger(availableNow=True)              # traite le retard, puis s&#x27;arrête
+     .toTable(&quot;ventes.bronze.commande&quot;))</code></pre>
+<p>En SQL, dans un pipeline déclaratif :</p>
+<pre class="code" data-lang="sql"><code>CREATE OR REFRESH STREAMING TABLE ventes.bronze.commande AS
+SELECT *, current_timestamp() AS _ingere_le, _metadata.file_path AS _fichier
+FROM STREAM read_files(
+  &#x27;/Volumes/ventes/bronze/landing/commandes&#x27;,
+  format =&gt; &#x27;csv&#x27;, header =&gt; true, sep =&gt; &#x27;;&#x27;,
+  schemaEvolutionMode =&gt; &#x27;addNewColumns&#x27;);</code></pre>
+<h3>Les options qui comptent</h3>
+<div class="table-wrap"><table><thead><tr><th>Option</th><th>Effet</th></tr></thead><tbody><tr><td><code>cloudFiles.format</code></td><td>le format réel des fichiers</td></tr><tr><td><code>cloudFiles.schemaLocation</code></td><td>où le schéma inféré est mémorisé</td></tr><tr><td><code>cloudFiles.schemaHints</code></td><td>forcer le type de certaines colonnes</td></tr><tr><td><code>cloudFiles.schemaEvolutionMode</code></td><td><code>addNewColumns</code> <em>(défaut sans schéma)</em> · <code>rescue</code> · <code>failOnNewColumns</code> · <code>none</code> <em>(défaut avec schéma)</em></td></tr><tr><td><code>rescuedDataColumn</code></td><td>où atterrissent les écarts au schéma</td></tr><tr><td><code>cloudFiles.useNotifications</code></td><td>passer du listage à la notification</td></tr><tr><td><code>cloudFiles.maxFilesPerTrigger</code></td><td>plafonner la taille d'un lot</td></tr></tbody></table></div>
+<blockquote><p>Sous <code>addNewColumns</code>, une colonne nouvelle <strong>fait échouer le flux</strong>, qui repart avec le schéma étendu au redémarrage. L'échec est volontaire ; des reprises configurées sur la tâche le rendent invisible.</p></blockquote>
+<h3>Les modes de déclenchement</h3>
+<pre class="code" data-lang="python"><code>.trigger(availableNow=True)              # tout ce qui attend, puis stop  ← le cas courant
+.trigger(processingTime=&quot;5 minutes&quot;)     # micro-lots, machines allumées
+# sans trigger : micro-lots au plus vite, en continu</code></pre>
+<hr>
+<h2>4. Streaming depuis un bus de messages</h2>
+<p>Même moteur, autre source. Le contenu arrive <strong>en binaire</strong>.</p>
+<pre class="code" data-lang="python"><code>from pyspark.sql.types import StructType, StringType, DoubleType
+
+schema = StructType().add(&quot;id&quot;, StringType()).add(&quot;montant&quot;, DoubleType())
+
+evts = (spark.readStream
+          .format(&quot;kafka&quot;)
+          .option(&quot;kafka.bootstrap.servers&quot;, &quot;broker:9092&quot;)
+          .option(&quot;subscribe&quot;, &quot;commandes&quot;)
+          .option(&quot;startingOffsets&quot;, &quot;latest&quot;)     # ou &quot;earliest&quot;
+          .load()
+          .select(F.from_json(F.col(&quot;value&quot;).cast(&quot;string&quot;), schema).alias(&quot;d&quot;),
+                  F.col(&quot;timestamp&quot;).alias(&quot;_recu_le&quot;))
+          .select(&quot;d.*&quot;, &quot;_recu_le&quot;))
+
+(evts.writeStream
+     .option(&quot;checkpointLocation&quot;, CHECK)
+     .trigger(availableNow=True)
+     .toTable(&quot;ventes.bronze.evenement&quot;))</code></pre>
+<hr>
+<h2>5. Base relationnelle — JDBC</h2>
+<h3>Lecture complète</h3>
+<pre class="code" data-lang="python"><code>opts = {
+  &quot;url&quot;: &quot;jdbc:postgresql://hote:5432/base&quot;,
+  &quot;driver&quot;: &quot;org.postgresql.Driver&quot;,
+  &quot;user&quot;: dbutils.secrets.get(&quot;coffre&quot;, &quot;pg_user&quot;),
+  &quot;password&quot;: dbutils.secrets.get(&quot;coffre&quot;, &quot;pg_password&quot;),
+}
+
+df = spark.read.format(&quot;jdbc&quot;).options(**opts, dbtable=&quot;public.commande&quot;).load()</code></pre>
+<h3>Lecture parallélisée</h3>
+<p>Sans ces quatre options, <strong>une seule connexion</strong> lit toute la table.</p>
+<pre class="code" data-lang="python"><code>df = (spark.read.format(&quot;jdbc&quot;).options(**opts)
+        .option(&quot;dbtable&quot;, &quot;public.commande&quot;)
+        .option(&quot;partitionColumn&quot;, &quot;id&quot;)      # numérique ou date, indexée
+        .option(&quot;lowerBound&quot;, 1)
+        .option(&quot;upperBound&quot;, 10_000_000)
+        .option(&quot;numPartitions&quot;, 8)           # 8 requêtes en parallèle
+        .option(&quot;fetchsize&quot;, 10_000)
+        .load())</code></pre>
+<h3>Ingestion incrémentale par curseur</h3>
+<p>Le motif complet : lire le watermark, extraire le delta, écrire, <strong>recalculer le watermark sur ce qui a été écrit</strong>.</p>
+<pre class="code" data-lang="python"><code>BATCH = str(uuid.uuid4())
+
+# 1. le curseur précédent
+wm = (spark.table(&quot;ops.watermark&quot;)
+        .filter(&quot;source = &#x27;pg.commande&#x27;&quot;).select(&quot;valeur&quot;).first())
+wm = wm[0] if wm else &quot;1970-01-01 00:00:00&quot;
+
+# 2. le delta — filtré CÔTÉ SOURCE, dans la requête poussée
+requete = f&quot;&quot;&quot;(SELECT * FROM public.commande
+               WHERE updated_at &gt; TIMESTAMP &#x27;{wm}&#x27;) AS d&quot;&quot;&quot;
+delta = (spark.read.format(&quot;jdbc&quot;).options(**opts)
+           .option(&quot;dbtable&quot;, requete).load()
+           .withColumn(&quot;_lot&quot;, F.lit(BATCH))
+           .withColumn(&quot;_ingere_le&quot;, F.current_timestamp()))
+
+# 3. UNE seule action sur la source : l&#x27;écriture
+delta.write.mode(&quot;append&quot;).saveAsTable(&quot;ventes.bronze.commande&quot;)
+
+# 4. le nouveau curseur se lit EN RETOUR sur la cible, jamais sur le plan
+ecrit = (spark.table(&quot;ventes.bronze.commande&quot;)
+           .filter(F.col(&quot;_lot&quot;) == BATCH)
+           .agg(F.count(&quot;*&quot;).alias(&quot;n&quot;), F.max(&quot;updated_at&quot;).alias(&quot;wm&quot;)).first())
+
+if ecrit[&quot;n&quot;]:
+    set_watermark(&quot;pg.commande&quot;, ecrit[&quot;wm&quot;])</code></pre>
+<p><strong>Trois choses à ne pas rater :</strong></p>
+<ul><li>Un DataFrame est un <strong>plan</strong>. <code>count()</code>, <code>write</code> et <code>agg()</code> relisent chacun la source. Sur une base vivante, le watermark calculé sur le plan peut dépasser ce qui a été écrit.</li><li>Le <code>&gt;</code> strict perd la ligne de bordure. Le <code>&gt;=</code> la récupère, au prix de doublons qu'une cible idempotente (<code>MERGE</code>) absorbe.</li><li>Un curseur est <strong>aveugle aux suppressions</strong>. On le double d'une réconciliation par comptage complet, moins fréquente.</li></ul>
+<hr>
+<h2>6. CDC et SCD2</h2>
+<h3>En impératif — le <code>MERGE</code> en deux temps</h3>
+<p>Un seul <code>MERGE</code> ne peut pas à la fois <strong>fermer</strong> une version et en <strong>insérer</strong> une autre pour la même clé. On duplique la source, une occurrence portant une clé de correspondance nulle pour forcer la branche <code>INSERT</code>.</p>
+<pre class="code" data-lang="sql"><code>MERGE INTO gold.dim_client AS cible
+USING (
+  -- ligne 1 : ferme la version courante (clé renseignée)
+  SELECT maj.id_cli AS cle_fusion, maj.* FROM maj
+  UNION ALL
+  -- ligne 2 : force l&#x27;insertion de la nouvelle version (clé nulle)
+  SELECT NULL AS cle_fusion, maj.* FROM maj
+  JOIN gold.dim_client d ON d.id_cli = maj.id_cli AND d.est_courant
+  WHERE d.nom &lt;&gt; maj.nom OR d.segment &lt;&gt; maj.segment       -- vrai changement
+) AS src
+ON cible.id_cli = src.cle_fusion AND cible.est_courant
+
+WHEN MATCHED THEN UPDATE SET
+  est_courant = false,
+  valide_jusqu_a = src.maj_le
+
+WHEN NOT MATCHED THEN INSERT
+  (id_cli, nom, segment, valide_depuis, valide_jusqu_a, est_courant)
+  VALUES (src.id_cli, src.nom, src.segment, src.maj_le, NULL, true);</code></pre>
+<p>Un <code>MERGE</code> simple, pour une SCD1 ou un rattrapage idempotent :</p>
+<pre class="code" data-lang="sql"><code>MERGE INTO silver.commande AS c
+USING delta AS d ON c.order_id = d.order_id
+WHEN MATCHED THEN UPDATE SET *
+WHEN NOT MATCHED THEN INSERT *;</code></pre>
+<h3>En déclaratif — le mécanisme automatisé</h3>
+<p>Tout le motif ci-dessus tient en dix lignes.</p>
+<pre class="code" data-lang="python"><code>dlt.create_streaming_table(&quot;gold.dim_client&quot;)
+
+dlt.apply_changes(
+    target      = &quot;gold.dim_client&quot;,
+    source      = &quot;silver_clients&quot;,
+    keys        = [&quot;id_cli&quot;],
+    sequence_by = F.col(&quot;maj_le&quot;),           # rend insensible à l&#x27;ordre d&#x27;arrivée
+    apply_as_deletes    = F.expr(&quot;_change_type = &#x27;delete&#x27;&quot;),
+    except_column_list  = [&quot;_change_type&quot;, &quot;_commit_version&quot;],
+    stored_as_scd_type  = 2,                 # 1 écrase · 2 historise
+)</code></pre>
+<pre class="code" data-lang="sql"><code>CREATE FLOW maj_client AS AUTO CDC INTO gold.dim_client
+FROM STREAM(LIVE.silver_clients)
+KEYS (id_cli) SEQUENCE BY maj_le STORED AS SCD TYPE 2;</code></pre>
+<div class="table-wrap"><table><thead><tr><th>Paramètre</th><th>Rôle</th></tr></thead><tbody><tr><td><code>keys</code></td><td>la clé métier</td></tr><tr><td><code>sequence_by</code></td><td><strong>quel changement est le plus récent</strong></td></tr><tr><td><code>stored_as_scd_type</code></td><td><code>1</code> écrase · <code>2</code> historise par intervalles</td></tr><tr><td><code>apply_as_deletes</code></td><td>la condition qui marque une suppression</td></tr><tr><td><code>except_column_list</code></td><td>les colonnes techniques à <strong>ne pas</strong> propager</td></tr></tbody></table></div>
+<blockquote><p>Oublier <code>except_column_list</code> fait grossir la dimension sans raison : chaque changement technique crée une version.</p></blockquote>
+<h3>Lire un flux de changements Delta</h3>
+<pre class="code" data-lang="sql"><code>ALTER TABLE silver.client SET TBLPROPERTIES (delta.enableChangeDataFeed = true);
+
+SELECT * FROM table_changes(&#x27;silver.client&#x27;, 12);   -- depuis la version 12</code></pre>
+<pre class="code" data-lang="python"><code>(spark.readStream.format(&quot;delta&quot;)
+   .option(&quot;readChangeFeed&quot;, &quot;true&quot;)
+   .option(&quot;startingVersion&quot;, 12)
+   .table(&quot;silver.client&quot;))</code></pre>
+<hr>
+<h2>Ce qu'on ajoute toujours en bronze</h2>
+<pre class="code" data-lang="python"><code>.withColumn(&quot;_ingere_le&quot;, F.current_timestamp())
+.withColumn(&quot;_fichier&quot;,   F.col(&quot;_metadata.file_path&quot;))
+.withColumn(&quot;_lot&quot;,       F.lit(BATCH_ID))</code></pre>
+<p>Sans ces trois colonnes, on ne peut ni tracer, ni rejouer, ni départager deux versions. Et <strong>tout reste en <code>STRING</code> en bronze</strong> : c'est silver qui type.</p>
+</section>
+<section class="fiche" id="f4"><p class="fiche-num">Fiche 4 · Dédupliquer, typer, isoler</p><h1>Nettoyage</h1>
+<p><strong>L'ordre compte.</strong> On déduplique d'abord — inutile de nettoyer quatre fois la même ligne — puis on nettoie, puis on type, puis on isole ce qui n'a pas passé.</p>
+<p>L'invariant à vérifier à chaque passage :</p>
+<pre class="code" data-lang="txt"><code>count(après déduplication) = count(silver) + count(quarantaine)</code></pre>
+<hr>
+<h2>1. Dédupliquer</h2>
+<p><code>dropDuplicates</code> ne convient pas dès que deux versions du même enregistrement diffèrent d'un horodatage. La fenêtre, si.</p>
+<pre class="code" data-lang="python"><code>from pyspark.sql import Window
+
+w = (Window.partitionBy(&quot;order_id&quot;)
+           .orderBy(F.col(&quot;_fichier_modifie_le&quot;).desc(),
+                    F.col(&quot;_fichier&quot;).desc()))          # ← le départage
+
+deduplique = (brut.withColumn(&quot;_n&quot;, F.row_number().over(w))
+                  .filter(&quot;_n = 1&quot;)
+                  .drop(&quot;_n&quot;))</code></pre>
+<p><strong>Deux règles :</strong></p>
+<ul><li><strong><code>row_number</code>, jamais <code>rank</code>.</strong> À critère de tri identique, <code>rank</code> donne 1 aux deux lignes et les deux passent le filtre.</li><li><strong>Toujours une colonne de départage.</strong> Sans elle, deux exécutions sur les mêmes données peuvent garder deux lignes différentes — l'incident ne lève aucune erreur, il produit deux vérités.</li></ul>
+<p>Ne date pas sur <code>_ingere_le</code> : cette colonne date le <strong>pipeline</strong>, pas la <strong>donnée</strong>. Un fichier de mars rechargé en avril passerait devant.</p>
+<p>Pour un cas simple, sans version :</p>
+<pre class="code" data-lang="python"><code>brut.dropDuplicates([&quot;order_id&quot;])      # arbitraire : quelle ligne survit ?
+brut.distinct()                        # lignes entièrement identiques</code></pre>
+<h3>Mesurer avant de décider</h3>
+<pre class="code" data-lang="python"><code>dups = brut.groupBy(&quot;order_id&quot;).count().filter(&quot;count &gt; 1&quot;)
+print(&quot;clés en double :&quot;, dups.count())
+
+# les copies sont-elles identiques entre elles ?
+cols = [c for c in brut.columns if not c.startswith(&quot;_&quot;)]
+print(&quot;contenus distincts :&quot;, brut.join(dups, &quot;order_id&quot;).select(*cols).distinct().count())</code></pre>
+<p>Si les deux nombres sont égaux, toutes les copies sont identiques et n'importe quel critère convient. Sinon, il faut choisir laquelle gagne — et le documenter.</p>
+<hr>
+<h2>2. Nettoyer</h2>
+<pre class="code" data-lang="python"><code>def nettoie_texte(c):
+    &quot;&quot;&quot;Espaces de bord, espaces insécables, casse.&quot;&quot;&quot;
+    return F.upper(F.trim(F.regexp_replace(c, r&quot;[ ​ ⁠]&quot;, &quot; &quot;)))
+
+def nettoie_decimal(c):
+    &quot;&quot;&quot;Chaîne polluée -&gt; décimal. Liste blanche : chiffres, virgule, point, signe.&quot;&quot;&quot;
+    net = F.regexp_replace(c, r&quot;[^0-9,.\-]&quot;, &quot;&quot;)
+    return F.regexp_replace(net, &quot;,&quot;, &quot;.&quot;)          # le cast attend un point</code></pre>
+<div class="table-wrap"><table><thead><tr><th>Besoin</th><th>Fonction</th></tr></thead><tbody><tr><td>Retirer les espaces de bord</td><td><code>F.trim</code> · <code>F.ltrim</code> · <code>F.rtrim</code></td></tr><tr><td>Normaliser la casse</td><td><code>F.upper</code> · <code>F.lower</code> · <code>F.initcap</code></td></tr><tr><td>Substituer par motif</td><td><code>F.regexp_replace(c, motif, remplacement)</code></td></tr><tr><td>Extraire par motif</td><td><code>F.regexp_extract(c, motif, groupe)</code></td></tr><tr><td>Tester un motif</td><td><code>c.rlike(motif)</code></td></tr><tr><td>Découper</td><td><code>F.split(c, ";")</code></td></tr><tr><td>Assembler</td><td><code>F.concat_ws("-", a, b)</code></td></tr><tr><td>Remplir à gauche</td><td><code>F.lpad(c, 13, "0")</code></td></tr></tbody></table></div>
+<h3>Traquer les caractères invisibles</h3>
+<pre class="code" data-lang="python"><code># inventaire exhaustif des points de code présents dans une colonne
+(df.select(F.explode(F.split(&quot;adresse&quot;, &quot;&quot;)).alias(&quot;ch&quot;))
+   .select(&quot;ch&quot;, F.ascii(&quot;ch&quot;).alias(&quot;code&quot;))
+   .groupBy(&quot;ch&quot;, &quot;code&quot;).count()
+   .orderBy(&quot;code&quot;).show(200, truncate=False))</code></pre>
+<p><code>F.ascii</code> ne lit que le <strong>premier</strong> caractère : d'où le <code>split</code> en caractères d'abord.</p>
+<hr>
+<h2>3. Typer</h2>
+<p><strong>Le mode ANSI est actif.</strong> Un <code>cast</code> qui échoue <strong>lève</strong> au lieu de rendre <code>NULL</code> — et toute la quarantaine repose sur <code>isNull()</code>.</p>
+<pre class="code" data-lang="python"><code>TS_FORMAT = &quot;yyyy-MM-dd HH:mm:ss&quot;       # deux paires en majuscules : MM et HH
+
+typed = (deduplique
+  .withColumn(&quot;montant&quot;,  nettoie_decimal(F.col(&quot;montant&quot;)).try_cast(&quot;decimal(12,2)&quot;))
+  .withColumn(&quot;quantite&quot;, F.regexp_replace(&quot;quantite&quot;, r&quot;[^0-9\-]&quot;, &quot;&quot;).try_cast(&quot;int&quot;))
+  .withColumn(&quot;order_ts&quot;, F.try_to_timestamp(&quot;order_ts&quot;, F.lit(TS_FORMAT)))
+  .withColumn(&quot;statut&quot;,   nettoie_texte(F.col(&quot;statut&quot;))))</code></pre>
+<div class="table-wrap"><table><thead><tr><th>Ce qui lève</th><th>Ce qu'on écrit</th></tr></thead><tbody><tr><td><code>.cast("int")</code></td><td><code>.try_cast("int")</code></td></tr><tr><td><code>F.to_timestamp(c, fmt)</code></td><td><code>F.try_to_timestamp(c, F.lit(fmt))</code></td></tr><tr><td><code>F.to_number(c, fmt)</code></td><td><code>F.try_to_number(c, F.lit(fmt))</code></td></tr><tr><td>débordement arithmétique</td><td><code>F.try_add</code> · <code>F.try_divide</code> · <code>F.try_multiply</code></td></tr></tbody></table></div>
+<p><strong>La règle : sur de la donnée venant de bronze, jamais <code>cast</code>, toujours <code>try_cast</code>.</strong></p>
+<h3>Absences</h3>
+<pre class="code" data-lang="python"><code>df.fillna(0, subset=[&quot;quantite&quot;])          # ou df.na.fill(...)
+df.dropna(subset=[&quot;order_id&quot;])             # ou df.na.drop(...)
+F.coalesce(F.col(&quot;a&quot;), F.col(&quot;b&quot;), F.lit(0))
+F.nullif(F.col(&quot;statut&quot;), F.lit(&quot;&quot;))       # &quot;&quot; devient NULL</code></pre>
+<p>Avant de remplacer une absence par zéro, demande-toi ce qu'elle signifie. <code>sum</code>, <code>avg</code>, <code>min</code>, <code>max</code> <strong>ignorent</strong> les absences : la moyenne de trois valeurs dont une est absente se calcule sur deux.</p>
+<hr>
+<h2>4. Isoler — écarter sans jeter</h2>
+<p>On construit un tableau de motifs, on retire les cases vides, on trie sur sa taille.</p>
+<pre class="code" data-lang="python"><code>VALIDES = [&quot;COMPLETED&quot;, &quot;PENDING&quot;, &quot;CANCELLED&quot;]
+
+valide = typed.withColumn(&quot;motifs&quot;, F.array_compact(F.array(
+    F.when(F.col(&quot;order_ts&quot;).isNull(),              F.lit(&quot;INVALID_TIMESTAMP&quot;)),
+    F.when(F.col(&quot;quantite&quot;).isNull() |
+           (F.col(&quot;quantite&quot;) &lt;= 0),                F.lit(&quot;INVALID_QUANTITY&quot;)),
+    F.when(F.col(&quot;montant&quot;).isNull() |
+           (F.col(&quot;montant&quot;) &lt;= 0),                 F.lit(&quot;INVALID_PRICE&quot;)),
+    F.when(~F.col(&quot;statut&quot;).isin(VALIDES),          F.lit(&quot;UNKNOWN_STATUS&quot;)),
+)))
+
+silver      = valide.filter(F.size(&quot;motifs&quot;) == 0).drop(&quot;motifs&quot;)
+quarantaine = valide.filter(F.size(&quot;motifs&quot;) &gt; 0)
+
+silver.write.mode(&quot;overwrite&quot;).saveAsTable(&quot;ventes.silver.commande&quot;)
+(quarantaine.withColumn(&quot;_mis_de_cote_le&quot;, F.current_timestamp())
+            .write.mode(&quot;append&quot;).saveAsTable(&quot;ventes.silver.commande_quarantaine&quot;))</code></pre>
+<p><strong>Pourquoi cette forme.</strong> Il n'existe pas d'<code>append</code> conditionnel dans l'API DataFrame : on construit un tableau de taille fixe où les branches non déclenchées valent <code>NULL</code>, puis <code>array_compact</code> retire les trous. La forme générale, si tu veux filtrer autrement :</p>
+<pre class="code" data-lang="python"><code>F.filter(F.array(...), lambda x: x.isNotNull())</code></pre>
+<p><strong>Une ligne peut porter plusieurs motifs</strong> — <code>F.size("motifs") &gt; 1</code> les compte.</p>
+<h3>Vérifier</h3>
+<pre class="code" data-lang="python"><code>print(deduplique.count(), silver.count() + quarantaine.count())   # doivent être égaux
+
+quarantaine.select(F.explode(&quot;motifs&quot;).alias(&quot;motif&quot;)) \
+           .groupBy(&quot;motif&quot;).count().orderBy(F.desc(&quot;count&quot;)).show()</code></pre>
+<hr>
+<h2>Le degré de sévérité — trois niveaux</h2>
+<p>Le même besoin s'exprime autrement selon l'endroit où l'on contrôle.</p>
+<pre class="code" data-lang="python"><code># en impératif : la quarantaine ci-dessus — la ligne est conservée avec son motif
+
+# en déclaratif
+@dlt.expect(&quot;montant_connu&quot;, &quot;montant IS NOT NULL&quot;)     # compte, laisse passer
+@dlt.expect_or_drop(&quot;qte_positive&quot;, &quot;quantite &gt; 0&quot;)     # écarte et compte
+@dlt.expect_or_fail(&quot;cle_presente&quot;, &quot;order_id IS NOT NULL&quot;)  # arrête le lot</code></pre>
+<pre class="code" data-lang="sql"><code>-- au niveau de la table : l&#x27;écriture ENTIÈRE échoue
+ALTER TABLE silver.commande ALTER COLUMN order_id SET NOT NULL;
+ALTER TABLE silver.commande ADD CONSTRAINT devise_connue
+  CHECK (devise IN (&#x27;EUR&#x27;, &#x27;USD&#x27;, &#x27;GBP&#x27;));</code></pre>
+<blockquote><p><strong>On commence toujours par observer.</strong> Poser une règle bloquante dont on n'a pas mesuré le taux de violation, c'est programmer l'échec de la chaîne pour la nuit suivante.</p></blockquote>
+<p>Et la question à trancher avant d'écarter automatiquement : <strong>où vont les lignes écartées, et peut-on les rejouer ?</strong> Si la réponse est « nulle part », le mécanisme n'est qu'un filtre silencieux avec de meilleures manières.</p>
+</section>
+<section class="fiche" id="f5"><p class="fiche-num">Fiche 5 · Réduire ou annoter</p><h1>Agrégation et publication</h1>
+<p>Deux sujets, un même fil : <strong>que promet-on à celui qui lira ?</strong></p>
+<hr>
+<h2>Réduire ou annoter</h2>
+<div class="table-wrap"><table><thead><tr><th></th><th>Agrégation</th><th>Fenêtre</th></tr></thead><tbody><tr><td>Ce qu'elle fait</td><td>plusieurs lignes → <strong>une</strong></td><td>chaque ligne reçoit un calcul sur son groupe</td></tr><tr><td>Le détail</td><td><strong>détruit</strong></td><td>conservé</td></tr><tr><td>Quand</td><td>un total par catégorie</td><td>un cumul, un rang, une part</td></tr></tbody></table></div>
+<pre class="code" data-lang="python"><code># réduire
+(cmd.groupBy(&quot;region&quot;, &quot;mois&quot;)
+    .agg(F.sum(&quot;montant&quot;).alias(&quot;ca&quot;),
+         F.count(&quot;*&quot;).alias(&quot;lignes&quot;),
+         F.count(&quot;montant&quot;).alias(&quot;renseignes&quot;),      # ignore les absences
+         F.countDistinct(&quot;id_cli&quot;).alias(&quot;clients&quot;))
+    .filter(F.col(&quot;ca&quot;) &gt; 100_000))                   # remplace HAVING
+
+# annoter
+w = Window.partitionBy(&quot;id_cli&quot;).orderBy(&quot;jour&quot;)
+cumul = w.rowsBetween(Window.unboundedPreceding, 0)
+
+cmd.withColumns({
+  &quot;rang&quot;:      F.row_number().over(w),
+  &quot;veille&quot;:    F.lag(&quot;montant&quot;, 1, 0).over(w),
+  &quot;ca_cumule&quot;: F.sum(&quot;montant&quot;).over(cumul),
+  &quot;part&quot;:      F.col(&quot;montant&quot;) / F.sum(&quot;montant&quot;).over(Window.partitionBy(&quot;id_cli&quot;)),
+})</code></pre>
+<h3>Toujours nommer</h3>
+<p>Sans <code>alias</code>, tes colonnes s'appellent <code>sum(montant)</code>. Six mois plus tard, le tableau de bord qui s'appuyait dessus tombe au premier changement, et personne ne relie la panne. Un agrégat nommé <strong>se filtre ensuite comme une colonne ordinaire</strong>.</p>
+<h3>Ce que comptent les fonctions de comptage</h3>
+<pre class="code" data-lang="python"><code>F.count(&quot;*&quot;)            # les lignes
+F.count(&quot;montant&quot;)      # les valeurs RENSEIGNÉES — ignore les absences</code></pre>
+<p><strong>L'écart entre les deux est exactement le nombre d'absences</strong> — la mesure de complétude la plus simple qui existe :</p>
+<pre class="code" data-lang="python"><code>(F.count(&quot;montant&quot;) / F.count(&quot;*&quot;)).alias(&quot;completude&quot;)</code></pre>
+<p><code>sum</code>, <code>avg</code>, <code>min</code>, <code>max</code> ignorent tous les absences. La moyenne de trois valeurs dont une est absente se calcule sur deux.</p>
+<div class="table-wrap"><table><thead><tr><th>Fonction</th><th>À savoir</th></tr></thead><tbody><tr><td><code>F.count_if(cond)</code></td><td>plus lisible qu'un <code>when</code> imbriqué</td></tr><tr><td><code>F.countDistinct(a, b)</code></td><td>brassage complet, coûteux</td></tr><tr><td><code>F.approx_count_distinct(c, 0.01)</code></td><td>second argument : l'erreur admise</td></tr><tr><td><code>F.percentile_approx(c, 0.5, 10000)</code></td><td>troisième argument : la précision</td></tr><tr><td><code>F.collect_set</code> · <code>F.collect_list</code></td><td><strong>tout le groupe en mémoire</strong> : dangereux</td></tr></tbody></table></div>
+<h3>Le cadre d'une fenêtre — la surprise durable</h3>
+<pre class="code" data-lang="python"><code>w = Window.partitionBy(&quot;id&quot;).orderBy(&quot;jour&quot;)
+F.last_value(&quot;m&quot;).over(w)     # rend la LIGNE COURANTE, pas la dernière du groupe</code></pre>
+<p>Une fenêtre <strong>triée</strong> a un cadre implicite qui va du début du groupe <strong>jusqu'à la ligne courante</strong>. Sans tri, le cadre couvre toute la partition. Dès qu'une fonction est sensible aux bornes, <strong>écris le cadre</strong> :</p>
+<pre class="code" data-lang="python"><code>partition = w.rowsBetween(Window.unboundedPreceding, Window.unboundedFollowing)
+cumul     = w.rowsBetween(Window.unboundedPreceding, 0)
+sept_obs  = w.rowsBetween(-6, 0)      # six voisines : compte de lignes
+sept_jours = w.rangeBetween(-6, 0)    # ex æquo compris : valeur de la colonne de tri</code></pre>
+<div class="table-wrap"><table><thead><tr><th>Fonction</th><th>Sur ex æquo</th></tr></thead><tbody><tr><td><code>F.row_number()</code></td><td>1, 2, 3 — <strong>une seule survivante</strong></td></tr><tr><td><code>F.rank()</code></td><td>1, 1, 3 — « les 3 premiers » peut en rendre 5</td></tr><tr><td><code>F.dense_rank()</code></td><td>1, 1, 2</td></tr></tbody></table></div>
+<p>Et jamais de fenêtre <strong>sans <code>partitionBy</code></strong> sur un gros volume : tout se rassemble sur un seul exécuteur.</p>
+<h3>Le grain</h3>
+<p>Avant d'agréger, écris en une phrase ce que représentera une ligne du résultat. Une table au grain pays-mois se somme par pays sans problème — mais en calculer la moyenne donne <strong>la moyenne des mois</strong>, qui n'est pas la moyenne des ventes.</p>
+<hr>
+<h2>Les quatre objets de publication</h2>
+<p>Ils ne diffèrent que par <strong>le moment où le calcul a lieu</strong>.</p>
+<div class="table-wrap"><table><thead><tr><th>Objet</th><th>Calcul</th><th>Lecture</th><th>Fraîcheur</th></tr></thead><tbody><tr><td><strong>Table</strong></td><td>lors d'un traitement explicite</td><td>minimale</td><td>celle du dernier traitement</td></tr><tr><td><strong>Vue</strong></td><td>à chaque lecture</td><td>le coût de la requête, à chaque fois</td><td>toujours à jour</td></tr><tr><td><strong>Vue matérialisée</strong></td><td>au rafraîchissement</td><td>minimale</td><td>celle du dernier rafraîchissement</td></tr><tr><td><strong>Table de flux</strong></td><td>en continu, à l'arrivée</td><td>minimale</td><td>quelques minutes</td></tr></tbody></table></div>
+<pre class="code" data-lang="sql"><code>CREATE OR REPLACE VIEW gold.v_ca AS
+  SELECT region, sum(montant) AS ca FROM gold.faits GROUP BY region;
+
+CREATE MATERIALIZED VIEW gold.mv_ca AS
+  SELECT region, sum(montant) AS ca FROM gold.faits GROUP BY region;
+
+CREATE OR REFRESH STREAMING TABLE gold.st_evt AS
+  SELECT * FROM STREAM(silver.evenement);
+
+CREATE OR REPLACE TABLE gold.t_ca AS SELECT * FROM gold.v_ca;</code></pre>
+<h3>Trancher : coût × fréquence</h3>
+<blockquote><p><strong>On matérialise ce qui est lu bien plus souvent qu'il n'est écrit, et jamais l'inverse.</strong></p></blockquote>
+<p>Une agrégation de 40 secondes lue <strong>12 fois par jour</strong> : 8 minutes de calcul quotidien en vue simple, contre 2 heures de rafraîchissement en vue matérialisée. <strong>La vue gagne.</strong></p>
+<p>La même lue <strong>200 fois par jour</strong> : 2 h 20 en vue simple contre 2 h fixes, et une réponse en une seconde au lieu de quarante. <strong>La matérialisée gagne.</strong></p>
+<p>La question à poser au demandeur n'est pas <em>« voulez-vous que ce soit rapide »</em> mais <strong>« combien de fois par jour cette requête sera-t-elle exécutée »</strong>.</p>
+<h3>Table de flux : un seul critère</h3>
+<p><strong>Les lignes anciennes peuvent-elles être modifiées en source ?</strong> Si oui, une table de flux ne le verra <strong>jamais</strong> — elle traite chaque enregistrement une fois. Il faut une vue matérialisée, qui recalcule.</p>
+<h3>Le piège de la définition relative</h3>
+<pre class="code" data-lang="sql"><code>-- PIÈGE : la borne est figée au calcul, la fenêtre glisse en silence
+CREATE MATERIALIZED VIEW gold.ca_90j AS
+  SELECT sum(montant) AS ca FROM gold.faits
+  WHERE date_vente &gt;= current_date() - INTERVAL 90 DAYS;
+
+-- JUSTE : matérialiser à un grain ABSOLU, laisser le lecteur choisir sa fenêtre
+CREATE MATERIALIZED VIEW gold.ca_jour AS
+  SELECT date_vente, sum(montant) AS ca FROM gold.faits GROUP BY date_vente;</code></pre>
+<p>Aucune erreur, aucune valeur aberrante, aucun écart de volume. L'indicateur porte simplement sur une période vieille de plusieurs mois.</p>
+<hr>
+<h2>Encapsuler une règle</h2>
+<p>Tant qu'une règle est recopiable, elle sera recopiée — et corrigée dans onze tableaux de bord sur quatorze.</p>
+<pre class="code" data-lang="sql"><code>CREATE OR REPLACE FUNCTION gold.ttc(ht DECIMAL(12,2))
+  RETURNS DECIMAL(12,2) RETURN ht * 1.20;
+
+SELECT gold.ttc(montant) FROM gold.faits;
+
+-- la vue paramétrée : une requête réutilisable dont on fixe l&#x27;argument à l&#x27;appel
+CREATE OR REPLACE FUNCTION gold.cmd_du_mois(m STRING)
+  RETURNS TABLE (id STRING, montant DECIMAL(12,2))
+  RETURN SELECT id_cmd, montant FROM gold.faits
+         WHERE date_format(jour, &#x27;yyyy-MM&#x27;) = m;
+
+SELECT * FROM gold.cmd_du_mois(&#x27;2026-03&#x27;);</code></pre>
+<p>Une fonction <strong>SQL</strong> est optimisée comme du SQL ordinaire ; une fonction Python force le moteur à sortir de son mode efficace.</p>
+<hr>
+<h2>Publier, c'est promettre</h2>
+<p>Sur la <strong>structure</strong> — renommer ou supprimer une colonne casse quelque chose chez quelqu'un. Consulte le lignage <strong>avant</strong>, pas après.</p>
+<p>Sur la <strong>sémantique</strong> — changer la règle de calcul d'une colonne sans changer son nom ne casse rien techniquement, et fausse tout ce qui en dépend. Personne ne le verra.</p>
+<p>Sur la <strong>fraîcheur</strong> — à quelle heure la donnée de la veille est-elle disponible ? En l'absence de promesse affichée, chacun se construit une croyance optimiste.</p>
+<p><strong>Traite une table publiée comme une interface</strong> : ajouter sans casser, ne jamais retirer sans préavis, publier une nouvelle version à côté de l'ancienne quand le fond change.</p>
+</section>
+<section class="fiche" id="f6"><p class="fiche-num">Fiche 6 · Lakeflow Jobs</p><h1>Orchestration</h1>
+<p><strong>Le mode de panne propre à l'orchestration</strong> : se terminer en vert sans avoir rien fait. Tout le reste de cette fiche en découle.</p>
+<hr>
+<h2>Le graphe, pas la liste</h2>
+<p>On déclare des <strong>dépendances</strong>, pas un ordre. Le moteur en déduit trois choses : l'ordre, le parallélisme possible, et surtout <strong>le périmètre exact à relancer</strong> après un échec.</p>
+<pre class="code" data-lang="yaml"><code>resources:
+  jobs:
+    quotidien:
+      name: ventes_quotidien
+      max_concurrent_runs: 1          # évite les recouvrements
+
+      parameters:
+        - name: jour
+          default: &quot;{{job.start_time.iso_date}}&quot;   # ← rejouable
+
+      schedule:
+        quartz_cron_expression: &quot;0 30 5 * * ?&quot;
+        timezone_id: &quot;Europe/Paris&quot;                # sinon l&#x27;heure d&#x27;été décale tout
+
+      email_notifications:
+        on_failure:   [data@exemple.fr]
+        on_duration_warning_threshold_exceeded: [data@exemple.fr]
+
+      tasks:
+        - task_key: ingestion
+          notebook_task:
+            notebook_path: ./notebooks/bronze
+            base_parameters: { jour: &quot;{{job.parameters.jour}}&quot; }
+          timeout_seconds: 3600       # SANS LUI : rien n&#x27;arrête une tâche bloquée
+          max_retries: 2              # SI la tâche est rejouable
+          min_retry_interval_millis: 60000
+
+        - task_key: controle
+          depends_on: [{ task_key: ingestion }]
+          notebook_task: { notebook_path: ./notebooks/controle }
+          timeout_seconds: 900
+
+        - task_key: publication
+          depends_on: [{ task_key: controle }]
+          condition_task:
+            op: EQUAL_TO
+            left: &quot;{{tasks.controle.values.qualite_ok}}&quot;
+            right: &quot;true&quot;
+
+        - task_key: alerte
+          depends_on: [{ task_key: publication }]
+          run_if: AT_LEAST_ONE_FAILED     # ← sinon elle est SAUTÉE, jamais exécutée
+          notebook_task: { notebook_path: ./notebooks/alerte }</code></pre>
+<hr>
+<h2>Faire circuler une information</h2>
+<p>Chaque tâche s'exécute dans son propre contexte : aucune variable ne survit d'une tâche à l'autre. Deux canaux, et deux seulement.</p>
+<h3>Les paramètres — de l'orchestrateur vers la tâche</h3>
+<pre class="code" data-lang="python"><code>dbutils.widgets.text(&quot;jour&quot;, &quot;&quot;)
+jour = dbutils.widgets.get(&quot;jour&quot;)        # TOUJOURS une chaîne
+
+if not jour:
+    raise ValueError(&quot;paramètre « jour » absent&quot;)   # bruyant, pas de repli silencieux
+
+from datetime import date
+jour = date.fromisoformat(jour)           # convertir soi-même</code></pre>
+<div class="table-wrap"><table><thead><tr><th>Substitution</th><th>Ce qu'elle donne</th></tr></thead><tbody><tr><td><code>{{job.parameters.jour}}</code></td><td>un paramètre du travail, propagé aux tâches</td></tr><tr><td><code>{{job.start_time.iso_date}}</code></td><td><strong>la date de démarrage</strong> — identique après relance</td></tr><tr><td><code>{{job.id}}</code> · <code>{{task.run_id}}</code></td><td>traçabilité</td></tr></tbody></table></div>
+<blockquote><p><strong>Ne calcule jamais « hier » dans le code.</strong> Un traitement qui lit l'horloge ne sait faire qu'aujourd'hui : rattraper trois journées suppose de modifier le code, de l'exécuter trois fois, puis de le remettre en état — à sept heures du matin, sous pression, en oubliant la dernière étape.</p></blockquote>
+<h3>Les valeurs de tâche — d'une tâche à la suivante</h3>
+<pre class="code" data-lang="python"><code># amont
+n = charge.count()
+dbutils.jobs.taskValues.set(key=&quot;lignes&quot;, value=n)
+
+# aval — debugValue permet d&#x27;exécuter le carnet SEUL, hors du graphe
+n = dbutils.jobs.taskValues.get(taskKey=&quot;ingestion&quot;, key=&quot;lignes&quot;,
+                                default=0, debugValue=0)</code></pre>
+<p>Sans <code>debugValue</code>, tout carnet employant ce mécanisme devient impossible à déboguer à la main — et l'on finit par commenter les lignes, puis par oublier de les décommenter.</p>
+<hr>
+<h2>Le vert qui ne veut rien dire</h2>
+<p>Un graphe « en succès » ne dit pas que le travail a été fait. Il dit qu'<strong>aucune tâche exécutée n'a échoué</strong>.</p>
+<p>Une tâche <strong>sautée</strong> n'est pas une tâche en échec. Un graphe dont toutes les tâches utiles ont été sautées se termine <strong>en vert</strong>, et n'alerte personne. Le cas réel : vingt-trois jours de vert pendant qu'aucun fichier n'arrivait, découvert en revue mensuelle.</p>
+<p><strong>La parade : rendre le silence bruyant.</strong></p>
+<pre class="code" data-lang="python"><code># tâche placée sur la branche « fichier absent »
+jour = dbutils.widgets.get(&quot;jour&quot;)
+raise RuntimeError(f&quot;Aucun fichier source pour le {jour}. Chaîne interrompue.&quot;)</code></pre>
+<h3><code>run_if</code> — réagir à autre chose qu'un succès</h3>
+<p><code>depends_on</code> signifie <strong>« après le succès de »</strong>. Une dépendance ne se déclenche jamais sur un échec, quelle que soit la condition qu'on lui accroche.</p>
+<div class="table-wrap"><table><thead><tr><th>Valeur</th><th>La tâche démarre quand</th></tr></thead><tbody><tr><td><code>ALL_SUCCESS</code></td><td>toutes les amonts ont réussi — <strong>le défaut</strong></td></tr><tr><td><code>AT_LEAST_ONE_FAILED</code></td><td>au moins une a échoué — <strong>la tâche d'alerte</strong></td></tr><tr><td><code>ALL_DONE</code></td><td>toutes sont terminées, quel qu'en soit l'état</td></tr><tr><td><code>NONE_FAILED</code></td><td>aucune n'a échoué, les sautées étant tolérées</td></tr></tbody></table></div>
+<hr>
+<h2>Les réglages qui font la différence</h2>
+<div class="table-wrap"><table><thead><tr><th>Réglage</th><th>Ce qu'il gouverne</th><th>Le piège</th></tr></thead><tbody><tr><td><code>timeout_seconds</code></td><td>quand abandonner</td><td><strong>Aucune valeur par défaut.</strong> Une tâche bloquée l'est indéfiniment, et le calcul se facture</td></tr><tr><td><code>max_retries</code></td><td>les reprises automatiques</td><td>N'a de sens que si la tâche est <strong>rejouable</strong></td></tr><tr><td><code>max_concurrent_runs</code></td><td>exécutions simultanées</td><td><strong>1</strong> par défaut. Ne l'augmenter que si chaque exécution porte une <strong>tranche différente</strong></td></tr><tr><td><code>run_if</code></td><td>la règle de déclenchement</td><td><code>ALL_SUCCESS</code> par défaut</td></tr></tbody></table></div>
+<p><strong>Les reprises sur une tâche non idempotente programment des doublons.</strong> Une tâche qui ajoute sans borne de progression, relancée après une coupure survenue en cours d'écriture, recharge l'intégralité du lot <strong>en s'ajoutant</strong> à ce qui était déjà écrit. Le cas réel : trois semaines d'analyse pour des doublons qui n'apparaissaient que le samedi.</p>
+<p><strong>Un délai maximal se règle à deux fois la durée habituelle</strong>, sur chaque tâche, sans exception.</p>
+<hr>
+<h2>Les déclencheurs</h2>
+<div class="table-wrap"><table><thead><tr><th>Type</th><th>Quand le choisir</th><th>Ce qu'il impose</th></tr></thead><tbody><tr><td><strong>Programmé</strong></td><td>régularité, prévisibilité</td><td>connaître l'heure de disponibilité, et prendre une marge</td></tr><tr><td><strong>Arrivée de fichier</strong></td><td>dépôts imprévisibles</td><td><strong>plafonner</strong> les exécutions simultanées, sinon cascade</td></tr><tr><td><strong>Mise à jour de table</strong></td><td>chaîner deux traitements</td><td>rien — c'est la réponse propre au problème de la marge</td></tr><tr><td><strong>Continu</strong></td><td>la latence décide vraiment</td><td>des machines allumées en permanence</td></tr></tbody></table></div>
+<blockquote><p>Deux traitements planifiés à 5 h et 6 h, et le premier finit désormais à 6 h 10 : la correction structurelle n'est pas d'avancer le premier, c'est un <strong>déclencheur par mise à jour de table</strong> sur le second.</p></blockquote>
+<hr>
+<h2>Les types de tâche</h2>
+<div class="table-wrap"><table><thead><tr><th>Type</th><th>Pour quoi</th></tr></thead><tbody><tr><td>Notebook</td><td>le cas courant</td></tr><tr><td><strong>Fichier Python ou JAR</strong></td><td>une logique packagée dans une bibliothèque versionnée</td></tr><tr><td>Requête SQL</td><td>du SQL pur</td></tr><tr><td>Tableau de bord</td><td>rafraîchir une restitution</td></tr><tr><td>Pipeline</td><td>déclencher un pipeline déclaratif</td></tr><tr><td><code>for_each</code></td><td>répéter une tâche sur une liste, avec un plafond de concurrence</td></tr><tr><td>Condition</td><td>brancher selon une valeur de tâche</td></tr></tbody></table></div>
+<p>Et l'appel qu'il vaut mieux éviter :</p>
+<pre class="code" data-lang="python"><code>r = dbutils.notebook.run(&quot;./traiter&quot;, 600, {&quot;jour&quot;: jour})</code></pre>
+<p>Il <strong>ne se voit pas dans le graphe</strong>, ne se reprend pas indépendamment, et transforme trois tâches lisibles en une seule tâche opaque. À réserver aux boucles dont le nombre d'itérations n'est connu qu'à l'exécution.</p>
+<hr>
+<h2>La porte de contrôle</h2>
+<p>Le motif qui empêche une donnée fausse d'atteindre les consommateurs.</p>
+<pre class="code" data-lang="python"><code># tâche « controle », placée ENTRE le calcul et la publication
+metriques = executer_controles(&quot;staging.faits&quot;)
+bloquants = [m for m in metriques if m[&quot;statut&quot;] == &quot;KO&quot; and m[&quot;bloquant&quot;]]
+
+dbutils.jobs.taskValues.set(key=&quot;qualite_ok&quot;, value=(len(bloquants) == 0))</code></pre>
+<p>La tâche de publication ne démarre que si <code>{{tasks.controle.values.qualite_ok}}</code> vaut <code>true</code> ; la branche opposée porte une tâche qui <strong>échoue explicitement</strong>.</p>
+<p>Cela suppose que calcul et publication soient <strong>deux étapes distinctes</strong> : écrire dans une table temporaire, contrôler, puis basculer. Un contrôle placé <strong>après</strong> la publication ne protège personne — il documente un incident déjà survenu.</p>
+<hr>
+<h2>Les trois surveillances à câbler dès la mise en production</h2>
+<ol><li><strong>L'échec</strong> — évidemment.</li><li><strong>Le dépassement de durée</strong> — attrape les blocages.</li><li><strong>La présence attendue de l'exécution.</strong> Un traitement qui ne se déclenche plus n'échoue jamais, donc n'alerte jamais.</li></ol>
+<pre class="code" data-lang="sql"><code>-- les chaînes qui auraient dû tourner cette nuit et dont aucune exécution n&#x27;existe
+SELECT a.chaine
+FROM   ops.chaines_attendues a
+LEFT   ANTI JOIN ops.journal_executions j
+       ON j.chaine = a.chaine AND j.debut &gt;= current_date()
+WHERE  a.actif;</code></pre>
+</section>
+<section class="fiche" id="f7"><p class="fiche-num">Fiche 7 · Le graphe déduit du code</p><h1>Pipelines déclaratifs</h1>
+<p><strong>Le renversement</strong> : on ne décrit plus une suite d'opérations, on décrit <strong>les jeux de données qui doivent exister</strong>. Le moteur en déduit le graphe, l'ordre, l'état et la reprise.</p>
+<blockquote><p><strong>Vocabulaire.</strong> Le produit s'appelle <em>Lakeflow Declarative Pipelines</em> — l'ancien <em>Delta Live Tables</em>. Mais <strong>le module Python est resté <code>dlt</code></strong> : ne « corrige » jamais un import pour l'aligner sur le nom commercial.</p></blockquote>
+<hr>
+<h2>Le graphe est un effet du code</h2>
+<pre class="code" data-lang="python"><code>import dlt
+from pyspark.sql import functions as F
+
+@dlt.table(comment=&quot;Dépôt fidèle, aucune transformation&quot;)
+def brut_commandes():
+    return (spark.readStream.format(&quot;cloudFiles&quot;)
+              .option(&quot;cloudFiles.format&quot;, &quot;csv&quot;)
+              .option(&quot;cloudFiles.schemaLocation&quot;, SCHEMA)
+              .option(&quot;header&quot;, &quot;true&quot;).option(&quot;sep&quot;, &quot;;&quot;)
+              .load(ARRIVEES))
+
+@dlt.table(comment=&quot;Commandes typées&quot;)
+def silver_commandes():
+    # CETTE LECTURE EST LA DÉPENDANCE : rien d&#x27;autre à déclarer
+    return (dlt.read_stream(&quot;brut_commandes&quot;)
+              .withColumn(&quot;montant&quot;, F.col(&quot;montant_txt&quot;).try_cast(&quot;decimal(12,2)&quot;)))</code></pre>
+<p><strong>Le piège central</strong> : lire une table du même pipeline par le chemin ordinaire ne crée <strong>aucune dépendance</strong>.</p>
+<pre class="code" data-lang="python"><code>dlt.read_stream(&quot;brut_commandes&quot;)     # ✅ crée le lien dans le graphe
+dlt.read(&quot;brut_commandes&quot;)            # ✅ idem, en lecture complète
+spark.read.table(&quot;brut_commandes&quot;)    # ❌ AUCUNE dépendance</code></pre>
+<p>Avec la troisième forme, les deux tables s'exécutent <strong>en parallèle</strong>, la seconde sur un état vide ou périmé. Le code s'exécute, ne signale rien, et produit un résultat faux à la première exécution puis juste aux suivantes — ce qui rend le diagnostic pénible.</p>
+<p>En SQL, c'est <code>STREAM(...)</code> qui joue ce rôle :</p>
+<pre class="code" data-lang="sql"><code>CREATE OR REFRESH STREAMING TABLE silver_commandes AS
+  SELECT * FROM STREAM(LIVE.brut_commandes);</code></pre>
+<hr>
+<h2>Les trois natures d'objet</h2>
+<div class="table-wrap"><table><thead><tr><th>Forme</th><th>Ce qu'elle fait</th><th>Quand la choisir</th></tr></thead><tbody><tr><td><strong>Table de flux</strong></td><td>traite chaque enregistrement <strong>une fois</strong>, l'ajoute</td><td>source qui ne fait que grandir</td></tr><tr><td><strong>Vue matérialisée</strong></td><td>recalculée, éventuellement de façon incrémentale</td><td>tout ce qui peut changer rétroactivement</td></tr><tr><td><strong>Vue</strong></td><td>ne stocke rien, étape intermédiaire nommée</td><td>découper un calcul long sans matérialiser</td></tr></tbody></table></div>
+<pre class="code" data-lang="python"><code>@dlt.table                 # table matérialisée : recalcul complet à chaque exécution
+@dlt.view                  # intermédiaire non stocké</code></pre>
+<pre class="code" data-lang="sql"><code>CREATE OR REFRESH STREAMING TABLE t AS …    -- alimentée par incréments
+CREATE OR REFRESH MATERIALIZED VIEW v AS …  -- recalculée</code></pre>
+<blockquote><p><strong>Le critère de choix tient en une question : les lignes anciennes peuvent-elles être modifiées en source ?</strong> Si oui, une table de flux ne le verra <strong>jamais</strong>. C'est l'erreur de conception la plus fréquente, et elle ne se manifeste que des semaines plus tard, sous forme de chiffres qui ne se corrigent pas.</p></blockquote>
+<p>Un changement de logique se répercute différemment : une <strong>table matérialisée</strong> refait tout l'historique, une <strong>table de flux</strong> ne vaut que pour l'avenir.</p>
+<hr>
+<h2>La qualité attachée à la définition</h2>
+<p>C'est l'apport principal, et ce n'est pas la brièveté du code : <strong>chaque attente alimente une mesure, exécution après exécution, sans une ligne de comptage à écrire.</strong></p>
+<pre class="code" data-lang="python"><code>@dlt.table
+@dlt.expect(&quot;montant_connu&quot;,  &quot;montant IS NOT NULL&quot;)        # compte, laisse passer
+@dlt.expect_or_drop(&quot;qte_positive&quot;, &quot;quantite &gt; 0&quot;)         # écarte et compte
+@dlt.expect_or_fail(&quot;cle_presente&quot;, &quot;id_cmd IS NOT NULL&quot;)   # le LOT entier échoue
+def silver_commandes():
+    return dlt.read_stream(&quot;brut_commandes&quot;)</code></pre>
+<p>La forme groupée, plus lisible dès trois règles :</p>
+<pre class="code" data-lang="python"><code>REGLES = {
+    &quot;montant_connu&quot;:  &quot;montant IS NOT NULL&quot;,
+    &quot;qte_positive&quot;:   &quot;quantite &gt; 0&quot;,
+    &quot;date_plausible&quot;: &quot;jour &gt;= &#x27;2015-01-01&#x27;&quot;,
+}
+
+@dlt.table
+@dlt.expect_all(REGLES)                # aussi expect_all_or_drop, expect_all_or_fail
+def silver_v2():
+    return dlt.read_stream(&quot;brut_commandes&quot;)</code></pre>
+<pre class="code" data-lang="sql"><code>CONSTRAINT observe EXPECT (montant IS NOT NULL)
+CONSTRAINT ecarte  EXPECT (qte &gt; 0)      ON VIOLATION DROP ROW
+CONSTRAINT arrete  EXPECT (id IS NOT NULL) ON VIOLATION FAIL UPDATE</code></pre>
+<p><strong>Trois règles d'usage :</strong></p>
+<ul><li><strong>Commence toujours par <code>expect</code>.</strong> Poser une règle bloquante dont on n'a pas mesuré le taux de violation est la meilleure façon de faire échouer la chaîne la nuit suivante — on découvre souvent qu'elle attrape quinze pour cent des lignes.</li><li><strong>Le nom compte</strong> : c'est lui qu'on lira dans les mesures. <code>regle_3</code> n'apprend rien.</li><li><strong>Une attente ne porte que sur les colonnes du résultat retourné.</strong> Elle ne peut pas viser une colonne supprimée en cours de définition — ce qui oblige parfois à réorganiser l'ordre des opérations.</li></ul>
+<h3>Lire les mesures produites</h3>
+<pre class="code" data-lang="sql"><code>SELECT timestamp,
+       details:flow_progress.data_quality.expectations
+FROM   event_log(TABLE(ventes.ldp.evenements))
+WHERE  event_type = &#x27;flow_progress&#x27;
+ORDER  BY timestamp DESC LIMIT 20;</code></pre>
+<p>C'est de l'observabilité obtenue sans l'écrire — <strong>à condition d'aller la lire</strong>.</p>
+<hr>
+<h2>Historiser sans écrire la mécanique</h2>
+<p>Tout le motif SCD2 — fusion conditionnelle, intervalles de validité, fermeture de la version précédente — tient ici en dix lignes.</p>
+<pre class="code" data-lang="python"><code>dlt.create_streaming_table(&quot;gold.dim_client&quot;)     # préalable obligatoire
+
+dlt.apply_changes(
+    target      = &quot;gold.dim_client&quot;,
+    source      = &quot;silver_clients&quot;,
+    keys        = [&quot;id_cli&quot;],
+    sequence_by = F.col(&quot;maj_le&quot;),
+    apply_as_deletes   = F.expr(&quot;_change_type = &#x27;delete&#x27;&quot;),
+    except_column_list = [&quot;_change_type&quot;, &quot;_commit_version&quot;],
+    stored_as_scd_type = 2,
+)</code></pre>
+<pre class="code" data-lang="sql"><code>CREATE FLOW maj_client AS AUTO CDC INTO gold.dim_client
+FROM STREAM(LIVE.silver_clients)
+KEYS (id_cli) SEQUENCE BY maj_le STORED AS SCD TYPE 2;</code></pre>
+<div class="table-wrap"><table><thead><tr><th>Paramètre</th><th>Ce qu'il fait</th></tr></thead><tbody><tr><td><code>sequence_by</code></td><td>désigne <strong>lequel de deux changements est le plus récent</strong> — rend l'opération insensible à l'ordre d'arrivée</td></tr><tr><td><code>stored_as_scd_type</code></td><td><code>1</code> écrase · <code>2</code> historise. Les deux s'écrivent pareil : on peut commencer simple et basculer</td></tr><tr><td><code>except_column_list</code></td><td><strong>l'oubli le plus fréquent.</strong> Sans lui, chaque changement technique crée une version et la dimension grossit sans raison</td></tr></tbody></table></div>
+<blockquote><p><strong>Vocabulaire</strong> : <code>APPLY CHANGES INTO</code> s'appelle désormais <strong><code>AUTO CDC</code></strong>.</p></blockquote>
+<hr>
+<h2>Les modes d'exécution — choisis sur le pipeline, jamais dans le code</h2>
+<div class="table-wrap"><table><thead><tr><th>Mode</th><th>Comportement</th></tr></thead><tbody><tr><td><strong>Déclenché</strong></td><td>traite ce qui attend, puis s'arrête — <strong>le cas courant</strong>, machines libérées</td></tr><tr><td><strong>Continu</strong></td><td>ne s'arrête pas — machines allumées en permanence, se chiffre</td></tr><tr><td><strong>Développement</strong></td><td>machines réutilisées, pas de reprise — allers-retours rapides</td></tr><tr><td><strong>Production</strong></td><td>machines neuves, reprises automatiques</td></tr><tr><td><strong>Rafraîchissement complet</strong></td><td>reconstruit <strong>chaque table depuis la source</strong></td></tr></tbody></table></div>
+<blockquote><p>⚠️ <strong>Le rafraîchissement complet efface l'historique d'une dimension SCD2.</strong> C'est exactement ce qu'on veut après avoir corrigé une logique fautive, et exactement ce qu'on ne veut pas sur une table historisée — la source ne contient plus les états passés. Une table peut en être <strong>exclue</strong>, et il faut y penser à la déclaration, pas à l'incident.</p></blockquote>
+<hr>
+<h2>Ce qu'on accepte de perdre</h2>
+<div class="table-wrap"><table><thead><tr><th></th><th>Impératif</th><th>Déclaratif</th></tr></thead><tbody><tr><td>Ce qu'on écrit</td><td>une suite d'opérations</td><td>des définitions</td></tr><tr><td>Le graphe</td><td>déclaré à côté, à maintenir</td><td><strong>déduit du code</strong></td></tr><tr><td>État et reprise</td><td>à écrire et surveiller</td><td><strong>pris en charge</strong></td></tr><tr><td>Volume de code</td><td>élevé</td><td>réduit</td></tr><tr><td>Maîtrise du plan</td><td>totale</td><td><strong>faible</strong></td></tr><tr><td>Transposabilité</td><td>bonne</td><td><strong>faible</strong></td></tr></tbody></table></div>
+<p><strong>Trois coûts rarement présentés :</strong></p>
+<ul><li><strong>Le contrôle.</strong> Quand le moteur décide mal, le diagnostic est difficile — le plan n'est pas dans le code que tu as écrit, tu ne peux pas relire tes propres décisions puisque tu ne les as pas prises.</li><li><strong>La propriété des objets.</strong> Un pipeline déclaratif <strong>possède ses tables</strong>. Retirer une définition peut supprimer la table au déploiement suivant — y compris une table intermédiaire qu'une équipe métier avait fini par consulter directement.</li><li><strong>L'enfermement.</strong> Une chaîne déclarative ne se transpose pas, elle se réécrit.</li></ul>
+<h3>Quand choisir l'un ou l'autre</h3>
+<p><strong>Déclaratif</strong> pour les chaînes régulières et nombreuses, qui font toutes à peu près la même chose : ingérer, nettoyer, publier, avec des contrôles. Dix-sept chaînes de six cents lignes deviennent dix-sept chaînes de quarante.</p>
+<p><strong>Impératif</strong> pour ce qui sort du cadre : appel à un service externe, logique métier élaborée, ordre imposé pour des raisons que le moteur ne peut pas deviner, optimisation fine.</p>
+<p><strong>Et une seule discipline dans une organisation mixte : ne pas mélanger les deux à l'intérieur d'un même flux.</strong> Une chaîne moitié déclarative et moitié impérative cumule les inconvénients — il faut à la fois maintenir un graphe explicite et subir les décisions du moteur.</p>
+</section>
+<section class="fiche" id="f8"><p class="fiche-num">Fiche 8 · Git Folders et bundles</p><h1>CI/CD</h1>
+<p>Le vocabulaire et les pièges sont dans <code>exam/fiche-cicd.md</code>. <strong>Ici, c'est un bundle complet, de bout en bout.</strong></p>
+<blockquote><p><strong>Noms actuels</strong> : <em>Declarative Automation Bundles</em> (ex-<em>Databricks Asset Bundles</em>) · <em>Databricks Git Folders</em> (ex-<em>Repos</em>) · <em>Lakeflow Jobs</em> (ex-<em>Workflows</em>). <strong>La commande CLI, elle, est restée <code>databricks bundle</code>.</strong></p></blockquote>
+<hr>
+<h2>L'arborescence</h2>
+<pre class="code" data-lang="txt"><code>ventes/
+├── databricks.yml              identité, variables, targets
+├── resources/
+│   ├── quotidien.job.yml
+│   └── ingestion.pipeline.yml
+├── src/
+│   ├── bronze.py
+│   └── silver.py
+└── .gitignore</code></pre>
+<h2><code>databricks.yml</code></h2>
+<pre class="code" data-lang="yaml"><code>bundle:
+  name: ventes
+
+include:
+  - resources/*.yml
+
+variables:
+  catalogue:
+    description: Catalogue cible
+    default: ventes_dev
+  chemin_arrivees:
+    description: Répertoire de dépôt des fichiers
+    default: /Volumes/ventes_dev/bronze/landing
+  coffre:
+    description: Nom du scope de secrets
+    default: ventes_dev
+
+targets:
+  dev:
+    mode: development          # préfixe les ressources, SUSPEND les plannings
+    default: true
+    workspace:
+      host: https://adb-xxxx.azuredatabricks.net
+    variables:
+      catalogue: ventes_dev
+
+  prod:
+    mode: production           # noms sans préfixe, plannings actifs
+    workspace:
+      host: https://adb-xxxx.azuredatabricks.net
+    variables:
+      catalogue: ventes
+      chemin_arrivees: /Volumes/ventes/bronze/landing
+      coffre: ventes_prod</code></pre>
+<p><strong><code>targets</code> = les environnements.</strong> Jamais les tables cibles d'un pipeline — c'est la confusion la plus fréquente, et elle est listée comme piège dans le guide.</p>
+<h3>Ce que <code>mode: development</code> fait, et les deux problèmes qu'il règle</h3>
+<div class="table-wrap"><table><thead><tr><th></th><th><code>development</code></th><th><code>production</code></th></tr></thead><tbody><tr><td>Noms des ressources</td><td><strong>préfixés par le déployeur</strong></td><td>tels quels</td></tr><tr><td>Planifications</td><td><strong>suspendues</strong></td><td>actives</td></tr><tr><td>Machines</td><td>réutilisées</td><td>neuves, reprises automatiques</td></tr></tbody></table></div>
+<p>Le préfixe empêche deux développeurs de s'écraser sur un workspace unique. La suspension empêche un traitement en cours d'écriture de tourner toutes les nuits sur des données réelles. <strong>Deux problèmes distincts, une même option</strong> — c'est souvent posé comme tel.</p>
+<h2><code>resources/quotidien.job.yml</code></h2>
+<pre class="code" data-lang="yaml"><code>resources:
+  jobs:
+    quotidien:
+      name: ventes_quotidien
+      max_concurrent_runs: 1
+
+      parameters:
+        - name: catalogue
+          default: ${var.catalogue}         # ← la surcharge de target arrive ici
+        - name: jour
+          default: &quot;{{job.start_time.iso_date}}&quot;
+
+      schedule:
+        quartz_cron_expression: &quot;0 30 5 * * ?&quot;
+        timezone_id: &quot;Europe/Paris&quot;
+
+      tasks:
+        - task_key: bronze
+          notebook_task:
+            notebook_path: ../src/bronze.py
+            base_parameters:
+              catalogue: &quot;{{job.parameters.catalogue}}&quot;
+              jour: &quot;{{job.parameters.jour}}&quot;
+              jeton: &quot;{{secrets/${var.coffre}/api_token}}&quot;   # ← l&#x27;emplacement, pas la valeur
+          timeout_seconds: 3600
+          max_retries: 2
+
+        - task_key: silver
+          depends_on: [{ task_key: bronze }]
+          notebook_task:
+            notebook_path: ../src/silver.py
+            base_parameters: { catalogue: &quot;{{job.parameters.catalogue}}&quot; }
+          timeout_seconds: 1800
+
+        - task_key: alerte
+          depends_on: [{ task_key: silver }]
+          run_if: AT_LEAST_ONE_FAILED
+          notebook_task: { notebook_path: ../src/alerte.py }</code></pre>
+<hr>
+<h2>Les commandes, dans l'ordre</h2>
+<pre class="code" data-lang="bash"><code>databricks auth login --host https://adb-xxxx.azuredatabricks.net
+
+databricks bundle validate -t dev        # résout, vérifie, AFFICHE — ne modifie rien
+databricks bundle deploy   -t dev
+databricks bundle run quotidien -t dev
+
+databricks bundle deploy   -t prod       # la promotion : le MÊME code
+databricks bundle run quotidien -t prod
+
+databricks bundle destroy  -t dev        # supprime ce que le bundle a créé</code></pre>
+<p><strong><code>validate</code> est ton meilleur outil de compréhension</strong>, et celui qu'on néglige : il montre la configuration <strong>finale</strong>, après résolution des variables et application des surcharges. C'est là qu'on découvre ce qu'on a réellement écrit, par opposition à ce qu'on croyait écrire. À passer systématiquement avant tout déploiement.</p>
+<blockquote><p><code>bundle remove</code> et <code>bundle clean</code> <strong>n'existent pas</strong>. C'est <code>destroy</code>.</p></blockquote>
+<hr>
+<h2>Les secrets</h2>
+<pre class="code" data-lang="bash"><code>databricks secrets create-scope ventes_prod
+databricks secrets put-secret   ventes_prod api_token</code></pre>
+<pre class="code" data-lang="yaml"><code># dans le YAML versionné : l&#x27;EMPLACEMENT seulement
+jeton: &quot;{{secrets/ventes_prod/api_token}}&quot;</code></pre>
+<pre class="code" data-lang="python"><code># dans un carnet
+jeton = dbutils.secrets.get(scope=&quot;ventes_prod&quot;, key=&quot;api_token&quot;)</code></pre>
+<p><strong>Jamais de mot de passe dans une variable de bundle.</strong> Le YAML est versionné : la valeur serait lisible par quiconque a accès au dépôt, <strong>et pour toujours</strong>. Un dépôt conserve ce qu'on en retire ensuite — un secret ayant transité par un historique est <strong>compromis</strong>, il faut le <strong>remplacer</strong>, pas l'effacer.</p>
+<p>Le <strong>nom</strong> du scope et de la clé sont parfaitement publiables ; ce sont même de bonnes variables de target.</p>
+<hr>
+<h2>Git Folders</h2>
+<p>Un dossier du workspace <strong>est</strong> un dépôt Git : <em>Workspace → Create → Git folder</em>.</p>
+<p>Les quatre gestes de l'objectif d'examen : créer une branche, basculer d'une branche à l'autre — <strong>le contenu des fichiers change</strong> —, committer et pousser, ouvrir une <em>pull request</em>.</p>
+<blockquote><p>⚠️ <strong>Basculer de branche avec des modifications non commitées fait perdre le travail</strong>, dans le workspace comme en ligne de commande. Committer ou mettre de côté d'abord.</p></blockquote>
+<p>Les données n'ont rien à faire dans un dépôt Git. Le code, les notebooks et le bundle, oui.</p>
+<hr>
+<h2>Prouver la promotion, plutôt que l'affirmer</h2>
+<p>Un job de fumée qui écrit une ligne dans une table de journal, dans les deux environnements :</p>
+<pre class="code" data-lang="python"><code>dbutils.widgets.text(&quot;catalogue&quot;, &quot;&quot;)
+cat = dbutils.widgets.get(&quot;catalogue&quot;)
+
+spark.sql(f&quot;&quot;&quot;
+  INSERT INTO {cat}.ops.deployment_log
+  SELECT current_timestamp(), &#x27;{cat}&#x27;, &#x27;{{{{bundle.target}}}}&#x27;, &#x27;{{{{job.name}}}}&#x27;
+&quot;&quot;&quot;)</code></pre>
+<p>Après un déploiement sur les deux cibles, la table contient <strong>deux lignes avec deux catalogs différents et deux noms de job différents</strong>. C'est ce qui prouve que <strong>le même code</strong> a produit deux déploiements distincts — et c'est toute la définition de la promotion d'environnement.</p>
+<p>Sans ça, « j'ai déployé » n'est qu'une affirmation.</p>
+<hr>
+<h2>Les cinq pièges</h2>
+<ol><li><strong><code>validate</code> ne déploie pas.</strong> La confusion coûte du temps dans les deux sens : croire qu'on a déployé, ou hésiter à valider par crainte de modifier.</li><li><strong>Retirer une ressource du YAML la supprime</strong> au déploiement suivant — avec son historique d'exécutions, et pour un pipeline, potentiellement ses tables. Le fichier fait autorité.</li><li><strong><code>deploy</code> est idempotent.</strong> Deux exécutions sans changement ne produisent <strong>rien</strong> : aucun doublon, aucune version empilée.</li><li><strong>Une ressource créée à la main est invisible au bundle</strong> : ni gérée, ni supprimée, ni reproduite ailleurs. Protection d'un côté, source de dérive de l'autre — c'est ainsi que dev et prod divergent sans que rien ne le signale.</li><li><strong>Un environnement de test sans données réalistes ne prouve rien.</strong> Un déploiement validé sur trois lignes ne dit rien du comportement sur trois cents millions.</li></ol>
+<h3>Ce qui disparaît, et ce qui reste</h3>
+<div class="table-wrap"><table><thead><tr><th></th><th>Au <code>deploy</code> suivant</th></tr></thead><tbody><tr><td>La <strong>ressource</strong> — job, pipeline</td><td><strong>supprimée</strong>, avec son historique</td></tr><tr><td>Le <strong>fichier source</strong> — notebook, <code>.py</code></td><td><strong>intact</strong> : c'est la charge utile, pas une ressource</td></tr><tr><td>Les <strong>tables</strong> d'un pipeline déclaratif</td><td>le pipeline les possède — à vérifier avant</td></tr></tbody></table></div>
+</section><section class="fiche" id="fin">
+  <p class="fiche-num">Annexe · À relire quand les chiffres sont faux</p>
+  <h1>Les pièges qui ne lèvent aucune erreur</h1>
+  <p>Ils partagent tous la même propriété : <strong>le traitement réussit</strong>. Aucune
+  exception, aucune alerte, aucun journal — seulement un résultat faux.</p>
+  <div class="table-wrap"><table><thead><tr><th>Le piège</th><th>Fiche</th></tr></thead><tbody>
+  <tr><td><code>TRUNCATE</code> puis <code>COPY INTO</code> charge <strong>zéro ligne</strong></td><td>3</td></tr>
+  <tr><td>Les jetons CSV excédentaires sont <strong>tronqués</strong>, jamais sauvés</td><td>1</td></tr>
+  <tr><td>Sous ANSI, un <code>cast</code> raté <strong>lève</strong> — d'où <code>try_cast</code> partout</td><td>4</td></tr>
+  <tr><td><code>rank</code> laisse passer les ex æquo là où <code>row_number</code> n'en garde qu'un</td><td>4</td></tr>
+  <tr><td>Une fenêtre triée a un cadre qui s'arrête à la <strong>ligne courante</strong></td><td>5</td></tr>
+  <tr><td>Une vue matérialisée à définition relative <strong>décale sa fenêtre</strong> en silence</td><td>5</td></tr>
+  <tr><td>Une tâche <strong>sautée</strong> n'est pas une tâche en échec : le graphe finit en vert</td><td>6</td></tr>
+  <tr><td>Sans <code>timeout_seconds</code>, rien n'arrête une tâche bloquée</td><td>6</td></tr>
+  <tr><td><code>spark.read.table</code> dans un pipeline déclaratif <strong>ne crée aucune dépendance</strong></td><td>7</td></tr>
+  <tr><td>Un rafraîchissement complet <strong>efface l'historique</strong> d'une SCD2</td><td>7</td></tr>
+  <tr><td>Retirer une ressource du YAML la <strong>supprime</strong> au déploiement suivant</td><td>8</td></tr>
+  <tr><td>Une ressource créée à la main est <strong>invisible</strong> au bundle</td><td>8</td></tr>
+  </tbody></table></div>
+
+  <h2>Les quatre questions qui reviennent partout</h2>
+  <p><strong>Où vit l'état ?</strong> <code>COPY INTO</code> dans les métadonnées de la table ·
+  Auto Loader dans un checkpoint · un curseur JDBC dans une table que tu maintiens · un
+  pipeline déclaratif s'en charge. Tout le reste en découle.</p>
+  <p><strong>Le passé peut-il changer ?</strong> Si oui, ni table de flux ni curseur
+  incrémental : une vue matérialisée, ou une réconciliation complète en doublure.</p>
+  <p><strong>Rejouer est-il sans conséquence ?</strong> C'est l'idempotence, et c'est elle qui
+  décide si tu peux activer des reprises automatiques — pas le volume.</p>
+  <p><strong>Qui lira, et que lui promets-tu ?</strong> Structure, sémantique, fraîcheur. Une
+  table publiée est une interface.</p>
+</section>
+</div>

@@ -1,6 +1,6 @@
 # Journal de révision
 
-**Examen : jeudi 3 septembre 2026, 9 h 45**
+**Examen : jeudi 3 septembre 2026, 9 h 45 — ✅ RÉUSSI, 89 % pondéré**
 
 *Recalé le 3 août : départ le 7 au matin.*
 
@@ -385,7 +385,8 @@ Ce qu'une IA m'a dit et que je n'ai pas encore confirmé sur docs.databricks.com
 | **31 août** | **n°1** | **36 / 45 — 80 % · 82 % pondéré** | **7 (62 %), 5 (67 %), 2 (78 %)** |
 | **1er sept** | **n°2** | **34 / 45 — 76 % pondéré** *(Q11 créditée, corrigé faux)* | **5 (60 %), 6 (67 %), 4 (71 %), 7 (71 %)** |
 | **1er sept** | **n°3** *(format du jour J)* | **43 / 45 — 96 % pondéré** | **5 (80 %), 2 (89 %)** — le reste à 100 % |
-| | n°2 | … / 45 | |
+| **2 sept** | **drill de syntaxe** *(101 q, PySpark et SQL)* | **88 / 101 — 87 %** | imbriqué 4/8 · optimisation 3/7 · écriture 1/4 |
+| **3 sept** | **🎓 EXAMEN RÉEL — PASS** | **89 % pondéré · 66 min sur 90** | 1 (66 %), 2 (77 %) |
 
 Compare surtout ta **progression par section** entre les deux : c'est elle qui dit si les
 révisions ont porté, pas le score global.
@@ -394,6 +395,125 @@ révisions ont porté, pas le score global.
 > ses options portaient le biais de position décrit plus haut, celles des blancs ont été
 > rebrassées. Compare les blancs entre eux ; sers-toi du diagnostic pour les priorités,
 > pas pour mesurer une progression.
+
+---
+
+## 3 septembre 2026 — le résultat
+
+**Databricks Certified Data Engineer Associate : PASS.**
+**66 minutes sur 90.** Environ 41 questions notées justes.
+
+| Section | Poids | Blanc n°1 | Blanc n°2 | Blanc n°3 | **Réel** |
+|---|---|---|---|---|---|
+| 1 · Plateforme | 6 % | 100 % | 100 % | 100 % | **66 %** |
+| 2 · Ingestion | 21 % | 78 % | 83 % | 89 % | **77 %** |
+| 3 · Transformation | 22 % | 100 % | 82 % | 100 % | **100 %** |
+| 4 · Jobs | 16 % | 83 % | 71 % | 100 % | **100 %** |
+| 5 · CI/CD | 10 % | 67 % | 60 % | 80 % | **80 %** |
+| 6 · Diagnostic | 10 % | 80 % | 67 % | 100 % | **80 %** |
+| 7 · Gouvernance | 15 % | 62 % | 71 % | 100 % | **100 %** |
+| **Pondéré** | | **82 %** | **76 %** | *96 %* | **89 %** |
+
+### Ce que les chiffres disent
+
+**Le résultat tombe exactement là où les mesures indépendantes le plaçaient.** 82 % et
+76 % aux deux blancs à froid, 96 % au blanc écrit par Claude le jour même — la prédiction
+était « entre les deux ». Elle est à 89 %.
+
+**Les trois sections à 100 % sont celles qui ont fait la boucle complète** : lecture du
+chapitre, salve, correction, contre-salve, reformulation. Gouvernance passe de **62 % à
+100 %**, Jobs de 71 % à 100 %, Transformation de 82 % à 100 %.
+
+**La seule section en retrait est la moins travaillée.** Section 1, 66 % — une question
+ratée sur trois. Elle est passée dernière dans toutes les priorisations (6 % de
+coefficient), sa fiche a été écrite le 1er septembre au soir et **corrigée le 2** après
+lecture du guide officiel. C'est le seul endroit où le matériel de préparation a pu
+desservir.
+
+**Section 2 à 77 %** : deux ratés sur neuf, sur la section la plus pratiquée en vrai
+(M1, M2). Rappel utile — pratiquer un cas particulier ne couvre pas les sept objectifs
+d'une section.
+
+### Ce que les chiffres ne disent pas
+
+Trois jours de préparation pour trente-huit heures de parcours non fait, après un été
+perdu. Cent trente pages lues, trois blancs, onze salves, un drill de 101 questions, un
+atelier médaillon monté à la main.
+
+Et **66 minutes sur 90**, après trois blancs bouclés en vingt. Le seul conseil de méthode
+sur lequel Claude avait fini par céder, appliqué le jour où il comptait.
+
+Deux défauts du matériel de préparation ont été relevés en cours de route — le corrigé de
+la Q11 du blanc n°2, et une question ambiguë sur la bordure de watermark. Les deux fois en
+confrontant la réponse de l'IA à une vérification personnelle. C'est le mode d'échec que
+le guide officiel de Databricks désigne comme le principal de la préparation assistée.
+
+---
+
+## Trajectoire — trois instruments, pas une courbe
+
+Consigné le 2 septembre 2026. **Ces mesures ne sont pas comparables entre elles** : elles
+n'interrogent pas la même chose.
+
+### Les évaluations à froid
+
+| | Date | Brut | Pondéré |
+|---|---|---|---|
+| Diagnostic, 7 fiches | 29-31 juil | 55/80 | *70 %* — biaisé, non comparable |
+| **Blanc n°1** | 31 août | 36/45 | **82 %** |
+| **Blanc n°2** | 1er sept | 34/45 | **76 %** |
+| Blanc n°3 *(écrit par Claude le jour même)* | 1er sept | 43/45 | *96 %* — surestimé |
+| **Drill de syntaxe** *(autre axe)* | 2 sept | 88/101 | **87 %** |
+
+**Les deux seules mesures indépendantes sont 82 % et 76 %.** Le diagnostic portait le
+biais de position ; le blanc n°3 a été écrit le jour même sur la matière révisée le jour
+même. Le drill n'est pas sur le même axe : il teste le rappel d'API, pas le raisonnement
+sur cas.
+
+### Les salves — 11 sessions, 143 questions
+
+| Salve | Date | Score |
+|---|---|---|
+| A · gouvernance et CI/CD (ch. 21) | 31 août | 14/15 |
+| B · diagnostic (ch. 20) | 31 août | 9/11 |
+| C · orchestration (ch. 18) | 31 août | 11/12 |
+| D · publication et déclaratif (ch. 19, 16) | 1er sept | 12/12 |
+| E · historisation (ch. 14) | 1er sept | 12/12 |
+| F · mêlée, 7 sections | 1er sept | 13/15 |
+| Ingestion (fiche) | 1er sept | 11/12 |
+| CI/CD (fiche) | 1er sept | 12/12 |
+| Optimisation (fiche) | 1er sept | 11/12 |
+| **Décroissance, à froid après une nuit** | 2 sept | **15/15** |
+| Finale, mêlée | 2 sept | 15/15 |
+| **Total** | | **135/143 — 94 %** |
+
+Les salves mesurent la **compréhension** juste après lecture, sujet souvent annoncé : un
+instrument favorable. Une seule fait exception — celle du 2 septembre au matin, posée à
+froid, sans relecture, dix-huit heures après. **C'est la seule qui mesure la rétention**,
+et c'est pour cette raison qu'elle compte plus que les dix autres réunies.
+
+### Par section, sur les trois blancs
+
+| Section | Poids | n°1 | n°2 | n°3 |
+|---|---|---|---|---|
+| 1 · Plateforme | 6 % | 100 % | 100 % | 100 % |
+| 2 · Ingestion | 21 % | 78 % | 83 % | 89 % |
+| 3 · Transformation | 22 % | 100 % | 82 % | 100 % |
+| 4 · Jobs | 16 % | 83 % | 71 % | 100 % |
+| 5 · CI/CD | 10 % | **67 %** | **60 %** | 80 % |
+| 6 · Diagnostic | 10 % | 80 % | **67 %** | 100 % |
+| 7 · Gouvernance | 15 % | **62 %** | 71 % | 100 % |
+
+### Le point le plus informatif de toute la préparation
+
+**Le creux du blanc n°2**, et non les sommets. Il a fait chuter de 82 à 76 % au milieu de
+la préparation la plus intensive — et il a révélé pourquoi : *trois faits répondus justes
+en salve la veille étaient tombés dix-huit heures plus tard*. La lecture convertit vite et
+s'évapore vite ; ce qui a tenu, c'est ce qui est passé par la boucle complète — salve,
+correction, contre-salve, reformulation.
+
+Sans ce creux, la journée du 1er septembre aurait été bâtie sur l'ajout de matière au lieu
+de la consolidation, et la salve de décroissance du 2 aurait été mauvaise.
 
 ---
 

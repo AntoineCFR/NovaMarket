@@ -13,12 +13,14 @@ est le travail à faire.
 
 | | Projet | Ce qu'on y travaille | État |
 |---|---|---|---|
-| **01** | *(à venir)* | Ingestion de fichiers, bronze → gold | 🔨 |
+| **01** | **[Spoke](01-spoke/)** — vélos en libre-service | Ingestion de fichiers CSV et JSON, bronze → gold | ✅ prêt |
 | **02** | *(à venir)* | Bases relationnelles et dépôts partenaires | ⏳ |
 | **03** | *(à venir)* | Orchestration | ⏳ |
 | **04** | *(à venir)* | Pipelines déclaratifs | ⏳ |
 | **05** | *(à venir)* | Bundles et promotion d'environnement | ⏳ |
 | — | **NovaMarket** | Tout, en même temps, avec les embûches | 🔨 refonte |
+
+Les cahiers des charges et les objets produits sont **en anglais** — le portfolio est international. `Training/` reste en français.
 
 Les préfixes numériques donnent l'ordre conseillé. NovaMarket n'en porte pas : il vient
 quand tu décides qu'il vient.

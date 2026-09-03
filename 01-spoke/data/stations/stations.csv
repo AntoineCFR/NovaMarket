@@ -1,0 +1,62 @@
+station_id,station_name,district,capacity,latitude,longitude,commissioned_on,status
+ST001,Riverside Bridge,Riverside,16,50.037683,14.485589,2024-05-23,active
+ST002,Old Town Station,Old Town,24,50.005846,14.468825,2024-07-08,active
+ST003,Harbour Quay,Harbour,24,50.052078,14.370318,2024-07-17,active
+ST004,  Northgate Square ,Northgate,16,50.000627,14.500585,2024-09-20,active
+ST005,University Court,University,12,50.013468,14.496081,2024-06-29,active
+ST006,Meadows Square,MEADOWS,16,50.058589,14.50103,2024-06-06,active
+ST007,Riverside Court,Riverside,20,50.000756,14.465275,2025-02-27,active
+ST008,Old Town Court,Old Town,12,50.065396,14.397038,2025-06-03,active
+ST009,Harbour Park,Harbour,16,50.042253,14.375186,2024-07-19,active
+ST010,Northgate Park,Northgate,,50.044887,14.427507,2024-10-20,active
+ST011,University Court,University,28,50.050011,14.391188,2024-03-19,active
+ST012,Meadows Gate,Meadows,24,50.032848,14.36575,2024-05-12,active
+ST013,Riverside Gate,riverside,12,50.060266,14.353816,2025-03-06,active
+ST014,Old Town Court,Old Town,12,50.015325,14.4472,2025-11-06,active
+ST015,Harbour Park,Harbour,16,50.092049,14.354122,2025-08-26,decommissioned
+ST016,Northgate Court,Northgate,12,50.07077,14.419241,2024-12-31,active
+ST017,University Park,University,20,50.042636,14.413108,2023-12-05,active
+ST018,Meadows Bridge,Meadows,12,50.040289,14.433846,2024-04-13,active
+ST019,Riverside Station,RIVERSIDE,12,50.057173,14.421487,2025-01-12,active
+ST020,Old Town Square,Old Town,28,50.00529,14.372266,2025-01-09,active
+ST021,Harbour Park,Harbour,12,50.069774,14.418769,2024-08-04,active
+ST022,  Northgate Court ,Northgate,16,49.994232,14.396463,2024-02-19,active
+ST023,University Quay,University,28,49.995347,14.396519,2025-09-08,active
+ST024,Meadows Square,Meadows,16,50.081871,14.482376,2025-03-25,active
+ST025,Riverside Quay,Riverside,24,50.071037,14.488517,2023-02-27,active
+ST026,Old Town Station,Old Town,28,50.065881,14.493679,2024-06-03,active
+ST027,Harbour Gate,harbour,12,50.081758,14.492031,2023-09-08,active
+ST028,Northgate Bridge,Northgate,20,50.059277,14.405213,2023-08-12,active
+ST029,University Gate,University,24,50.077165,14.358245,2025-09-14,active
+ST030,Meadows Gate,Meadows,16,50.040184,14.476264,2025-02-09,active
+ST031,Riverside Square,RIVERSIDE,24,50.065572,14.398112,2024-08-29,active
+ST032,Old Town Square,Old Town,16,50.059349,14.458746,2023-10-16,active
+ST033,Harbour Court,Harbour,20,50.05006,14.344795,2023-04-14,active
+ST034,Northgate Station,Northgate,24,50.073623,14.452765,2023-06-03,active
+ST035,University Square,University,28,50.02031,14.461474,2023-07-07,active
+ST036,Meadows Bridge,Meadows,24,50.053463,14.457502,2023-01-24,active
+ST037,Riverside Market,Riverside,20,50.047451,14.348403,2024-08-31,active
+ST038,Old Town Station,Old Town,,50.021743,14.388516,2023-02-22,active
+ST039,Harbour Market,Harbour,16,50.046092,14.504403,2024-04-07,active
+ST040,Northgate Market,Northgate,28,50.102068,14.387899,2025-03-10,active
+ST041,University Gate,University,16,50.034604,14.335802,2023-08-21,active
+ST042,Meadows Bridge,Meadows,12,50.059148,14.479905,2025-11-26,active
+ST043,Riverside Court,Riverside,28,50.036434,14.377676,2024-01-17,active
+ST044,Old Town Station,Old Town,20,50.044325,14.484991,2025-05-12,active
+ST045,  Harbour Station ,Harbour,28,50.011389,14.400332,2025-04-03,active
+ST046,Northgate Park,Northgate,12,50.012685,14.436996,2024-09-03,active
+ST047,University Gate,University,12,50.026181,14.402312,2024-07-16,active
+ST048,Meadows Park,Meadows,24,50.004344,14.424881,2024-05-06,decommissioned
+ST049,Riverside Square,Riverside,16,50.101056,14.387346,2023-02-10,active
+ST050,Old Town Park,Old Town,28,50.092525,14.472186,2023-06-14,active
+ST051,Harbour Station,Harbour,12,50.082631,14.48637,2024-05-30,active
+ST052,Northgate Station,NORTHGATE,28,50.018494,14.388531,2024-11-23,active
+ST053,University Station,University,16,50.047891,14.396445,2023-01-27,active
+ST054,Meadows Square,Meadows,16,50.056544,14.359192,2024-09-11,active
+ST055,Riverside Quay,Riverside,28,50.100254,14.468176,2023-01-25,active
+ST056,Old Town Station,Old Town,20,50.082077,14.501854,2024-03-14,active
+ST057,Harbour Quay,Harbour,24,50.076461,14.41512,2023-02-24,active
+ST058,Northgate Park,Northgate,28,50.083941,14.40529,2024-08-16,active
+ST059,University Square,University,16,49.993548,14.411152,2024-05-15,active
+ST060,Meadows Park,Meadows,28,49.992723,14.334272,2023-02-08,active
+ST008,Old Town Court,Old Town,12,50.065396,14.397038,2025-06-03,active
